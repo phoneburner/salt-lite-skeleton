@@ -35,10 +35,12 @@ class RouteGroupDefinition implements Definition, \IteratorAggregate
     private function __construct(
         string $path,
         array $methods,
-        array $attributes, /**
+        array $attributes,
+        /**
          * @var array<RouteDefinition>
          */
-        private array $routes, /**
+        private array $routes,
+        /**
          * @var array<RouteGroupDefinition>
          */
         private array $groups,

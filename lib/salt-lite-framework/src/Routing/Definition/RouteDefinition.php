@@ -208,7 +208,7 @@ class RouteDefinition implements Route, Definition, JsonSerializable
     }
 
     #[\Override]
-    public function withMethod(HttpMethod|string ...$method): self
+    public function withMethod(HttpMethod ...$method): self
     {
         $method = \array_map(HttpMethod::instance(...), $method);
         return new self($this->path, $method, $this->attributes);

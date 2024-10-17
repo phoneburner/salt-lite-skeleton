@@ -17,6 +17,7 @@ use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\RedirectRequestHandler;
 use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\StaticFileRequestHandler;
 use PhoneBurner\SaltLiteFramework\Routing\Route;
 use PhoneBurner\SaltLiteFramework\Util\Helper\Arr;
+use PhoneBurner\SaltLiteFramework\Util\Helper\Enum;
 use PhoneBurner\Tests\SaltLiteFramework\Fixtures\TestRequestHandler;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
@@ -399,12 +400,12 @@ class RouteDefinitionTest extends TestCase
 
         // not changed
         self::assertSame('/example', $sut->getRoutePath());
-        self::assertEquals($old_methods, $sut->getMethods());
+        self::assertEquals(Enum::values(...$old_methods), $sut->getMethods());
         self::assertEquals(['old' => 'data1'], $sut->getAttributes());
 
         // changed
         self::assertSame('/example', $new->getRoutePath());
-        self::assertEqualsCanonicalizing($new_methods, $new->getMethods());
+        self::assertEqualsCanonicalizing(Enum::values(...$new_methods), $new->getMethods());
         self::assertEquals(['old' => 'data1'], $new->getAttributes());
     }
 
@@ -799,33 +800,33 @@ class RouteDefinitionTest extends TestCase
     public static function provideChangedMethods(): Generator
     {
         yield 'single to single' => [
-            [HttpMethod::Get->value],
-            [HttpMethod::Post->value],
-            [HttpMethod::Post->value],
+            [HttpMethod::Get],
+            [HttpMethod::Post],
+            [HttpMethod::Post],
         ];
 
         yield 'single to multiple' => [
-            [HttpMethod::Get->value],
-            [HttpMethod::Post->value, HttpMethod::Get->value],
-            [HttpMethod::Post->value, HttpMethod::Get->value],
+            [HttpMethod::Get],
+            [HttpMethod::Post, HttpMethod::Get],
+            [HttpMethod::Post, HttpMethod::Get],
         ];
 
         yield 'multiple to single' => [
-            [HttpMethod::Post->value, HttpMethod::Get->value],
-            [HttpMethod::Get->value],
-            [HttpMethod::Get->value],
+            [HttpMethod::Post, HttpMethod::Get],
+            [HttpMethod::Get],
+            [HttpMethod::Get],
         ];
 
         yield 'multiple to multiple' => [
-            [HttpMethod::Post->value, HttpMethod::Get->value],
-            [HttpMethod::Delete->value, HttpMethod::Patch->value],
-            [HttpMethod::Delete->value, HttpMethod::Patch->value],
+            [HttpMethod::Post , HttpMethod::Get ],
+            [HttpMethod::Delete , HttpMethod::Patch ],
+            [HttpMethod::Delete , HttpMethod::Patch ],
         ];
 
         yield 'duplicates' => [
-            [HttpMethod::Post->value, HttpMethod::Get->value],
-            [HttpMethod::Delete->value, HttpMethod::Patch->value],
-            [HttpMethod::Delete->value, HttpMethod::Patch->value, HttpMethod::Delete->value, HttpMethod::Patch->value],
+            [HttpMethod::Post , HttpMethod::Get ],
+            [HttpMethod::Delete , HttpMethod::Patch ],
+            [HttpMethod::Delete , HttpMethod::Patch , HttpMethod::Delete , HttpMethod::Patch ],
         ];
     }
 

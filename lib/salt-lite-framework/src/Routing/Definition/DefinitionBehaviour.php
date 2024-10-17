@@ -6,6 +6,7 @@ namespace PhoneBurner\SaltLiteFramework\Routing\Definition;
 
 use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
 use PhoneBurner\SaltLiteFramework\Routing\Route;
+use PhoneBurner\SaltLiteFramework\Util\Helper\Enum;
 use Psr\Http\Server\RequestHandlerInterface;
 
 trait DefinitionBehaviour
@@ -35,7 +36,7 @@ trait DefinitionBehaviour
 
     private function setMethods(HttpMethod|string ...$methods): void
     {
-        $this->methods = \array_values(\array_unique(\array_column(\array_map(HttpMethod::instance(...), $methods,), 'value',)));
+        $this->methods = \array_values(\array_unique(Enum::values(...\array_map(HttpMethod::instance(...), $methods))));
     }
 
     public function with(callable ...$fns): self

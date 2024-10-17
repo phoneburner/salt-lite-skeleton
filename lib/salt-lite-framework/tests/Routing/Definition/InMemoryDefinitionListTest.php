@@ -78,8 +78,8 @@ class InMemoryDefinitionListTest extends TestCase
     public function iterator_is_flat(): void
     {
         self::assertEqualsCanonicalizing(
-            $this->expected_routes,
-            \iterator_to_array($this->sut, false),
+            \array_values($this->expected_routes),
+            \array_values(\iterator_to_array($this->sut, false)),
         );
     }
 
