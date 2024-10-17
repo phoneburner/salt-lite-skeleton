@@ -61,7 +61,7 @@ class RouterServiceProvider implements ServiceProvider
                         \assert($provider instanceof RouteProvider);
                         return $provider;
                     },
-                    $container->get(Configuration::class)->get('route_providers') ?? [],
+                    $container->get(Configuration::class)->get('router.route_providers') ?? [],
                 ));
             },
         );

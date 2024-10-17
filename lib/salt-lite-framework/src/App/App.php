@@ -48,7 +48,7 @@ final class App
         $container = new PhpDiContainerAdapter();
 
         // instantiate container and register application service providers
-        foreach ($this->config->get('service_providers') as $provider_class) {
+        foreach ($this->config->get('container.service_providers') as $provider_class) {
             \assert(\is_a($provider_class, ServiceProvider::class, true));
             (new $provider_class())->register($container);
         }

@@ -17,9 +17,11 @@ class User
     #[ORM\GeneratedValue(strategy: GeneratedValueStrategy::IDENTITY)]
     protected int $id;
 
-    public function __construct(#[ORM\Column(type: Types::STRING, length: 255, nullable: false)]
-    protected string $username, #[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: false)]
-    protected \DateTimeImmutable $date_added = new \DateTimeImmutable())
-    {
+    public function __construct(
+        #[ORM\Column(type: Types::STRING, length: 255, nullable: false)]
+        protected string $username,
+        #[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: false)]
+        protected \DateTimeImmutable $date_added = new \DateTimeImmutable(),
+    ) {
     }
 }

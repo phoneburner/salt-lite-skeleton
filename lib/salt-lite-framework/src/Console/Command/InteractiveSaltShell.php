@@ -7,6 +7,9 @@ namespace PhoneBurner\SaltLiteFramework\Console\Command;
 use Doctrine\DBAL\Connection;
 use Doctrine\ORM\EntityManagerInterface;
 use PhoneBurner\SaltLiteFramework\App\Environment;
+use PhoneBurner\SaltLiteFramework\Cache\AppendOnlyCache;
+use PhoneBurner\SaltLiteFramework\Cache\Cache;
+use PhoneBurner\SaltLiteFramework\Cache\Lock\LockFactory;
 use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
 use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
 use Psr\Log\LoggerInterface;
@@ -34,6 +37,9 @@ class InteractiveSaltShell extends Command
         'em' => EntityManagerInterface::class,
         'connection' => Connection::class,
         'redis' => \Redis::class,
+        'cache' => Cache::class,
+        'append_only_cache' => AppendOnlyCache::class,
+        'lock_factory' => LockFactory::class,
     ];
 
     public function __construct(private readonly MutableContainer $container)

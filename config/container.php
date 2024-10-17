@@ -11,13 +11,15 @@ use PhoneBurner\SaltLiteFramework\Logging\LoggingServiceProvider;
 use PhoneBurner\SaltLiteFramework\Router\RouterServiceProvider;
 
 return [
-    'service_providers' => [
-        AppServiceProvider::class,
-        ConsoleServiceProvider::class,
-        LoggingServiceProvider::class,
-        CacheServiceProvider::class,
-        DatabaseServiceProvider::class,
-        HttpServiceProvider::class,
-        RouterServiceProvider::class,
+    'container' => [
+        'service_providers' => [
+            AppServiceProvider::class,
+            ConsoleServiceProvider::class,
+            LoggingServiceProvider::class,
+            CacheServiceProvider::class,
+            DatabaseServiceProvider::class,
+            HttpServiceProvider::class,
+            RouterServiceProvider::class,
+        ],
     ],
 ];

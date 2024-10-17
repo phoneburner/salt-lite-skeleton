@@ -10,7 +10,6 @@ use Doctrine\ORM\Cache\DefaultCacheFactory;
 use Doctrine\ORM\Cache\Region\DefaultRegion;
 use Doctrine\ORM\Cache\RegionsConfiguration;
 use Doctrine\ORM\Configuration as EntityManagerConfiguration;
-use Doctrine\ORM\Decorator\EntityManagerDecorator;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\Driver\AttributeDriver;
@@ -64,13 +63,9 @@ class EntityManagerFactory
      *
      * @link https://github.com/briannesbitt/Carbon/issues/2525
      * @link https://github.com/doctrine/annotations/pull/293
-     * @template T of EntityManagerDecorator
-     * @param class-string<T>|null $wrapper_class
-     * @return EntityManagerDecorator
      */
     public function init(
         string $name = ConnectionFactory::DEFAULT,
-        string|null $wrapper_class = null,
     ): EntityManagerInterface {
         Types::register();
 
@@ -124,7 +119,7 @@ class EntityManagerFactory
             $em->getEventManager()->addEventSubscriber($subscriber);
         }
 
-        return $wrapper_class === null ? $em : new $wrapper_class($em);
+        return $em;
     }
 
     private function configureEntityCache(
