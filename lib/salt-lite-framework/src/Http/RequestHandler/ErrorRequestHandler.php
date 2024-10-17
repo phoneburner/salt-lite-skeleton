@@ -7,7 +7,7 @@ namespace PhoneBurner\SaltLiteFramework\Http\RequestHandler;
 use PhoneBurner\SaltLiteFramework\Http\Domain\HttpReasonPhrase;
 use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\GenericHttpExceptionResponse;
 use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\PageNotFoundResponse;
-use PhoneBurner\SaltLiteFramework\Router\Match\RouteMatch;
+use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

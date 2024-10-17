@@ -8,7 +8,7 @@ use PhoneBurner\SaltLiteFramework\Console\ConsoleServiceProvider;
 use PhoneBurner\SaltLiteFramework\Database\DatabaseServiceProvider;
 use PhoneBurner\SaltLiteFramework\Http\HttpServiceProvider;
 use PhoneBurner\SaltLiteFramework\Logging\LoggingServiceProvider;
-use PhoneBurner\SaltLiteFramework\Router\RouterServiceProvider;
+use PhoneBurner\SaltLiteFramework\Routing\RoutingServiceProvider;
 
 return [
     'container' => [
@@ -19,7 +19,7 @@ return [
             CacheServiceProvider::class,
             DatabaseServiceProvider::class,
             HttpServiceProvider::class,
-            RouterServiceProvider::class,
+            RoutingServiceProvider::class,
         ],
     ],
 ];

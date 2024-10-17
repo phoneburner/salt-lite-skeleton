@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 use PhoneBurner\SaltLiteFramework\Http\Middleware\CatchExceptionalResponses;
 use PhoneBurner\SaltLiteFramework\Http\Middleware\TransformHttpExceptionResponses;
-use PhoneBurner\SaltLiteFramework\Router\Middleware\AttachRouteToRequest;
-use PhoneBurner\SaltLiteFramework\Router\Middleware\DispatchRouteMiddleware;
-use PhoneBurner\SaltLiteFramework\Router\Middleware\DispatchRouteRequestHandler;
+use PhoneBurner\SaltLiteFramework\Routing\Middleware\AttachRouteToRequest;
+use PhoneBurner\SaltLiteFramework\Routing\Middleware\DispatchRouteMiddleware;
+use PhoneBurner\SaltLiteFramework\Routing\Middleware\DispatchRouteRequestHandler;
 
 return [
     'middleware' => [

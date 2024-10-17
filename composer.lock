@@ -2349,7 +2349,7 @@
             "dist": {
                 "type": "path",
                 "url": "./lib/salt-lite-framework",
-                "reference": "781d653f13f84117fb45191e167ef898b0043510"
+                "reference": "45315ad2133b0d925c7826bf41a08d0027c003f7"
             },
             "require": {
                 "brick/varexporter": "^0.5.0",
@@ -2432,6 +2432,37 @@
                 "psr-4": {
                     "PhoneBurner\\Tests\\SaltLiteFramework\\": "tests/"
                 }
+            },
+            "scripts": {
+                "lint": [
+                    "@php vendor/bin/parallel-lint -j $(nproc) --show-deprecated --exclude vendor --exclude build ."
+                ],
+                "phpcbf": [
+                    "@php vendor/bin/phpcbf --parallel=$(nproc) --report=full"
+                ],
+                "phpcs": [
+                    "@php vendor/bin/phpcs --parallel=$(nproc) --report=full"
+                ],
+                "phpstan": [
+                    "@php vendor/bin/phpstan analyze --memory-limit=-1"
+                ],
+                "test": [
+                    "@php vendor/bin/paratest"
+                ],
+                "test-coverage": [
+                    "@putenv XDEBUG_MODE=coverage",
+                    "@php vendor/bin/paratest --coverage-html=html/phpunit"
+                ],
+                "rector": [
+                    "@php vendor/bin/rector process"
+                ],
+                "ci": [
+                    "@lint",
+                    "@phpcs",
+                    "@test",
+                    "@phpstan",
+                    "@php vendor/bin/rector process --dry-run --clear-cache"
+                ]
             },
             "license": [
                 "proprietary"

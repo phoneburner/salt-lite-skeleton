@@ -8,19 +8,10 @@ use Doctrine\DBAL\Connection;
 use Doctrine\Migrations\Configuration\Connection\ExistingConnection;
 use Doctrine\Migrations\Configuration\Migration\ConfigurationArray;
 use Doctrine\Migrations\DependencyFactory;
-use Doctrine\Migrations\Tools\Console\Command\CurrentCommand;
-use Doctrine\Migrations\Tools\Console\Command\DiffCommand;
-use Doctrine\Migrations\Tools\Console\Command\DumpSchemaCommand;
-use Doctrine\Migrations\Tools\Console\Command\ExecuteCommand;
-use Doctrine\Migrations\Tools\Console\Command\GenerateCommand;
-use Doctrine\Migrations\Tools\Console\Command\LatestCommand;
-use Doctrine\Migrations\Tools\Console\Command\ListCommand;
-use Doctrine\Migrations\Tools\Console\Command\MigrateCommand;
-use Doctrine\Migrations\Tools\Console\Command\RollupCommand;
-use Doctrine\Migrations\Tools\Console\Command\StatusCommand;
-use Doctrine\Migrations\Tools\Console\Command\SyncMetadataCommand;
-use Doctrine\Migrations\Tools\Console\Command\UpToDateCommand;
-use Doctrine\Migrations\Tools\Console\Command\VersionCommand;
+use Doctrine\Migrations\Tools\Console\ConsoleRunner as MigrationConsoleRunner;
+use Doctrine\ORM\Tools\Console\ConsoleRunner as OrmConsoleRunner;
+use Doctrine\ORM\Tools\Console\EntityManagerProvider;
+use PhoneBurner\SaltLiteFramework\App\Context;
 use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
 use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
 use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
@@ -69,24 +60,15 @@ class ConsoleServiceProvider implements ServiceProvider
                 $container->get(LoggerInterface::class),
             );
 
-            $application->addCommands([
-                new CurrentCommand($dependency_factory),
-                new DiffCommand($dependency_factory),
-                new DumpSchemaCommand($dependency_factory),
-                new ExecuteCommand($dependency_factory),
-                new GenerateCommand($dependency_factory),
-                new LatestCommand($dependency_factory),
-                new ListCommand($dependency_factory),
-                new MigrateCommand($dependency_factory),
-                new RollupCommand($dependency_factory),
-                new StatusCommand($dependency_factory),
-                new SyncMetadataCommand($dependency_factory),
-                new UpToDateCommand($dependency_factory),
-                new VersionCommand($dependency_factory),
-            ]);
+            MigrationConsoleRunner::addCommands($application, $dependency_factory);
+            OrmConsoleRunner::addCommands($application, $container->get(EntityManagerProvider::class));
+
+            $context = $container->get(Context::class);
+
             $application->setCommandLoader($container->get(CommandLoaderInterface::class));
-            $application->setAutoExit(false);
-            $application->setCatchExceptions(false);
+            $application->setAutoExit($context !== Context::Http);
+            $application->setCatchExceptions($context !== Context::Http);
+
             return $application;
         });
     }

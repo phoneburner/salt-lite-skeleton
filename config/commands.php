@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use PhoneBurner\SaltLiteFramework\Console\Command\InteractiveSaltShell;
-use PhoneBurner\SaltLiteFramework\Router\Command\CacheRoutes;
-use PhoneBurner\SaltLiteFramework\Router\Command\ListRoutes;
+use PhoneBurner\SaltLiteFramework\Routing\Command\CacheRoutes;
+use PhoneBurner\SaltLiteFramework\Routing\Command\ListRoutes;
 
 return [
     'commands' => [

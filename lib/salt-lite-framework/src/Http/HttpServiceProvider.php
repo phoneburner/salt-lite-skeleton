@@ -14,7 +14,7 @@ use PhoneBurner\SaltLiteFramework\Http\Middleware\MiddlewareRequestHandlerFactor
 use PhoneBurner\SaltLiteFramework\Http\Middleware\TransformHttpExceptionResponses;
 use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\HttpExceptionResponseTransformer;
 use PhoneBurner\SaltLiteFramework\Logging\LogTrace;
-use PhoneBurner\SaltLiteFramework\Router\RequestHandler\NullHandler;
+use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\NullHandler;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;

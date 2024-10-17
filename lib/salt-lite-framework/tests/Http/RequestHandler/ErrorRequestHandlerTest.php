@@ -8,7 +8,7 @@ use PhoneBurner\SaltLiteFramework\Http\Domain\HttpReasonPhrase;
 use PhoneBurner\SaltLiteFramework\Http\RequestHandler\ErrorRequestHandler;
 use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\HttpExceptionResponse;
 use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\PageNotFoundResponse;
-use PhoneBurner\SaltLiteFramework\Router\Match\RouteMatch;
+use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
