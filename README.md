@@ -24,6 +24,8 @@
 - [x] Redis Connection Configuration
 - [x] Remote Cache/Append-Only Cache/In-Memory Cache Support
 - [x] Crypto (Paseto, Int to UUID, etc.)
+- [ ] Event Sourcing / EventSauce
+- [ ] Behat BDD Testing Framework (or Codeception)
 - [ ] API Handler 
 - [ ] PSR-14 Event Dispatcher
 - [ ] Local/Remote Filesystem Storage via Flysystem
