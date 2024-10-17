@@ -74,7 +74,7 @@ class RouteGroupDefinition implements Definition, \IteratorAggregate
             }
 
             return $route->withRoutePath($this->path . $route->getRoutePath())
-                ->withAddedMethod(...\array_map(HttpMethod::from(...), $this->methods))
+                ->withAddedMethod(...\array_map(HttpMethod::instance(...), $this->methods))
                 ->withAddedAttributes($attributes);
         }, \iterator_to_array($this->getRoutes(), false));
     }

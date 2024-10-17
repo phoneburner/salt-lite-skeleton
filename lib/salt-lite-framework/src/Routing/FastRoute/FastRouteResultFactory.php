@@ -16,7 +16,7 @@ class FastRouteResultFactory
     public function make(FastRouteMatch $match): RouterResult
     {
         if ($match->getStatus() === Dispatcher::METHOD_NOT_ALLOWED) {
-            return MethodNotAllowed::make(...\array_map(HttpMethod::from(...), $match->getMethods()));
+            return MethodNotAllowed::make(...\array_map(HttpMethod::instance(...), $match->getMethods()));
         }
 
         if ($match->getStatus() === Dispatcher::FOUND) {

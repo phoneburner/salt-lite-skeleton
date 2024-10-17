@@ -116,6 +116,11 @@ enum HttpMethod: string
      */
     case Patch = 'PATCH';
 
+    public static function instance(self|string $method): self
+    {
+        return $method instanceof self ? $method : self::from(\strtoupper($method));
+    }
+
     public static function values(): array
     {
         return \array_column(self::cases(), 'value');

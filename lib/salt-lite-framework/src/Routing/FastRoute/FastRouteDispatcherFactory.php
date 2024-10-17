@@ -13,13 +13,13 @@ use FastRoute\RouteParser\Std as StdRouteParser;
 use PhoneBurner\SaltLiteFramework\Util\Filesystem\FileWriter;
 use Psr\Log\LoggerInterface;
 
-final readonly class FastRouteDispatcherFactory
+class FastRouteDispatcherFactory
 {
     private const int EXPORT_OPTIONS = VarExporter::ADD_RETURN | VarExporter::TRAILING_COMMA_IN_ARRAY;
 
     public function __construct(
-        private LoggerInterface $logger,
-        private string|null $cache_file = null,
+        private readonly LoggerInterface $logger,
+        private readonly string|null $cache_file = null,
     ) {
     }
 

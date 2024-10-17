@@ -38,7 +38,7 @@ class CacheRoutes extends Command
 
         if ($this->environment->stage === BuildStage::Development) {
             $output->writeln('<comment>Route caching is disabled in development mode</comment>');
-            $output->writeln('Set the ENABLE_ROUTE_CACHE environment variable to `true` enable it');
+            $output->writeln('Set the SALT_ENABLE_ROUTE_CACHE environment variable to `true` enable it');
             return self::SUCCESS;
         }
 
