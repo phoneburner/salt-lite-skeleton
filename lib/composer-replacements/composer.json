@@ -1,0 +1,31 @@
+{
+  "name": "phoneburner/composer-replacements",
+  "description": "A 'no-op' package with no dependencies used to cleanly replace other packages",
+  "type": "library",
+  "require": {
+    "php": "^8.2",
+    "ext-ctype": "*",
+    "ext-iconv": "*",
+    "ext-intl": "*",
+    "ext-random": "*",
+    "ext-sodium": "*",
+    "ext-mbstring": "*"
+  },
+  "replace": {
+    "paragonie/random_compat": ">=v2.0.0",
+    "paragonie/sodium_compat": "*",
+    "symfony/polyfill-ctype": "*",
+    "symfony/polyfill-iconv": "*",
+    "symfony/polyfill-intl-grapheme": "*",
+    "symfony/polyfill-intl-icu": "*",
+    "symfony/polyfill-intl-idn": "*",
+    "symfony/polyfill-intl-messageformatter": "*",
+    "symfony/polyfill-intl-normalizer": "*",
+    "symfony/polyfill-mbstring": "*",
+    "symfony/polyfill-php72": "*",
+    "symfony/polyfill-php73": "*",
+    "symfony/polyfill-php80": "*",
+    "symfony/polyfill-php81": "*",
+    "symfony/polyfill-php82": "*"
+  }
+}

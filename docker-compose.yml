@@ -1,0 +1,44 @@
+services:
+  web:
+    container_name: "salt-lite-skeleton-web"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: development
+    platform: linux/amd64
+    ports:
+      - "${DOCKER_HOST_HTTP_PORT:-8000}:${HTTP_PORT:-80}"
+    depends_on:
+      - database
+      - cache
+    volumes:
+      - ${SOURCE_DIR:-./}:/var/www/
+      - ./php-development.ini:/usr/local/etc/php/conf.d/settings.ini
+    env_file:
+      - .env
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+  database:
+    container_name: "salt-lite-skeleton-db"
+    image: mysql:8.0.36
+    platform: linux/amd64
+    ports:
+      - "${DOCKER_HOST_LOCAL_DB_PORT:-127.0.0.1:3309}:${MYSQL_PORT:-3306}"
+    volumes:
+      - ./database/seed/:/docker-entrypoint-initdb.d/
+    tmpfs:
+      - /var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "${LOCAL_DB_ROOT_PASS:-pb_pass123}"
+      MYSQL_DATABASE: "${LOCAL_DB_SCHEMA:-salt-lite-skeleton}"
+      MYSQL_USER: "${LOCAL_DB_USER:-pb_user}"
+      MYSQL_PASSWORD: "${LOCAL_DB_PASS:-pb_pass}"
+
+  cache:
+    container_name: "salt-lite-skeleton-cache"
+    image: redis:7
+    platform: linux/amd64
+    ports:
+      - "${DOCKER_HOST_REDIS_PORT:-63791}:${REDIS_PORT:-6379}"
+

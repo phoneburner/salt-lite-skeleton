@@ -1,0 +1,107 @@
+{
+  "name": "phoneburner/salt-lite-skeleton",
+  "description": "Salt-Lite Application Skeleton",
+  "type": "project",
+  "license": "proprietary",
+  "config": {
+    "platform": {
+      "php": "8.3"
+    },
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true,
+      "sllh/composer-lint": true
+    }
+  },
+  "repositories": [
+    {
+      "type": "github",
+      "url": "https://github.com/andysnell/http-tortilla"
+    },
+    {
+      "type": "path",
+      "url": "./lib/composer-replacements",
+      "options": {
+        "canonical": true,
+        "symlink": true,
+        "versions": {
+          "phoneburner/composer-replacements": "dev-main"
+        }
+      }
+    },
+    {
+      "type": "path",
+      "url": "./lib/salt-lite-framework",
+      "options": {
+        "canonical": true,
+        "symlink": true,
+        "versions": {
+          "phoneburner/salt-lite-framework": "dev-main"
+        }
+      }
+    }
+  ],
+  "autoload": {
+    "classmap": [
+    ],
+    "psr-4": {
+      "PhoneBurner\\SaltLiteSkeleton\\": "src/",
+      "PhoneBurner\\SaltLiteSkeleton\\Migrations\\": "database/migrations/"
+    },
+    "files": [
+      "includes/bootstrap.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PhoneBurner\\Tests\\SaltLiteSkeleton\\Unit\\": "tests/unit/",
+      "PhoneBurner\\Tests\\SaltLiteFramework\\": "lib/salt-lite-framework/tests/"
+    }
+  },
+  "require": {
+    "php": "^8.3",
+    "ext-bcmath": "*",
+    "ext-ctype": "*",
+    "ext-curl": "*",
+    "ext-exif": "*",
+    "ext-gmp": "*",
+    "ext-iconv": "*",
+    "ext-igbinary": "*",
+    "ext-intl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "ext-pdo": "*",
+    "ext-random": "*",
+    "ext-redis": "*",
+    "ext-sodium": "*",
+    "ext-zip": "*",
+    "ext-zlib": "*",
+    "phoneburner/composer-replacements": "dev-main",
+    "phoneburner/salt-lite-framework": "dev-main",
+    "phoneburner/http-tortilla": "dev-v2.x-dev as 2.0.0"
+  },
+  "require-dev": {
+    "brianium/paratest": "^7.5",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1",
+    "filp/whoops": "^2.16",
+    "php-parallel-lint/php-parallel-lint": "^1.4",
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "^1.12.6",
+    "phpstan/phpstan-deprecation-rules": "^1.2.1",
+    "phpstan/phpstan-doctrine": "^1.5.3",
+    "phpstan/phpstan-phpunit": "^1.4",
+    "phpunit/phpunit": "^11",
+    "psy/psysh": "^0.12.4",
+    "rector/rector": "^1.2.7",
+    "roave/security-advisories": "dev-latest",
+    "slevomat/coding-standard": "^8.15",
+    "spaze/phpstan-disallowed-calls": "^3.5",
+    "squizlabs/php_codesniffer": "^3.10.3",
+    "symfony/var-dumper": "^7.1.5"
+  },
+  "scripts": {
+  },
+  "extra": {
+  }
+}
