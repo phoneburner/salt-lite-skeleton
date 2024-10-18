@@ -2,6 +2,7 @@
 /.github/
 /build/
 /vendor/
+/html/phpunit
 
 .env
 .phpunit.result.cache
