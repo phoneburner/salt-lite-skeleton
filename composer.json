@@ -75,6 +75,7 @@
     "ext-random": "*",
     "ext-redis": "*",
     "ext-sodium": "*",
+    "ext-timezonedb": "*",
     "ext-zip": "*",
     "ext-zlib": "*",
     "phoneburner/composer-replacements": "dev-main",

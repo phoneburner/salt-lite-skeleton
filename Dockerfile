@@ -31,9 +31,29 @@ EOF
 
 # Install PHP Extensions
 RUN <<-EOF
-  docker-php-ext-install -j$(nproc) bcmath exif gmp intl opcache pdo_mysql zip;
-  MAKEFLAGS="-j $(nproc)" pecl install igbinary redis;
-  docker-php-ext-enable igbinary redis;
+  docker-php-ext-install -j$(nproc) \
+    bcmath \
+    exif \
+    gmp \
+    intl \
+    opcache \
+    pdo_mysql \
+    pdo_sqlite \
+    zip;
+  MAKEFLAGS="-j $(nproc)" pecl install \
+    grpc \
+    igbinary \
+    opentelemetry \
+    protobuf \
+    redis \
+    timezonedb;
+  docker-php-ext-enable \
+    grpc \
+    igbinary \
+    opentelemetry \
+    protobuf \
+    redis \
+    timezonedb;
 EOF
 
 # Apache Webserver Configuration
@@ -56,7 +76,7 @@ ENV XDEBUG_MODE "off"
 WORKDIR /var/www
 COPY --link php-development.ini /usr/local/etc/php/conf.d/settings.ini
 RUN <<-EOF
-  MAKEFLAGS="-j $(nproc)" pecl install xdebug-3.4.0beta1;
+  MAKEFLAGS="-j $(nproc)" pecl install xdebug;
   docker-php-ext-enable xdebug;
 EOF
 USER dev
