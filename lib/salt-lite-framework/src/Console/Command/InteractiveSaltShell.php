@@ -25,9 +25,9 @@ class InteractiveSaltShell extends Command
 {
     public const string NAME = 'shell';
 
-    public const string DESCRIPTION = 'SeaSalt Interactive PHP Shell';
+    public const string DESCRIPTION = 'Interactive PHP REPL Shell (PsySH)';
 
-    private const string MESSAGE = "SeaSaltLite PHP REPL Console \r\nEnter \"ls -l\" to List Defined Variables or \"exit\" to Quit";
+    private const string MESSAGE = "Interactive PHP REPL Shell (PsySH) \r\nEnter \"ls -l\" to List Defined Variables or \"exit\" to Quit";
 
     private const array SERVICES = [
         'config' => Configuration::class,

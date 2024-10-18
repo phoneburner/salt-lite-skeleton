@@ -9,10 +9,12 @@ use PhoneBurner\SaltLiteFramework\Database\DatabaseServiceProvider;
 use PhoneBurner\SaltLiteFramework\Http\HttpServiceProvider;
 use PhoneBurner\SaltLiteFramework\Logging\LoggingServiceProvider;
 use PhoneBurner\SaltLiteFramework\Routing\RoutingServiceProvider;
+use PhoneBurner\SaltLiteSkeleton\Example\ExampleServiceProvider;
 
 return [
     'container' => [
         'service_providers' => [
+            // Framework Service Providers
             AppServiceProvider::class,
             ConsoleServiceProvider::class,
             LoggingServiceProvider::class,
@@ -20,6 +22,9 @@ return [
             DatabaseServiceProvider::class,
             HttpServiceProvider::class,
             RoutingServiceProvider::class,
+
+            // Application Service Providers
+            ExampleServiceProvider::class,
         ],
     ],
 ];
