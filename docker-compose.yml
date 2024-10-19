@@ -18,6 +18,7 @@ services:
     env_file:
       - .env
     environment:
+      PHP_IDE_CONFIG: "serverName=cli" # Used by PhpStorm for path mapping
       COMPOSER_AUTH: "{\"github-oauth\": {\"github.com\":\"${GITHUB_TOKEN}\"}}"
     extra_hosts:
       - host.docker.internal:host-gateway

@@ -4,54 +4,37 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLiteFramework\Configuration;
 
-use Laminas\ConfigAggregator\ArrayProvider;
-use Laminas\ConfigAggregator\ConfigAggregator;
-use Laminas\ConfigAggregator\PhpFileProvider;
+use Brick\VarExporter\VarExporter;
 use PhoneBurner\SaltLiteFramework\App\BuildStage;
 use PhoneBurner\SaltLiteFramework\App\Environment;
-
-use function PhoneBurner\SaltLiteFramework\env;
+use PhoneBurner\SaltLiteFramework\Util\Filesystem\FileWriter;
 
 use const PhoneBurner\SaltLiteFramework\APP_ROOT;
 
 class ConfigurationFactory
 {
+    private const int EXPORT_OPTIONS = VarExporter::ADD_RETURN | VarExporter::TRAILING_COMMA_IN_ARRAY;
     private const string CONFIG_PATH = APP_ROOT . '/config';
     private const string CACHE_FILE = APP_ROOT . '/storage/bootstrap/config.cache.php';
 
-    private static ImmutableConfiguration $cache;
-
-    public static function make(
-        Environment $environment,
-    ): ImmutableConfiguration {
-        return self::$cache ??= new ImmutableConfiguration((new ConfigAggregator(
-            [
-                new PhpFileProvider(self::CONFIG_PATH . '/*.php'),
-                new ArrayProvider([
-                    ConfigAggregator::ENABLE_CACHE => true,
-                ]),
-            ],
-            self::cache($environment->stage),
-            self::processors(),
-        ))->getMergedConfig());
-    }
-
-    /**
-     * @return non-empty-string|null
-     */
-    private static function cache(BuildStage $build_stage): string|null
+    public static function make(Environment $environment): ImmutableConfiguration
     {
-        return match (true) {
-            $build_stage === BuildStage::Production, (bool)env('SALT_ENABLE_CONFIG_CACHE') => self::CACHE_FILE,
-            default => null,
-        };
-    }
+        $use_cache = $environment->stage === BuildStage::Production || $_ENV['SALT_ENABLE_CONFIG_CACHE'];
+        if ($use_cache && \file_exists(self::CACHE_FILE)) {
+            return new ImmutableConfiguration(include self::CACHE_FILE);
+        }
 
-    /**
-     * @return list<callable(array): array>
-     */
-    private static function processors(): array
-    {
-        return [];
+        $config = [];
+        foreach (\glob(self::CONFIG_PATH . '/*.php') ?: [] as $file) {
+            foreach (include $file ?: [] as $key => $value) {
+                $config[$key] = $value;
+            }
+        }
+
+        if ($use_cache) {
+            FileWriter::string(self::CACHE_FILE, '<?php ' . VarExporter::export($config, self::EXPORT_OPTIONS));
+        }
+
+        return new ImmutableConfiguration($config);
     }
 }

@@ -60,6 +60,10 @@ the implementation of the `getRoutes()` method, which should return an array of 
 docker compose run --rm -it web php salt
 ```
 
+### Filesystem/Storage
+
+Resolve `League\Flysystem\FilesystemOperator` from the container.
+
 ### Testing
 
 Running `make tests` will run the full test suite via ParaTest, which will execute tests in parallel for faster execution.
@@ -73,7 +77,7 @@ http://localhost:8000/html/phpunit
 ### How to Add Dependencies to the Framework Update the Skeleton Application
 ```shell
 docker compose run --rm -it web composer -d lib/salt-lite-framework --no-install --no-update require nesbot/carbon \
-  && docker compose run --rm -it web composer update`
+  && docker compose run --rm -it web composer update
 ```
 
 ## Functionality To-Do Checklist
@@ -97,13 +101,13 @@ docker compose run --rm -it web composer -d lib/salt-lite-framework --no-install
 - [x] Redis Connection Configuration
 - [x] Remote Cache/Append-Only Cache/In-Memory Cache Support
 - [x] Crypto (Paseto, Int to UUID, etc.)
-- [ ] Open Telemetry
+- [x] Open Telemetry
 - [ ] Front-End Scaffolding
 - [ ] Event Sourcing / EventSauce
 - [ ] Behat BDD Testing Framework (or Codeception)
 - [ ] API Handler 
 - [ ] PSR-14 Event Dispatcher
-- [ ] Local/Remote Filesystem Storage via Flysystem
+- [x] Local/Remote Filesystem Storage via Flysystem
 - [ ] Session Management
 - [ ] ACL/Permissions
 - [ ] API Authentication (OAuth2, JWT, etc.)

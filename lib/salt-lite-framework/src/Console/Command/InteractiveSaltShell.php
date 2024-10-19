@@ -6,6 +6,7 @@ namespace PhoneBurner\SaltLiteFramework\Console\Command;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\ORM\EntityManagerInterface;
+use League\Flysystem\FilesystemOperator;
 use PhoneBurner\SaltLiteFramework\App\Environment;
 use PhoneBurner\SaltLiteFramework\Cache\AppendOnlyCache;
 use PhoneBurner\SaltLiteFramework\Cache\Cache;
@@ -40,6 +41,7 @@ class InteractiveSaltShell extends Command
         'cache' => Cache::class,
         'append_only_cache' => AppendOnlyCache::class,
         'lock_factory' => LockFactory::class,
+        'storage' => FilesystemOperator::class,
     ];
 
     public function __construct(private readonly MutableContainer $container)

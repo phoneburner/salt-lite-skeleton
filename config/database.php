@@ -12,7 +12,7 @@ return [
             'connections' => [
                 'default' => [
                     'host' => env('SALT_RABBITMQ_HOST'),
-                    'port' => env('SALT_RABBITMQ_PORT', 5672),
+                    'port' => (int)env('SALT_RABBITMQ_PORT', 5672),
                     'user' => env('SALT_RABBITMQ_USER'),
                     'password' => env('SALT_RABBITMQ_PASS'),
                 ],
@@ -22,7 +22,7 @@ return [
             'connections' => [
                 'default' => [
                     'host' => env('SALT_REDIS_HOST'),
-                    'port' => env('SALT_REDIS_PORT', 6379),
+                    'port' => (int)env('SALT_REDIS_PORT', 6379),
                 ],
             ],
             'timeout' => 5,
@@ -32,7 +32,7 @@ return [
                 'default' => [
                     'driver' => 'pdo_mysql',
                     'host' => env('SALT_MYSQL_HOST'),
-                    'port' => env('SALT_MYSQL_PORT', 3306),
+                    'port' => (int)env('SALT_MYSQL_PORT', 3306),
                     'dbname' => env('SALT_MYSQL_NAME'),
                     'user' => env('SALT_MYSQL_USER'),
                     'password' => env('SALT_MYSQL_PASS'),
