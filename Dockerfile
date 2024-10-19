@@ -5,9 +5,9 @@ ENV COMPOSER_HOME "/home/dev/composer"
 EXPOSE 80
 
 RUN <<-EOF
-  groupadd --gid 1000 dev;
-  useradd --system --create-home --uid 1000 --gid 1000 --shell /bin/bash dev;
-  apt-get update;
+  groupadd --gid 1000 dev
+  useradd --system --create-home --uid 1000 --gid 1000 --shell /bin/bash dev
+  apt-get update
   apt-get install -y -q \
     apt-transport-https \
     autoconf  \
@@ -20,51 +20,33 @@ RUN <<-EOF
     libgmp-dev \
     libicu-dev \
     libzip-dev \
+    librabbitmq-dev \
     libsodium-dev \
     pkg-config \
     unzip \
     vim-tiny \
     zip \
-    zlib1g-dev;
-  apt-get clean;
+    zlib1g-dev
+  apt-get clean
 EOF
 
 # Install PHP Extensions
+RUN docker-php-ext-install -j$(nproc) bcmath exif gmp intl opcache pdo_mysql zip
 RUN <<-EOF
-  docker-php-ext-install -j$(nproc) \
-    bcmath \
-    exif \
-    gmp \
-    intl \
-    opcache \
-    pdo_mysql \
-    pdo_sqlite \
-    zip;
-  MAKEFLAGS="-j $(nproc)" pecl install \
-    grpc \
-    igbinary \
-    opentelemetry \
-    protobuf \
-    redis \
-    timezonedb;
-  docker-php-ext-enable \
-    grpc \
-    igbinary \
-    opentelemetry \
-    protobuf \
-    redis \
-    timezonedb;
+  MAKEFLAGS="-j $(nproc)" pecl install amqp grpc igbinary opentelemetry protobuf redis timezonedb \
+  && docker-php-ext-enable amqp grpc igbinary opentelemetry protobuf redis timezonedb \
+  && rm -rf /tmp/pear
 EOF
 
 # Apache Webserver Configuration
 RUN <<-EOF
-  a2enmod rewrite;
-  a2enmod deflate;
-  a2enmod env;
-  a2enmod ssl;
-  a2enmod expires;
-  a2enmod headers;
-  mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini";
+  a2enmod rewrite
+  a2enmod deflate
+  a2enmod env
+  a2enmod ssl
+  a2enmod expires
+  a2enmod headers
+  mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 EOF
 
 COPY --link php-production.ini /usr/local/etc/php/conf.d/settings.ini
@@ -76,8 +58,9 @@ ENV XDEBUG_MODE "off"
 WORKDIR /var/www
 COPY --link php-development.ini /usr/local/etc/php/conf.d/settings.ini
 RUN <<-EOF
-  MAKEFLAGS="-j $(nproc)" pecl install xdebug;
-  docker-php-ext-enable xdebug;
+  MAKEFLAGS="-j $(nproc)" pecl install xdebug
+  docker-php-ext-enable xdebug
+  rm -rf /tmp/pear
 EOF
 USER dev
 

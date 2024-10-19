@@ -8,11 +8,21 @@ use const PhoneBurner\SaltLiteFramework\APP_ROOT;
 
 return [
     'database' => [
+        'rabbitmq' => [
+            'connections' => [
+                'default' => [
+                    'host' => env('SALT_RABBITMQ_HOST'),
+                    'port' => env('SALT_RABBITMQ_PORT', 5672),
+                    'user' => env('SALT_RABBITMQ_USER'),
+                    'password' => env('SALT_RABBITMQ_PASS'),
+                ],
+            ],
+        ],
         'redis' => [
             'connections' => [
                 'default' => [
-                    'host' => env('SALT_REDIS_CACHE_HOST'),
-                    'port' => env('SALT_REDIS_CACHE_PORT', 6379),
+                    'host' => env('SALT_REDIS_HOST'),
+                    'port' => env('SALT_REDIS_PORT', 6379),
                 ],
             ],
             'timeout' => 5,
