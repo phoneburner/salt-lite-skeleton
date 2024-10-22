@@ -18,10 +18,6 @@
   },
   "repositories": [
     {
-      "type": "github",
-      "url": "https://github.com/andysnell/http-tortilla"
-    },
-    {
       "type": "path",
       "url": "./lib/composer-replacements",
       "options": {
@@ -82,7 +78,8 @@
     "ext-zlib": "*",
     "phoneburner/composer-replacements": "dev-main",
     "phoneburner/salt-lite-framework": "dev-main",
-    "phoneburner/http-tortilla": "dev-v2.x-dev as 2.0.0"
+    "phoneburner/api-handler": "v1.0-RC1@dev",
+    "phoneburner/http-tortilla": "^1.0.0@dev"
   },
   "require-dev": {
     "ext-opentelemetry": "*",
