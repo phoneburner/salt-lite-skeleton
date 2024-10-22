@@ -14,6 +14,7 @@ use Psr\Container\ContainerInterface;
 
 class StorageServiceProvider implements ServiceProvider
 {
+    #[\Override]
     public function register(MutableContainer $container): void
     {
         $container->bind(FilesystemReader::class, FilesystemOperator::class);

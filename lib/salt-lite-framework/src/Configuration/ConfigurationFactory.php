@@ -21,6 +21,7 @@ class ConfigurationFactory
     {
         $use_cache = $environment->stage === BuildStage::Production || $_ENV['SALT_ENABLE_CONFIG_CACHE'];
         if ($use_cache && \file_exists(self::CACHE_FILE)) {
+            /** @phpstan-ignore include.fileNotFound (see https://github.com/phpstan/phpstan/issues/11798) */
             return new ImmutableConfiguration(include self::CACHE_FILE);
         }
 
