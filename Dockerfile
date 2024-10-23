@@ -31,11 +31,12 @@ RUN <<-EOF
 EOF
 
 # Install PHP Extensions
-RUN docker-php-ext-install -j$(nproc) bcmath exif gmp intl opcache pdo_mysql zip
 RUN <<-EOF
-  MAKEFLAGS="-j $(nproc)" pecl install amqp grpc igbinary opentelemetry protobuf redis timezonedb \
+  docker-php-ext-install -j$(nproc) bcmath exif gmp intl opcache pdo_mysql zip \
+  && MAKEFLAGS="-j $(nproc)" pecl install amqp grpc igbinary opentelemetry protobuf redis timezonedb \
   && docker-php-ext-enable amqp grpc igbinary opentelemetry protobuf redis timezonedb \
-  && rm -rf /tmp/pear
+  && rm -rf /tmp/pear \
+  && find "$(php-config --extension-dir)" -name '*.so' -type f -exec strip --strip-all {} \;
 EOF
 
 # Apache Webserver Configuration
