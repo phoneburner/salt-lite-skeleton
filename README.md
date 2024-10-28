@@ -10,6 +10,40 @@ users with a robust framework with minimum cognitive overhead from the original
 Salt framework, avoiding the pitfalls of bringing in a full-fledged third-party 
 framework and trying to adapt that to our needs. 
 
+## Installation
+In order to run this application you need to have Docker installed and on your 
+machine, as well as a new Github Personal Access Token with repo scope. The build
+process will prompt you to enter this token, or it can be added manually by coping
+the .env.example file to .env and adding the token to the GITHUB_TOKEN variable.
+
+To build the application containers and install the dependencies, run the following:
+```shell
+make
+```
+You can confirm a successful installation by running the following:
+```shell
+make test
+```
+
+If you ever need to start fresh, you can run the following:
+```shell
+make clean
+```
+
+To start the application, run the following:
+```shell
+make up
+```
+
+To stop the application, run the following:
+```shell
+make down
+```
+
+By default, the application server will be available at http://localhost:8888,
+navigating to this URL should display the friendly 404 response page.
+
+
 ### Notable Differences from Salt
 - The time zone configuration for PHP and the database is set to UTC by default.
 - Configuration is defined by the environment, and not by the path value of a request.
