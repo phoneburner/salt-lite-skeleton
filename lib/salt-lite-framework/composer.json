@@ -61,6 +61,7 @@
     "doctrine/dbal": "^4.2",
     "doctrine/migrations": "^3.8",
     "doctrine/orm": "^3.3",
+    "eventsauce/eventsauce": "^3.6",
     "guzzlehttp/guzzle": "^7.9",
     "guzzlehttp/psr7": "^2.7",
     "josegonzalez/dotenv": "^4.0",

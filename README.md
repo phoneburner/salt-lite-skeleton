@@ -12,7 +12,7 @@ framework and trying to adapt that to our needs.
 
 ## Installation
 In order to run this application you need to have Docker installed and on your 
-machine, as well as a new Github Personal Access Token with repo scope. The build
+machine, as well as a new GitHub Personal Access Token with repo scope. The build
 process will prompt you to enter this token, or it can be added manually by coping
 the .env.example file to .env and adding the token to the GITHUB_TOKEN variable.
 
@@ -149,6 +149,7 @@ docker compose run --rm -it web composer -d lib/salt-lite-framework --no-install
 - [ ] Mailer / Notifications
 - [ ] Queueing/Async Job/Listener Processing
 - [ ] Cron/Scheduling
+- [ ] Document creating and running migrations
 
 Domain Specific
 - [ ] Time Domain Code
