@@ -13,6 +13,7 @@ use PhoneBurner\SaltLiteFramework\Cache\Cache;
 use PhoneBurner\SaltLiteFramework\Cache\Lock\LockFactory;
 use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
 use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use Psy\Configuration as PsyConfiguration;
 use Psy\Shell;
@@ -20,6 +21,8 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Messenger\MessageBusInterface;
 
 #[AsCommand(self::NAME, self::DESCRIPTION)]
 class InteractiveSaltShell extends Command
@@ -34,6 +37,7 @@ class InteractiveSaltShell extends Command
         'config' => Configuration::class,
         'container' => MutableContainer::class,
         'environment' => Environment::class,
+        'event_dispatcher' => EventDispatcherInterface::class,
         'logger' => LoggerInterface::class,
         'em' => EntityManagerInterface::class,
         'connection' => Connection::class,
@@ -42,6 +46,8 @@ class InteractiveSaltShell extends Command
         'append_only_cache' => AppendOnlyCache::class,
         'lock_factory' => LockFactory::class,
         'storage' => FilesystemOperator::class,
+        'bus' => MessageBusInterface::class,
+        'mailer' => MailerInterface::class,
     ];
 
     public function __construct(private readonly MutableContainer $container)

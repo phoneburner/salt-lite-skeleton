@@ -136,19 +136,19 @@ docker compose run --rm -it web composer -d lib/salt-lite-framework --no-install
 - [x] Remote Cache/Append-Only Cache/In-Memory Cache Support
 - [x] Crypto (Paseto, Int to UUID, etc.)
 - [x] Open Telemetry
-- [ ] Front-End Scaffolding
-- [ ] Event Sourcing / EventSauce
-- [ ] Behat BDD Testing Framework (or Codeception)
-- [ ] API Handler 
-- [ ] PSR-14 Event Dispatcher
 - [x] Local/Remote Filesystem Storage via Flysystem
+- [ ] Event Sourcing / EventSauce
+- [ ] Front-End Scaffolding
+- [ ] PSR-14 Event Dispatcher
+- [ ] Queueing/Async Job/Listener Processing
+- [ ] Task Scheduling (Cron Replacement)
+- [ ] Behat BDD Testing Framework (or Codeception)
+- [ ] API Handler
 - [ ] Session Management
 - [ ] ACL/Permissions
 - [ ] API Authentication (OAuth2, JWT, etc.)
 - [ ] API Rate Limiting
 - [ ] Mailer / Notifications
-- [ ] Queueing/Async Job/Listener Processing
-- [ ] Cron/Scheduling
 - [ ] Document creating and running migrations
 
 Domain Specific
@@ -159,3 +159,4 @@ Maybe?
 - [ ] "Debugbar" Tooling
 - [ ] Validation
 - [ ] API Documentation Tooling
+- [ ] Enforce Invokable Jobs with PHPStan Rule

@@ -32,7 +32,7 @@ EOF
 
 # Install PHP Extensions
 RUN <<-EOF
-  docker-php-ext-install -j$(nproc) bcmath exif gmp intl opcache pdo_mysql zip \
+  docker-php-ext-install -j$(nproc) bcmath exif gmp intl opcache pcntl pdo_mysql zip \
   && MAKEFLAGS="-j $(nproc)" pecl install amqp grpc igbinary opentelemetry protobuf redis timezonedb \
   && docker-php-ext-enable amqp grpc igbinary opentelemetry protobuf redis timezonedb \
   && rm -rf /tmp/pear \

@@ -8,6 +8,7 @@ use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\ErrorLogHandler;
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
+use Monolog\Processor\PsrLogMessageProcessor;
 use PhoneBurner\SaltLiteFramework\App\Environment;
 use PhoneBurner\SaltLiteFramework\Logging\Monolog\Processor\EnvironmentProcessor;
 use PhoneBurner\SaltLiteFramework\Logging\Monolog\Processor\LogTraceProcessor;
@@ -22,6 +23,7 @@ class LoggerFactory
         LogTrace $log_trace,
     ): LoggerInterface {
         $logger = new Logger('salt-lite', processors: [
+            new PsrLogMessageProcessor(removeUsedContextFields: true),
             new EnvironmentProcessor($environment),
             new LogTraceProcessor($log_trace),
         ]);

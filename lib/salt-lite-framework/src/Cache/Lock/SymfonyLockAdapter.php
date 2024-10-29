@@ -72,4 +72,9 @@ class SymfonyLockAdapter implements Lock, LoggerAwareInterface
             $this->lock->setLogger($logger);
         }
     }
+
+    public function wrapped(): SharedLockInterface
+    {
+        return $this->lock;
+    }
 }

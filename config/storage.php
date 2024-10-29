@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use League\Flysystem\AwsS3V3\AwsS3V3Adapter;
 use League\Flysystem\Local\LocalFilesystemAdapter;
+use PhoneBurner\SaltLiteFramework\Storage\StorageDriver;
 
 use function PhoneBurner\SaltLiteFramework\env;
 
@@ -11,13 +12,13 @@ use const PhoneBurner\SaltLiteFramework\APP_ROOT;
 
 return [
     'storage' => [
-        'default' => env('SALT_STORAGE_DRIVER') ?: 'local',
+        'default' => env('SALT_STORAGE_DRIVER') ?: StorageDriver::Local->value,
         'drivers' => [
-            'local' => [
+            StorageDriver::Local->value => [
                 'adapter' => LocalFilesystemAdapter::class,
                 'root' => APP_ROOT . '/storage/app',
             ],
-            's3' => [
+            StorageDriver::S3->value => [
                 'adapter' => AwsS3V3Adapter::class,
                 'client' => [
                     'credentials' => [

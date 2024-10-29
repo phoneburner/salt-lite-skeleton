@@ -24,7 +24,6 @@ use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
 use PhoneBurner\SaltLiteFramework\Database\Doctrine\Cache\CacheRegion;
 use PhoneBurner\SaltLiteFramework\Database\Doctrine\Cache\CacheType;
 use PhoneBurner\SaltLiteFramework\Database\Doctrine\ConnectionFactory;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\Orm\EntityListenerContainerResolver;
 use PhoneBurner\SaltLiteFramework\Database\Doctrine\Types;
 use PhoneBurner\SaltLiteFramework\Domain\Time\TimeConstant;
 use Psr\Container\ContainerInterface;

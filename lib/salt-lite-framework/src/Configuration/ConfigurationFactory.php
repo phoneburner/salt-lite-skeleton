@@ -19,10 +19,15 @@ class ConfigurationFactory
 
     public static function make(Environment $environment): ImmutableConfiguration
     {
-        $use_cache = $environment->stage === BuildStage::Production || $_ENV['SALT_ENABLE_CONFIG_CACHE'];
-        if ($use_cache && \file_exists(self::CACHE_FILE)) {
-            /** @phpstan-ignore include.fileNotFound (see https://github.com/phpstan/phpstan/issues/11798) */
-            return new ImmutableConfiguration(include self::CACHE_FILE);
+        $use_cache = $environment->stage !== BuildStage::Development || $_ENV['SALT_ENABLE_CONFIG_CACHE'];
+        if (\file_exists(self::CACHE_FILE)) {
+            if ($use_cache) {
+                /** @phpstan-ignore include.fileNotFound (see https://github.com/phpstan/phpstan/issues/11798) */
+                return new ImmutableConfiguration(include self::CACHE_FILE);
+            }
+
+            // remove stale cache file to force re-creation next time the cache is enabled
+            @\unlink(self::CACHE_FILE);
         }
 
         $config = [];
