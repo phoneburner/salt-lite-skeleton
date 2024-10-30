@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Logging\Monolog\Processor;
+namespace PhoneBurner\SaltLite\Framework\Logging\Monolog\Processor;
 
 use Monolog\LogRecord;
-use PhoneBurner\SaltLiteFramework\App\Environment;
+use PhoneBurner\SaltLite\Framework\App\Environment;
 
 class EnvironmentProcessor
 {

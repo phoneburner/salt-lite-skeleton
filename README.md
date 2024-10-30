@@ -56,11 +56,11 @@ with attributes and data providers must be defined as static functions.
 
 
 ### Backwards Capability Guarantees
-Classes and interfaces with the `#[PhoneBurner\SaltLiteFramework\Attribute\Contract]` attribute
+Classes and interfaces with the `#[PhoneBurner\SaltLite\Framework\Attribute\Contract]` attribute
 are considered part of the public API of the framework and should not be changed without
 a major version bump. These "contracts" can be freely used in application code.
 
-Conversely, classes and interfaces with the `#[PhoneBurner\SaltLiteFramework\Attribute\Internal]`
+Conversely, classes and interfaces with the `#[PhoneBurner\SaltLite\Framework\Attribute\Internal]`
 attribute are very tightly coupled to third-party vendor and/or framework logic,
 and should not be used in application code.
 
@@ -89,8 +89,8 @@ objects or expressions as values will be problematic.
 
 ### Routing
 Application routes should be defined in classes that implement the 
-`\PhoneBurner\SaltLiteFramework\Routing\RouteProvider` interface. That interface
-defines an invokable class that returns an array of PhoneBurner\SaltLiteFramework\Routing\Definition\Definition
+`\PhoneBurner\SaltLite\Framework\Routing\RouteProvider` interface. That interface
+defines an invokable class that returns an array of PhoneBurner\SaltLite\Framework\Routing\Definition\Definition
 instances. The DQL for defining routes is as follows is the same as the full Salt 
 codebase. The `RouteProvider` should then be registered with the application
 in the `config/routes.php` file.
@@ -109,7 +109,7 @@ Resolve `League\Flysystem\FilesystemOperator` from the container.
 
 ### Queue Jobs
 
-1. Create a job class that implements `PhoneBurner\SaltLiteFramework\Queue\JobInterface`. The class must be invokable and serializable.
+1. Create a job class that implements `PhoneBurner\SaltLite\Framework\Queue\JobInterface`. The class must be invokable and serializable.
 2. Dispatch the job using the `MessageBusInterface` service.
 
 

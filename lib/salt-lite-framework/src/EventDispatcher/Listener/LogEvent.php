@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\EventDispatcher\Listener;
+namespace PhoneBurner\SaltLite\Framework\EventDispatcher\Listener;
 
 use Psr\Log\LoggerInterface;
 

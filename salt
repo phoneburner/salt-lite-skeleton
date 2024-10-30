@@ -3,9 +3,9 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLiteFramework\App\App;
-use PhoneBurner\SaltLiteFramework\App\Context;
-use PhoneBurner\SaltLiteFramework\App\Kernel;
+use PhoneBurner\SaltLite\Framework\App\App;
+use PhoneBurner\SaltLite\Framework\App\Context;
+use PhoneBurner\SaltLite\Framework\App\Kernel;
 
 require_once __DIR__ . '/vendor/autoload.php';
 

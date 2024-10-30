@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Domain;
+namespace PhoneBurner\SaltLite\Framework\Domain;
 
 readonly class RegExp implements \Stringable
 {

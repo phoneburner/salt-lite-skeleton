@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Cache;
+namespace PhoneBurner\Tests\SaltLite\Framework\Cache;
 
-use PhoneBurner\SaltLiteFramework\Cache\NullCache;
-use PhoneBurner\SaltLiteFramework\Domain\Time\Ttl;
+use PhoneBurner\SaltLite\Framework\Cache\NullCache;
+use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

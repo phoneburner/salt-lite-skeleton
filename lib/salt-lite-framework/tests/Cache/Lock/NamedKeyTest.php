@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Cache\Lock;
+namespace PhoneBurner\Tests\SaltLite\Framework\Cache\Lock;
 
-use PhoneBurner\SaltLiteFramework\Cache\Lock\NamedKey;
-use PhoneBurner\SaltLiteFramework\Cache\Lock\NamedKeyFactory;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\NamedKey;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\NamedKeyFactory;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

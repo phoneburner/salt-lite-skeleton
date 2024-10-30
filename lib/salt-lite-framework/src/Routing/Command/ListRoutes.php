@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Command;
+namespace PhoneBurner\SaltLite\Framework\Routing\Command;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Routing\Command\CommandHelper\CsvFormatter;
-use PhoneBurner\SaltLiteFramework\Routing\Command\CommandHelper\HashFormatter;
-use PhoneBurner\SaltLiteFramework\Routing\Command\CommandHelper\JsonFormatter;
-use PhoneBurner\SaltLiteFramework\Routing\Command\CommandHelper\RouteDefinitionListFormatter;
-use PhoneBurner\SaltLiteFramework\Routing\Command\CommandHelper\RouteDefinitionListSorter;
-use PhoneBurner\SaltLiteFramework\Routing\Command\CommandHelper\SortByName;
-use PhoneBurner\SaltLiteFramework\Routing\Command\CommandHelper\SortByPath;
-use PhoneBurner\SaltLiteFramework\Routing\Command\CommandHelper\TableFormatter;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\DefinitionList;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\InMemoryDefinitionList;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Routing\Command\CommandHelper\CsvFormatter;
+use PhoneBurner\SaltLite\Framework\Routing\Command\CommandHelper\HashFormatter;
+use PhoneBurner\SaltLite\Framework\Routing\Command\CommandHelper\JsonFormatter;
+use PhoneBurner\SaltLite\Framework\Routing\Command\CommandHelper\RouteDefinitionListFormatter;
+use PhoneBurner\SaltLite\Framework\Routing\Command\CommandHelper\RouteDefinitionListSorter;
+use PhoneBurner\SaltLite\Framework\Routing\Command\CommandHelper\SortByName;
+use PhoneBurner\SaltLite\Framework\Routing\Command\CommandHelper\SortByPath;
+use PhoneBurner\SaltLite\Framework\Routing\Command\CommandHelper\TableFormatter;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\DefinitionList;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\InMemoryDefinitionList;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

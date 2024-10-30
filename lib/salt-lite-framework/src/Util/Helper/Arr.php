@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Util\Helper;
+namespace PhoneBurner\SaltLite\Framework\Util\Helper;
 
 use ArrayAccess;
 use Iterator;
 use IteratorIterator;
 use JsonException;
-use PhoneBurner\SaltLiteFramework\Domain\Arrayable;
+use PhoneBurner\SaltLite\Framework\Domain\Arrayable;
 use Traversable;
 
 abstract class Arr

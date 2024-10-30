@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\RequestHandler;
+namespace PhoneBurner\SaltLite\Framework\Routing\RequestHandler;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpHeader;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\FileNotFoundResponse;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\ServerErrorResponse;
-use PhoneBurner\SaltLiteFramework\Http\Response\StreamResponse;
-use PhoneBurner\SaltLiteFramework\Routing\Domain\StaticFile;
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpHeader;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\FileNotFoundResponse;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\ServerErrorResponse;
+use PhoneBurner\SaltLite\Framework\Http\Response\StreamResponse;
+use PhoneBurner\SaltLite\Framework\Routing\Domain\StaticFile;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

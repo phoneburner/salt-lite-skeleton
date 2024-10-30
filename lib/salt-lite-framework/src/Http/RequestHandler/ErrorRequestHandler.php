@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http\RequestHandler;
+namespace PhoneBurner\SaltLite\Framework\Http\RequestHandler;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpReasonPhrase;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\GenericHttpExceptionResponse;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\PageNotFoundResponse;
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpReasonPhrase;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\GenericHttpExceptionResponse;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\PageNotFoundResponse;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

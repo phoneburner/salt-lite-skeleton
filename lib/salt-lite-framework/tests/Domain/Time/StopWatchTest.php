@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Domain\Time;
+namespace PhoneBurner\Tests\SaltLite\Framework\Domain\Time;
 
-use PhoneBurner\SaltLiteFramework\Domain\Time\StopWatch;
+use PhoneBurner\SaltLite\Framework\Domain\Time\StopWatch;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

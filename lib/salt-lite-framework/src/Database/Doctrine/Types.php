@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Database\Doctrine;
+namespace PhoneBurner\SaltLite\Framework\Database\Doctrine;
 
 use Doctrine\DBAL\Types\Types as DoctrineTypes;
 

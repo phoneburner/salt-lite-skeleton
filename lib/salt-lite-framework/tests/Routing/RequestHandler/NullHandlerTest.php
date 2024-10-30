@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\RequestHandler;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\RequestHandler;
 
 use Laminas\Diactoros\Uri;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\PageNotFoundResponse;
-use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\NullHandler;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\PageNotFoundResponse;
+use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\NullHandler;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;

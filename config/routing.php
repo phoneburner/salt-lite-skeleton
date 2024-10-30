@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLiteSkeleton\AppRouteProvider;
-use PhoneBurner\SaltLiteSkeleton\Example\ExampleRouteProvider;
+use PhoneBurner\SaltLite\App\AppRouteProvider;
+use PhoneBurner\SaltLite\App\Example\ExampleRouteProvider;
 
-use function PhoneBurner\SaltLiteFramework\env;
+use function PhoneBurner\SaltLite\Framework\env;
 
-use const PhoneBurner\SaltLiteFramework\APP_ROOT;
+use const PhoneBurner\SaltLite\Framework\APP_ROOT;
 
 return [
     'routing' => [

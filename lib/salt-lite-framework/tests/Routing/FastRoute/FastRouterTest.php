@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\FastRoute;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\FastRoute;
 
 use ArrayIterator;
 use FastRoute\Dispatcher;
@@ -10,22 +10,22 @@ use FastRoute\RouteCollector;
 use Generator;
 use IteratorAggregate;
 use LogicException;
-use PhoneBurner\SaltLiteFramework\App\BuildStage;
-use PhoneBurner\SaltLiteFramework\App\Environment;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\DefinitionList;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\InMemoryDefinitionList;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\FastRoute\FastRouteDispatcherFactory;
-use PhoneBurner\SaltLiteFramework\Routing\FastRoute\FastRouteMatch;
-use PhoneBurner\SaltLiteFramework\Routing\FastRoute\FastRouter as SUT;
-use PhoneBurner\SaltLiteFramework\Routing\FastRoute\FastRouteResultFactory;
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
-use PhoneBurner\SaltLiteFramework\Routing\Result\MethodNotAllowed;
-use PhoneBurner\SaltLiteFramework\Routing\Result\RouteFound;
-use PhoneBurner\SaltLiteFramework\Routing\Result\RouteNotFound;
-use PhoneBurner\SaltLiteFramework\Routing\RouterResult;
-use PhoneBurner\Tests\SaltLiteFramework\TestSupport\MockRequest;
+use PhoneBurner\SaltLite\Framework\App\BuildStage;
+use PhoneBurner\SaltLite\Framework\App\Environment;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\DefinitionList;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\InMemoryDefinitionList;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\FastRoute\FastRouteDispatcherFactory;
+use PhoneBurner\SaltLite\Framework\Routing\FastRoute\FastRouteMatch;
+use PhoneBurner\SaltLite\Framework\Routing\FastRoute\FastRouter as SUT;
+use PhoneBurner\SaltLite\Framework\Routing\FastRoute\FastRouteResultFactory;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch;
+use PhoneBurner\SaltLite\Framework\Routing\Result\MethodNotAllowed;
+use PhoneBurner\SaltLite\Framework\Routing\Result\RouteFound;
+use PhoneBurner\SaltLite\Framework\Routing\Result\RouteNotFound;
+use PhoneBurner\SaltLite\Framework\Routing\RouterResult;
+use PhoneBurner\Tests\SaltLite\Framework\TestSupport\MockRequest;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

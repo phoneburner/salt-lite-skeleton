@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Database\Redis;
+namespace PhoneBurner\SaltLite\Framework\Database\Redis;
 
 interface RedisManager
 {

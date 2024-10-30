@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing;
+namespace PhoneBurner\SaltLite\Framework\Routing;
 
-use PhoneBurner\SaltLiteFramework\Routing\Definition\Definition;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\Definition;
 
 interface RouteProvider
 {

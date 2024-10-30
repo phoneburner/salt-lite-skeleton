@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\EventDispatcher;
+namespace PhoneBurner\SaltLite\Framework\EventDispatcher;
 
 use Psr\Container\ContainerInterface;
 

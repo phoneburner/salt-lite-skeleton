@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http\Response;
+namespace PhoneBurner\SaltLite\Framework\Http\Response;
 
 use Crell\ApiProblem\ApiProblem;
-use PhoneBurner\SaltLiteFramework\Http\Domain\ContentType;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpHeader;
+use PhoneBurner\SaltLite\Framework\Http\Domain\ContentType;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpHeader;
 
 class ApiProblemResponse extends JsonResponse
 {

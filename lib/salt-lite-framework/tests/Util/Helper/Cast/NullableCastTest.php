@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Util\Helper\Cast;
+namespace PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Cast;
 
-use PhoneBurner\SaltLiteFramework\Util\Helper\Cast\NullableCast;
-use PhoneBurner\Tests\SaltLiteFramework\Util\Helper\Fixture\IntBackedEnum;
-use PhoneBurner\Tests\SaltLiteFramework\Util\Helper\Fixture\Stoplight;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Cast\NullableCast;
+use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\IntBackedEnum;
+use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\Stoplight;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

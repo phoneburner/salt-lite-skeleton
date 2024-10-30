@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\RequestHandler;
+namespace PhoneBurner\SaltLite\Framework\Routing\RequestHandler;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpStatus;
-use PhoneBurner\SaltLiteFramework\Http\Response\RedirectResponse;
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpStatus;
+use PhoneBurner\SaltLite\Framework\Http\Response\RedirectResponse;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

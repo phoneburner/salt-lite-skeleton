@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Bus;
+namespace PhoneBurner\SaltLite\Framework\Bus;
 
-use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
-use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
-use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
-use PhoneBurner\SaltLiteFramework\Scheduler\ScheduleCollection;
+use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
+use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
+use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Scheduler\ScheduleCollection;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Clock\ClockInterface;
 use Psr\Container\ContainerInterface;

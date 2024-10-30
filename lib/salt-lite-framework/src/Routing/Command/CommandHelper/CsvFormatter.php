@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Command\CommandHelper;
+namespace PhoneBurner\SaltLite\Framework\Routing\Command\CommandHelper;
 
-use PhoneBurner\SaltLiteFramework\Routing\Definition\DefinitionList;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\DefinitionList;
 use SplTempFileObject;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Output\OutputInterface;

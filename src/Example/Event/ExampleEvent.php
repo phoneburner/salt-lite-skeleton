@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteSkeleton\Example\Event;
+namespace PhoneBurner\SaltLite\App\Example\Event;
 
 class ExampleEvent
 {

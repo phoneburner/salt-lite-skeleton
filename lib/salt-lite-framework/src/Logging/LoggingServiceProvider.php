@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Logging;
+namespace PhoneBurner\SaltLite\Framework\Logging;
 
-use PhoneBurner\SaltLiteFramework\App\Environment;
-use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
-use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\App\Environment;
+use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
+use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 

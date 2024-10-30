@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Middleware;
+namespace PhoneBurner\SaltLite\Framework\Routing\Middleware;
 
-use PhoneBurner\SaltLiteFramework\Http\Middleware\MiddlewareRequestHandlerFactory;
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
+use PhoneBurner\SaltLite\Framework\Http\Middleware\MiddlewareRequestHandlerFactory;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;

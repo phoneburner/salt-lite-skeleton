@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLiteFramework\App\AppServiceProvider;
-use PhoneBurner\SaltLiteFramework\Bus\BusServiceProvider;
-use PhoneBurner\SaltLiteFramework\Cache\CacheServiceProvider;
-use PhoneBurner\SaltLiteFramework\Console\ConsoleServiceProvider;
-use PhoneBurner\SaltLiteFramework\Database\DatabaseServiceProvider;
-use PhoneBurner\SaltLiteFramework\EventDispatcher\EventDispatcherServiceProvider;
-use PhoneBurner\SaltLiteFramework\Http\HttpServiceProvider;
-use PhoneBurner\SaltLiteFramework\Logging\LoggingServiceProvider;
-use PhoneBurner\SaltLiteFramework\Mailer\MailerServiceProvider;
-use PhoneBurner\SaltLiteFramework\Routing\RoutingServiceProvider;
-use PhoneBurner\SaltLiteFramework\Scheduler\SchedulerServiceProvider;
-use PhoneBurner\SaltLiteFramework\Storage\StorageServiceProvider;
-use PhoneBurner\SaltLiteSkeleton\Example\ExampleServiceProvider;
+use PhoneBurner\SaltLite\App\Example\ExampleServiceProvider;
+use PhoneBurner\SaltLite\Framework\App\AppServiceProvider;
+use PhoneBurner\SaltLite\Framework\Bus\BusServiceProvider;
+use PhoneBurner\SaltLite\Framework\Cache\CacheServiceProvider;
+use PhoneBurner\SaltLite\Framework\Console\ConsoleServiceProvider;
+use PhoneBurner\SaltLite\Framework\Database\DatabaseServiceProvider;
+use PhoneBurner\SaltLite\Framework\EventDispatcher\EventDispatcherServiceProvider;
+use PhoneBurner\SaltLite\Framework\Http\HttpServiceProvider;
+use PhoneBurner\SaltLite\Framework\Logging\LoggingServiceProvider;
+use PhoneBurner\SaltLite\Framework\Mailer\MailerServiceProvider;
+use PhoneBurner\SaltLite\Framework\Routing\RoutingServiceProvider;
+use PhoneBurner\SaltLite\Framework\Scheduler\SchedulerServiceProvider;
+use PhoneBurner\SaltLite\Framework\Storage\StorageServiceProvider;
 
 return [
     'container' => [

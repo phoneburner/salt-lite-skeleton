@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http\Stream;
+namespace PhoneBurner\SaltLite\Framework\Http\Stream;
 
 use Psr\Http\Message\StreamInterface;
 

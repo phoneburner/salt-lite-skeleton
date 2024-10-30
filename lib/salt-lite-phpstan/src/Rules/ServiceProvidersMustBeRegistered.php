@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLite\Phpstan\Rules;
 
-use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
 use PhpParser\Node;
 use PHPStan\Analyser\Scope;
 use PHPStan\Node\InClassNode;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 
-use const PhoneBurner\SaltLiteFramework\APP_ROOT;
+use const PhoneBurner\SaltLite\Framework\APP_ROOT;
 
 /**
  * @implements Rule<InClassNode>

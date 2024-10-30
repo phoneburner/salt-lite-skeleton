@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Util\Crypto;
+namespace PhoneBurner\Tests\SaltLite\Framework\Util\Crypto;
 
 use Generator;
 use InvalidArgumentException;
-use PhoneBurner\SaltLiteFramework\Util\Crypto\IntegerId;
-use PhoneBurner\SaltLiteFramework\Util\Crypto\IntToUuid;
+use PhoneBurner\SaltLite\Framework\Util\Crypto\IntegerId;
+use PhoneBurner\SaltLite\Framework\Util\Crypto\IntToUuid;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

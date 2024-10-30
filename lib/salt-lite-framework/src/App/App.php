@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\App;
+namespace PhoneBurner\SaltLite\Framework\App;
 
-use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
-use PhoneBurner\SaltLiteFramework\Configuration\ConfigurationFactory;
-use PhoneBurner\SaltLiteFramework\Container\PhpDiContainerAdapter;
-use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
-use PhoneBurner\SaltLiteFramework\Logging\LogTrace;
+use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
+use PhoneBurner\SaltLite\Framework\Configuration\ConfigurationFactory;
+use PhoneBurner\SaltLite\Framework\Container\PhpDiContainerAdapter;
+use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Logging\LogTrace;
 use Psr\Container\ContainerInterface;
 
 final class App

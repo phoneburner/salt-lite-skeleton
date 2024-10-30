@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\Definition;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Definition;
 
 use Generator;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\LazyConfigDefinitionList as SUT;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteGroupDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\Route;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\LazyConfigDefinitionList as SUT;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteGroupDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\Route;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 use League\Flysystem\AwsS3V3\AwsS3V3Adapter;
 use League\Flysystem\Local\LocalFilesystemAdapter;
-use PhoneBurner\SaltLiteFramework\Storage\StorageDriver;
+use PhoneBurner\SaltLite\Framework\Storage\StorageDriver;
 
-use function PhoneBurner\SaltLiteFramework\env;
+use function PhoneBurner\SaltLite\Framework\env;
 
-use const PhoneBurner\SaltLiteFramework\APP_ROOT;
+use const PhoneBurner\SaltLite\Framework\APP_ROOT;
 
 return [
     'storage' => [

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Cache;
+namespace PhoneBurner\SaltLite\Framework\Cache;
 
-use PhoneBurner\SaltLiteFramework\App\BuildStage;
-use PhoneBurner\SaltLiteFramework\App\Context;
-use PhoneBurner\SaltLiteFramework\App\Environment;
-use PhoneBurner\SaltLiteFramework\Cache\Marshaller\RemoteCacheMarshaller;
-use PhoneBurner\SaltLiteFramework\Cache\Marshaller\Serializer;
-use PhoneBurner\SaltLiteFramework\Database\Redis\RedisManager;
+use PhoneBurner\SaltLite\Framework\App\BuildStage;
+use PhoneBurner\SaltLite\Framework\App\Context;
+use PhoneBurner\SaltLite\Framework\App\Environment;
+use PhoneBurner\SaltLite\Framework\Cache\Marshaller\RemoteCacheMarshaller;
+use PhoneBurner\SaltLite\Framework\Cache\Marshaller\Serializer;
+use PhoneBurner\SaltLite\Framework\Database\Redis\RedisManager;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
@@ -21,7 +21,7 @@ use Symfony\Component\Cache\Adapter\PhpFilesAdapter;
 use Symfony\Component\Cache\Adapter\ProxyAdapter;
 use Symfony\Component\Cache\Adapter\RedisAdapter;
 
-use const PhoneBurner\SaltLiteFramework\APP_ROOT;
+use const PhoneBurner\SaltLite\Framework\APP_ROOT;
 
 class CacheItemPoolFactory
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Command\CommandHelper;
+namespace PhoneBurner\SaltLite\Framework\Routing\Command\CommandHelper;
 
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\Route;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\Route;
 
 class SortByName extends RouteDefinitionListSorter
 {

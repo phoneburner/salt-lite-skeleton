@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\RequestHandler;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\RequestHandler;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\ContentType;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpHeader;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\FileNotFoundResponse;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\ServerErrorResponse;
-use PhoneBurner\SaltLiteFramework\Http\Response\StreamResponse;
-use PhoneBurner\SaltLiteFramework\Routing\Domain\StaticFile;
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
-use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\StaticFileRequestHandler;
+use PhoneBurner\SaltLite\Framework\Http\Domain\ContentType;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpHeader;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\FileNotFoundResponse;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\ServerErrorResponse;
+use PhoneBurner\SaltLite\Framework\Http\Response\StreamResponse;
+use PhoneBurner\SaltLite\Framework\Routing\Domain\StaticFile;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch;
+use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\StaticFileRequestHandler;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 
-use const PhoneBurner\SaltLiteFramework\UNIT_TEST_ROOT;
+use const PhoneBurner\SaltLite\Framework\UNIT_TEST_ROOT;
 
 class StaticFileRequestHandlerTest extends TestCase
 {

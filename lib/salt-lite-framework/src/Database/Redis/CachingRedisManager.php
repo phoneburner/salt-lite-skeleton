@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Database\Redis;
+namespace PhoneBurner\SaltLite\Framework\Database\Redis;
 
-use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
-use PhoneBurner\SaltLiteFramework\Configuration\Exception\InvalidConfiguration;
-use PhoneBurner\SaltLiteFramework\Database\Redis\Exception\RedisConnectionFailure;
+use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
+use PhoneBurner\SaltLite\Framework\Configuration\Exception\InvalidConfiguration;
+use PhoneBurner\SaltLite\Framework\Database\Redis\Exception\RedisConnectionFailure;
 use Redis;
 use RedisException;
 

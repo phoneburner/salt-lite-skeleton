@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Cache\Lock;
+namespace PhoneBurner\SaltLite\Framework\Cache\Lock;
 
 enum SharedLockMode
 {

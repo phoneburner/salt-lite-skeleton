@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Cache\Marshaller;
+namespace PhoneBurner\SaltLite\Framework\Cache\Marshaller;
 
 enum Serializer
 {

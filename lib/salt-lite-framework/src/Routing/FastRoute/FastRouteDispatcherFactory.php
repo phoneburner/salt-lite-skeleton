@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\FastRoute;
+namespace PhoneBurner\SaltLite\Framework\Routing\FastRoute;
 
 use Brick\VarExporter\VarExporter;
 use FastRoute\DataGenerator\GroupCountBased as GroupCountBasedGenerator;
@@ -10,7 +10,7 @@ use FastRoute\Dispatcher;
 use FastRoute\Dispatcher\GroupCountBased as GroupCountBasedDispatcher;
 use FastRoute\RouteCollector;
 use FastRoute\RouteParser\Std as StdRouteParser;
-use PhoneBurner\SaltLiteFramework\Util\Filesystem\FileWriter;
+use PhoneBurner\SaltLite\Framework\Util\Filesystem\FileWriter;
 use Psr\Log\LoggerInterface;
 
 class FastRouteDispatcherFactory

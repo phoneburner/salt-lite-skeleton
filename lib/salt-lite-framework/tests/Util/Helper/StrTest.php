@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Util\Helper;
+namespace PhoneBurner\Tests\SaltLite\Framework\Util\Helper;
 
 use Generator;
 use Laminas\Diactoros\StreamFactory;
-use PhoneBurner\SaltLiteFramework\Domain\RegExp;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Str;
-use PhoneBurner\Tests\SaltLiteFramework\Util\Helper\Fixture\ShinyThing;
+use PhoneBurner\SaltLite\Framework\Domain\RegExp;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
+use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\ShinyThing;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

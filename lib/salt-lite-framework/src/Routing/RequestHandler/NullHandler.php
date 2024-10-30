@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\RequestHandler;
+namespace PhoneBurner\SaltLite\Framework\Routing\RequestHandler;
 
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\PageNotFoundResponse;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\PageNotFoundResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

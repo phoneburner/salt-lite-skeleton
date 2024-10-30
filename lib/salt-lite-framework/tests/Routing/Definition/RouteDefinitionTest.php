@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\Definition;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Definition;
 
 use ArrayIterator;
 use Generator;
 use InvalidArgumentException;
-use PhoneBurner\SaltLiteFramework\Http\Domain\ContentType;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpHeader;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpStatus;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition as SUT;
-use PhoneBurner\SaltLiteFramework\Routing\Domain\StaticFile;
-use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\RedirectRequestHandler;
-use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\StaticFileRequestHandler;
-use PhoneBurner\SaltLiteFramework\Routing\Route;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Arr;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Enum;
-use PhoneBurner\Tests\SaltLiteFramework\Fixtures\TestRequestHandler;
+use PhoneBurner\SaltLite\Framework\Http\Domain\ContentType;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpHeader;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpStatus;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition as SUT;
+use PhoneBurner\SaltLite\Framework\Routing\Domain\StaticFile;
+use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\RedirectRequestHandler;
+use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\StaticFileRequestHandler;
+use PhoneBurner\SaltLite\Framework\Routing\Route;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Arr;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Enum;
+use PhoneBurner\Tests\SaltLite\Framework\Fixtures\TestRequestHandler;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestWith;

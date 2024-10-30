@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Cache;
+namespace PhoneBurner\Tests\SaltLite\Framework\Cache;
 
-use PhoneBurner\SaltLiteFramework\Cache\CacheDriver;
-use PhoneBurner\SaltLiteFramework\Cache\CacheKey;
-use PhoneBurner\SaltLiteFramework\Cache\Lock\NamedKey;
+use PhoneBurner\SaltLite\Framework\Cache\CacheDriver;
+use PhoneBurner\SaltLite\Framework\Cache\CacheKey;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\NamedKey;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

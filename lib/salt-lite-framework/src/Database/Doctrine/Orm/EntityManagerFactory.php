@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Database\Doctrine\Orm;
+namespace PhoneBurner\SaltLite\Framework\Database\Doctrine\Orm;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\DBAL\Tools\Console\ConnectionProvider as DockerConnectionProvider;
@@ -15,17 +15,17 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\Driver\AttributeDriver;
 use Doctrine\ORM\Proxy\ProxyFactory;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\UnknownManagerException;
-use PhoneBurner\SaltLiteFramework\App\BuildStage;
-use PhoneBurner\SaltLiteFramework\App\Context;
-use PhoneBurner\SaltLiteFramework\App\Environment;
-use PhoneBurner\SaltLiteFramework\Cache\CacheDriver;
-use PhoneBurner\SaltLiteFramework\Cache\CacheItemPoolFactory;
-use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\Cache\CacheRegion;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\Cache\CacheType;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\ConnectionFactory;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\Types;
-use PhoneBurner\SaltLiteFramework\Domain\Time\TimeConstant;
+use PhoneBurner\SaltLite\Framework\App\BuildStage;
+use PhoneBurner\SaltLite\Framework\App\Context;
+use PhoneBurner\SaltLite\Framework\App\Environment;
+use PhoneBurner\SaltLite\Framework\Cache\CacheDriver;
+use PhoneBurner\SaltLite\Framework\Cache\CacheItemPoolFactory;
+use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
+use PhoneBurner\SaltLite\Framework\Database\Doctrine\Cache\CacheRegion;
+use PhoneBurner\SaltLite\Framework\Database\Doctrine\Cache\CacheType;
+use PhoneBurner\SaltLite\Framework\Database\Doctrine\ConnectionFactory;
+use PhoneBurner\SaltLite\Framework\Database\Doctrine\Types;
+use PhoneBurner\SaltLite\Framework\Domain\Time\TimeConstant;
 use Psr\Container\ContainerInterface;
 
 class EntityManagerFactory

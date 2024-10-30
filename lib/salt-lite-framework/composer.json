@@ -30,12 +30,12 @@
       "src/functions.php"
     ],
     "psr-4": {
-      "PhoneBurner\\SaltLiteFramework\\": "src/"
+      "PhoneBurner\\SaltLite\\Framework\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "PhoneBurner\\Tests\\SaltLiteFramework\\": "tests/"
+      "PhoneBurner\\Tests\\SaltLite\\Framework\\": "tests/"
     }
   },
   "require": {

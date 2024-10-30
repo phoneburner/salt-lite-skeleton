@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Util;
+namespace PhoneBurner\SaltLite\Framework\Util;
 
 use ArrayAccess;
 use Countable;
 use IteratorAggregate;
-use PhoneBurner\SaltLiteFramework\Domain\Arrayable;
+use PhoneBurner\SaltLite\Framework\Domain\Arrayable;
 
 /**
  * @template TKey

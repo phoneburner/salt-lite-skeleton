@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Command\CommandHelper;
+namespace PhoneBurner\SaltLite\Framework\Routing\Command\CommandHelper;
 
 use Generator;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\DefinitionList;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\Route;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Arr;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Str;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\DefinitionList;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\Route;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Arr;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
 use Symfony\Component\Console\Output\OutputInterface;
 
 abstract class RouteDefinitionListFormatter

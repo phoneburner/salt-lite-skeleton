@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Definition;
+namespace PhoneBurner\SaltLite\Framework\Routing\Definition;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Routing\Route;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Enum;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Routing\Route;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Enum;
 use Psr\Http\Server\RequestHandlerInterface;
 
 trait DefinitionBehaviour

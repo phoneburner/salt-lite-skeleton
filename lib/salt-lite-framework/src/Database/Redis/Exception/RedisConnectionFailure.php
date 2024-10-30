@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Database\Redis\Exception;
+namespace PhoneBurner\SaltLite\Framework\Database\Redis\Exception;
 
 use RedisException;
 

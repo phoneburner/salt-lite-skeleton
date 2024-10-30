@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Cache\Marshaller;
+namespace PhoneBurner\Tests\SaltLite\Framework\Cache\Marshaller;
 
-use PhoneBurner\SaltLiteFramework\Cache\Exception\CacheMarshallingError;
-use PhoneBurner\SaltLiteFramework\Cache\Marshaller\RemoteCacheMarshaller;
-use PhoneBurner\SaltLiteFramework\Cache\Marshaller\Serializer;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Str;
-use PhoneBurner\Tests\SaltLiteFramework\Util\Helper\Fixture\LazyObject;
-use PhoneBurner\Tests\SaltLiteFramework\Util\Helper\Fixture\Mirror;
+use PhoneBurner\SaltLite\Framework\Cache\Exception\CacheMarshallingError;
+use PhoneBurner\SaltLite\Framework\Cache\Marshaller\RemoteCacheMarshaller;
+use PhoneBurner\SaltLite\Framework\Cache\Marshaller\Serializer;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
+use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\LazyObject;
+use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\Mirror;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\WithoutErrorHandler;

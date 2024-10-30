@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Cache\Warmup;
+namespace PhoneBurner\SaltLite\Framework\Cache\Warmup;
 
-use PhoneBurner\SaltLiteFramework\Cache\CacheKey;
+use PhoneBurner\SaltLite\Framework\Cache\CacheKey;
 
 readonly class StaticCacheDataStruct
 {

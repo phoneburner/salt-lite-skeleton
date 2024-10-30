@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Logging;
+namespace PhoneBurner\SaltLite\Framework\Logging;
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\ErrorLogHandler;
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
 use Monolog\Processor\PsrLogMessageProcessor;
-use PhoneBurner\SaltLiteFramework\App\Environment;
-use PhoneBurner\SaltLiteFramework\Logging\Monolog\Processor\EnvironmentProcessor;
-use PhoneBurner\SaltLiteFramework\Logging\Monolog\Processor\LogTraceProcessor;
+use PhoneBurner\SaltLite\Framework\App\Environment;
+use PhoneBurner\SaltLite\Framework\Logging\Monolog\Processor\EnvironmentProcessor;
+use PhoneBurner\SaltLite\Framework\Logging\Monolog\Processor\LogTraceProcessor;
 use Psr\Log\LoggerInterface;
 
-use const PhoneBurner\SaltLiteFramework\APP_ROOT;
+use const PhoneBurner\SaltLite\Framework\APP_ROOT;
 
 class LoggerFactory
 {

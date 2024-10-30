@@ -3219,7 +3219,7 @@
             "dist": {
                 "type": "path",
                 "url": "./lib/salt-lite-framework",
-                "reference": "1a8cef595fc29cba9afad715173babb2c9a84096"
+                "reference": "007bde2f2e97553e8e8f474037300bb61ed63e5a"
             },
             "require": {
                 "brick/varexporter": "^0.5.0",
@@ -3309,12 +3309,12 @@
                     "src/functions.php"
                 ],
                 "psr-4": {
-                    "PhoneBurner\\SaltLiteFramework\\": "src/"
+                    "PhoneBurner\\SaltLite\\Framework\\": "src/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "PhoneBurner\\Tests\\SaltLiteFramework\\": "tests/"
+                    "PhoneBurner\\Tests\\SaltLite\\Framework\\": "tests/"
                 }
             },
             "scripts": {

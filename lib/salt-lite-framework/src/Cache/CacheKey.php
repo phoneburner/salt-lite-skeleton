@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Cache;
+namespace PhoneBurner\SaltLite\Framework\Cache;
 
-use PhoneBurner\SaltLiteFramework\Util\Helper\Cast\NullableCast;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Str;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Cast\NullableCast;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
 
 /**
  * Creates a PSR-6/PSR-16 safe cache key "namespaced" by the passed in parts

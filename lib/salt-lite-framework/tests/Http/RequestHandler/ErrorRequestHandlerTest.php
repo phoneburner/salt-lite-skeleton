@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Http\RequestHandler;
+namespace PhoneBurner\Tests\SaltLite\Framework\Http\RequestHandler;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpReasonPhrase;
-use PhoneBurner\SaltLiteFramework\Http\RequestHandler\ErrorRequestHandler;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\HttpExceptionResponse;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\PageNotFoundResponse;
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpReasonPhrase;
+use PhoneBurner\SaltLite\Framework\Http\RequestHandler\ErrorRequestHandler;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\HttpExceptionResponse;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\PageNotFoundResponse;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;

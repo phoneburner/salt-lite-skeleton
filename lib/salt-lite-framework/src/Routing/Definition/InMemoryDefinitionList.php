@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Definition;
+namespace PhoneBurner\SaltLite\Framework\Routing\Definition;
 
 use Generator;
-use PhoneBurner\SaltLiteFramework\Routing\Route;
+use PhoneBurner\SaltLite\Framework\Routing\Route;
 use UnexpectedValueException;
 
 /**

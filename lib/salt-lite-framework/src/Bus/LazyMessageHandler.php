@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Bus;
+namespace PhoneBurner\SaltLite\Framework\Bus;
 
 use Psr\Container\ContainerInterface;
 

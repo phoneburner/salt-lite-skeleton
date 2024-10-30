@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Cache\Marshaller;
+namespace PhoneBurner\Tests\SaltLite\Framework\Cache\Marshaller;
 
-use PhoneBurner\SaltLiteFramework\Cache\Marshaller\UnserializeUndefinedClassHandler;
+use PhoneBurner\SaltLite\Framework\Cache\Marshaller\UnserializeUndefinedClassHandler;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

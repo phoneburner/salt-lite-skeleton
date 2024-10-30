@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http\Domain;
+namespace PhoneBurner\SaltLite\Framework\Http\Domain;
 
 class ContentType
 {

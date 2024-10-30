@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Container;
+namespace PhoneBurner\SaltLite\Framework\Container;
 
-use PhoneBurner\SaltLiteFramework\Attribute\Contract;
+use PhoneBurner\SaltLite\Framework\Attribute\Contract;
 use Psr\Container\ContainerInterface;
 
 #[Contract]

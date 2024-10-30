@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use function PhoneBurner\SaltLiteFramework\env;
+use function PhoneBurner\SaltLite\Framework\env;
 
-use const PhoneBurner\SaltLiteFramework\APP_ROOT;
+use const PhoneBurner\SaltLite\Framework\APP_ROOT;
 
 return [
     'database' => [
@@ -55,7 +55,7 @@ return [
                             'table_name' => 'doctrine_migration_versions',
                         ],
                         'migrations_paths' => [
-                            'PhoneBurner\SaltLiteSkeleton\Migrations' => APP_ROOT . '/database/migrations',
+                            'PhoneBurner\SaltLite\Migrations' => APP_ROOT . '/database/migrations',
                         ],
                     ],
                 ],

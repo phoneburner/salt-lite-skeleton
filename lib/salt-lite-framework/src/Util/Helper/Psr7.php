@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Util\Helper;
+namespace PhoneBurner\SaltLite\Framework\Util\Helper;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\ContentType;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpHeader;
+use PhoneBurner\SaltLite\Framework\Http\Domain\ContentType;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpHeader;
 use Psr\Http\Message\MessageInterface;
 
 class Psr7

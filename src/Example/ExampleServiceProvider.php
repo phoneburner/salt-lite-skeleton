@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteSkeleton\Example;
+namespace PhoneBurner\SaltLite\App\Example;
 
-use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
-use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
+use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
 
 class ExampleServiceProvider implements ServiceProvider
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing;
+namespace PhoneBurner\SaltLite\Framework\Routing;
 
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch;
 
 interface RouterResult
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\Result;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Result;
 
 use LogicException;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Routing\Result\MethodNotAllowed as SUT;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Routing\Result\MethodNotAllowed as SUT;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

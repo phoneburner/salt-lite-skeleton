@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Queue\Event;
+namespace PhoneBurner\SaltLite\Framework\Queue\Event;
 
-use PhoneBurner\SaltLiteFramework\Queue\Job;
+use PhoneBurner\SaltLite\Framework\Queue\Job;
 
 class JobHandlingStart
 {

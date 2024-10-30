@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\Definition;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Definition;
 
-use PhoneBurner\SaltLiteFramework\Routing\Definition\InMemoryDefinitionList as SUT;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteGroupDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\Route;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\InMemoryDefinitionList as SUT;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteGroupDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\Route;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

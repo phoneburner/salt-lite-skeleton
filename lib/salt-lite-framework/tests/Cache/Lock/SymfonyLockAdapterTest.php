@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Cache\Lock;
+namespace PhoneBurner\Tests\SaltLite\Framework\Cache\Lock;
 
-use PhoneBurner\SaltLiteFramework\Cache\Lock\SharedLockMode;
-use PhoneBurner\SaltLiteFramework\Cache\Lock\SymfonyLockAdapter;
-use PhoneBurner\SaltLiteFramework\Domain\Time\StopWatch;
-use PhoneBurner\SaltLiteFramework\Domain\Time\Ttl;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\SharedLockMode;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\SymfonyLockAdapter;
+use PhoneBurner\SaltLite\Framework\Domain\Time\StopWatch;
+use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

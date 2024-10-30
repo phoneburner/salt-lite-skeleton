@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http;
+namespace PhoneBurner\SaltLite\Framework\Http;
 
 use Laminas\HttpHandlerRunner\Emitter\EmitterInterface;
-use PhoneBurner\SaltLiteFramework\App\Kernel;
-use PhoneBurner\SaltLiteFramework\Http\Response\HtmlResponse;
+use PhoneBurner\SaltLite\Framework\App\Kernel;
+use PhoneBurner\SaltLite\Framework\Http\Response\HtmlResponse;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
 use Whoops\Handler\PrettyPageHandler;

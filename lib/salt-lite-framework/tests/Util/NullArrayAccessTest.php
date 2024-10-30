@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Util;
+namespace PhoneBurner\Tests\SaltLite\Framework\Util;
 
-use PhoneBurner\SaltLiteFramework\Util\Helper\Str;
-use PhoneBurner\SaltLiteFramework\Util\NullArrayAccess;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
+use PhoneBurner\SaltLite\Framework\Util\NullArrayAccess;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

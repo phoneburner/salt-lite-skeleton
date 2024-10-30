@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Cache;
+namespace PhoneBurner\Tests\SaltLite\Framework\Cache;
 
-use PhoneBurner\SaltLiteFramework\Cache\CacheAdapter;
-use PhoneBurner\SaltLiteFramework\Cache\Lock\NamedKey;
-use PhoneBurner\SaltLiteFramework\Domain\Hash\Hash;
-use PhoneBurner\SaltLiteFramework\Domain\Time\Ttl;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Reflect;
+use PhoneBurner\SaltLite\Framework\Cache\CacheAdapter;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\NamedKey;
+use PhoneBurner\SaltLite\Framework\Domain\Hash\Hash;
+use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Reflect;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestWith;

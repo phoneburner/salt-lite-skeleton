@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Container;
+namespace PhoneBurner\SaltLite\Framework\Container;
 
-use PhoneBurner\SaltLiteFramework\Container\Exception\OverriddenArgumentNotSet;
-use PhoneBurner\SaltLiteFramework\Container\Exception\UnableToAutoResolveParameterException;
+use PhoneBurner\SaltLite\Framework\Container\Exception\OverriddenArgumentNotSet;
+use PhoneBurner\SaltLite\Framework\Container\Exception\UnableToAutoResolveParameterException;
 
 class ReflectionMethodAutoResolver
 {

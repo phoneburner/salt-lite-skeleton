@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Cache;
+namespace PhoneBurner\SaltLite\Framework\Cache;
 
-use PhoneBurner\SaltLiteFramework\App\BuildStage;
-use PhoneBurner\SaltLiteFramework\App\Context;
-use PhoneBurner\SaltLiteFramework\App\Environment;
-use PhoneBurner\SaltLiteFramework\Cache\Lock\LockFactory;
-use PhoneBurner\SaltLiteFramework\Cache\Lock\NamedKeyFactory;
-use PhoneBurner\SaltLiteFramework\Cache\Lock\SymfonyLockFactoryAdapter;
-use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
-use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
-use PhoneBurner\SaltLiteFramework\Database\Redis\RedisManager;
+use PhoneBurner\SaltLite\Framework\App\BuildStage;
+use PhoneBurner\SaltLite\Framework\App\Context;
+use PhoneBurner\SaltLite\Framework\App\Environment;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\LockFactory;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\NamedKeyFactory;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\SymfonyLockFactoryAdapter;
+use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
+use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Database\Redis\RedisManager;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;

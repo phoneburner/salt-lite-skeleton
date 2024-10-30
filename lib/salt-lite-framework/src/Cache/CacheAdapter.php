@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Cache;
+namespace PhoneBurner\SaltLite\Framework\Cache;
 
-use PhoneBurner\SaltLiteFramework\Cache\Exception\CacheWriteFailed;
-use PhoneBurner\SaltLiteFramework\Domain\Time\Ttl;
+use PhoneBurner\SaltLite\Framework\Cache\Exception\CacheWriteFailed;
+use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\Cache\Psr16Cache;

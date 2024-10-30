@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Configuration;
+namespace PhoneBurner\SaltLite\Framework\Configuration;
 
 use Brick\VarExporter\VarExporter;
-use PhoneBurner\SaltLiteFramework\App\BuildStage;
-use PhoneBurner\SaltLiteFramework\App\Environment;
-use PhoneBurner\SaltLiteFramework\Util\Filesystem\FileWriter;
+use PhoneBurner\SaltLite\Framework\App\BuildStage;
+use PhoneBurner\SaltLite\Framework\App\Environment;
+use PhoneBurner\SaltLite\Framework\Util\Filesystem\FileWriter;
 
-use const PhoneBurner\SaltLiteFramework\APP_ROOT;
+use const PhoneBurner\SaltLite\Framework\APP_ROOT;
 
 class ConfigurationFactory
 {

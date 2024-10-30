@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Cache\Warmup;
+namespace PhoneBurner\SaltLite\Framework\Cache\Warmup;
 
 interface StaticCacheDataProvider
 {

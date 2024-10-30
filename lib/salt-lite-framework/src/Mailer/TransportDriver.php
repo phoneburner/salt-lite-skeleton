@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Mailer;
+namespace PhoneBurner\SaltLite\Framework\Mailer;
 
 enum TransportDriver: string
 {

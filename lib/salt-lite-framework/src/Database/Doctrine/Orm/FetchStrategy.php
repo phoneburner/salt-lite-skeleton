@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Database\Doctrine\Orm;
+namespace PhoneBurner\SaltLite\Framework\Database\Doctrine\Orm;
 
 class FetchStrategy
 {

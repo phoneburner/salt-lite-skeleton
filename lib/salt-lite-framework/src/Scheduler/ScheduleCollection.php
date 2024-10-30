@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Scheduler;
+namespace PhoneBurner\SaltLite\Framework\Scheduler;
 
 use Symfony\Component\Scheduler\Schedule;
 use Symfony\Contracts\Service\ServiceProviderInterface;

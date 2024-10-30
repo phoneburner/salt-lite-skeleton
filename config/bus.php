@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLiteFramework\Queue\Job;
-use PhoneBurner\SaltLiteFramework\Queue\JobMessageHandler;
+use PhoneBurner\SaltLite\Framework\Queue\Job;
+use PhoneBurner\SaltLite\Framework\Queue\JobMessageHandler;
 use Symfony\Component\Mailer\Messenger\MessageHandler as EmailMessageHandler;
 use Symfony\Component\Mailer\Messenger\SendEmailMessage;
 use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpTransport;
 
-use function PhoneBurner\SaltLiteFramework\env;
+use function PhoneBurner\SaltLite\Framework\env;
 
 return [
     'bus' => [

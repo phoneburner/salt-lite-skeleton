@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteSkeleton\Example\Entity;
+namespace PhoneBurner\SaltLite\App\Example\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\Orm\GeneratedValueStrategy;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\Types;
+use PhoneBurner\SaltLite\Framework\Database\Doctrine\Orm\GeneratedValueStrategy;
+use PhoneBurner\SaltLite\Framework\Database\Doctrine\Types;
 
 #[ORM\Entity]
 #[ORM\Table(name: 'users')]

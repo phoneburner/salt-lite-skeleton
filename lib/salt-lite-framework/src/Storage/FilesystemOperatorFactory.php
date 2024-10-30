@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Storage;
+namespace PhoneBurner\SaltLite\Framework\Storage;
 
 use Aws\S3\S3Client;
 use League\Flysystem\AwsS3V3\AwsS3V3Adapter;
 use League\Flysystem\Filesystem;
 use League\Flysystem\FilesystemOperator;
 use League\Flysystem\Local\LocalFilesystemAdapter;
-use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
-use PhoneBurner\SaltLiteFramework\Configuration\Exception\InvalidConfiguration;
+use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
+use PhoneBurner\SaltLite\Framework\Configuration\Exception\InvalidConfiguration;
 
 class FilesystemOperatorFactory
 {

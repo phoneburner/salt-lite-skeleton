@@ -55,8 +55,8 @@
     "classmap": [
     ],
     "psr-4": {
-      "PhoneBurner\\SaltLiteSkeleton\\": "src/",
-      "PhoneBurner\\SaltLiteSkeleton\\Migrations\\": "database/migrations/"
+      "PhoneBurner\\SaltLite\\App\\": "src/",
+      "PhoneBurner\\SaltLite\\Migrations\\": "database/migrations/"
     },
     "files": [
       "includes/bootstrap.php"
@@ -64,8 +64,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "PhoneBurner\\Tests\\SaltLiteSkeleton\\Unit\\": "tests/unit/",
-      "PhoneBurner\\Tests\\SaltLiteFramework\\": "lib/salt-lite-framework/tests/"
+      "PhoneBurner\\Tests\\SaltLite\\App\\Unit\\": "tests/unit/",
+      "PhoneBurner\\Tests\\SaltLite\\Framework\\": "lib/salt-lite-framework/tests/"
     }
   },
   "require": {

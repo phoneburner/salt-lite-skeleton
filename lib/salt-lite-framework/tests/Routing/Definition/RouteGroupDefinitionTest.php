@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\Definition;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Definition;
 
 use ArrayIterator;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteGroupDefinition as SUT;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Arr;
-use PhoneBurner\Tests\SaltLiteFramework\Fixtures\TestRequestHandler;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteGroupDefinition as SUT;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Arr;
+use PhoneBurner\Tests\SaltLite\Framework\Fixtures\TestRequestHandler;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;

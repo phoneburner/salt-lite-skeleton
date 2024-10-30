@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Util\Crypto\Paseto;
+namespace PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto;
 
 final readonly class PasetoKey
 {

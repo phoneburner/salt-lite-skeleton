@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Console\Command;
+namespace PhoneBurner\SaltLite\Framework\Console\Command;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\ORM\EntityManagerInterface;
 use League\Flysystem\FilesystemOperator;
-use PhoneBurner\SaltLiteFramework\App\Environment;
-use PhoneBurner\SaltLiteFramework\Cache\AppendOnlyCache;
-use PhoneBurner\SaltLiteFramework\Cache\Cache;
-use PhoneBurner\SaltLiteFramework\Cache\Lock\LockFactory;
-use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
-use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
+use PhoneBurner\SaltLite\Framework\App\Environment;
+use PhoneBurner\SaltLite\Framework\Cache\AppendOnlyCache;
+use PhoneBurner\SaltLite\Framework\Cache\Cache;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\LockFactory;
+use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
+use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use Psy\Configuration as PsyConfiguration;

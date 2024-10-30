@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Storage;
+namespace PhoneBurner\SaltLite\Framework\Storage;
 
 use League\Flysystem\FilesystemOperator;
 use League\Flysystem\FilesystemReader;
 use League\Flysystem\FilesystemWriter;
-use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
-use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
-use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
+use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
+use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
 use Psr\Container\ContainerInterface;
 
 class StorageServiceProvider implements ServiceProvider

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Util\Crypto;
+namespace PhoneBurner\SaltLite\Framework\Util\Crypto;
 
 final readonly class IntegerId
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Result;
+namespace PhoneBurner\SaltLite\Framework\Routing\Result;
 
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
-use PhoneBurner\SaltLiteFramework\Routing\RouterResult;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch;
+use PhoneBurner\SaltLite\Framework\Routing\RouterResult;
 
 class RouteFound implements RouterResult
 {

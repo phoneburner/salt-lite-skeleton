@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Cache\Lock;
+namespace PhoneBurner\SaltLite\Framework\Cache\Lock;
 
-use PhoneBurner\SaltLiteFramework\Cache\CacheKey;
-use PhoneBurner\SaltLiteFramework\Cache\Marshaller\RemoteCacheMarshaller;
+use PhoneBurner\SaltLite\Framework\Cache\CacheKey;
+use PhoneBurner\SaltLite\Framework\Cache\Marshaller\RemoteCacheMarshaller;
 
 class NamedKeyFactory
 {

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Definition;
+namespace PhoneBurner\SaltLite\Framework\Routing\Definition;
 
 use JsonSerializable;
 use Laminas\Diactoros\Uri;
 use PhoneBurner\Http\Message\UriWrapper;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpHeader;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpStatus;
-use PhoneBurner\SaltLiteFramework\Routing\Domain\StaticFile;
-use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\RedirectRequestHandler;
-use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\StaticFileRequestHandler;
-use PhoneBurner\SaltLiteFramework\Routing\Route;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Arr;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpHeader;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpStatus;
+use PhoneBurner\SaltLite\Framework\Routing\Domain\StaticFile;
+use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\RedirectRequestHandler;
+use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\StaticFileRequestHandler;
+use PhoneBurner\SaltLite\Framework\Routing\Route;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Arr;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\Result;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Result;
 
 use LogicException;
-use PhoneBurner\SaltLiteFramework\Routing\Result\RouteNotFound as SUT;
+use PhoneBurner\SaltLite\Framework\Routing\Result\RouteNotFound as SUT;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\FastRoute;
+namespace PhoneBurner\SaltLite\Framework\Routing\FastRoute;
 
 use FastRoute\Dispatcher;
 

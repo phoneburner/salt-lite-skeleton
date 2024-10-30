@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Definition;
+namespace PhoneBurner\SaltLite\Framework\Routing\Definition;
 
 use Generator;
 use IteratorAggregate;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Arr;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Arr;
 
 /**
  * @implements IteratorAggregate<RouteDefinition>

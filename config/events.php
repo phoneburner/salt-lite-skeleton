@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLiteFramework\EventDispatcher\Listener\LogEvent;
-use PhoneBurner\SaltLiteFramework\Queue\Event\JobHandlingComplete;
-use PhoneBurner\SaltLiteFramework\Queue\Event\JobHandlingFailed;
-use PhoneBurner\SaltLiteFramework\Queue\Event\JobHandlingStart;
-use PhoneBurner\SaltLiteSkeleton\Example\Event\ExampleEvent;
-use PhoneBurner\SaltLiteSkeleton\Example\Listener\ExampleListener;
+use PhoneBurner\SaltLite\App\Example\Event\ExampleEvent;
+use PhoneBurner\SaltLite\App\Example\Listener\ExampleListener;
+use PhoneBurner\SaltLite\Framework\EventDispatcher\Listener\LogEvent;
+use PhoneBurner\SaltLite\Framework\Queue\Event\JobHandlingComplete;
+use PhoneBurner\SaltLite\Framework\Queue\Event\JobHandlingFailed;
+use PhoneBurner\SaltLite\Framework\Queue\Event\JobHandlingStart;
 use Symfony\Component\Console\EventListener\ErrorListener;
 use Symfony\Component\Messenger\Event\SendMessageToTransportsEvent;
 use Symfony\Component\Messenger\Event\WorkerMessageFailedEvent;

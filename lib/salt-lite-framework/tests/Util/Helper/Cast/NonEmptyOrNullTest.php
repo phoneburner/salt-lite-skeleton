@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Util\Helper\Cast;
+namespace PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Cast;
 
-use PhoneBurner\SaltLiteFramework\Util\Helper\Cast\NonEmptyOrNull;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Cast\NonEmptyOrNull;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

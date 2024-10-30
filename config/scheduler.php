@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLiteSkeleton\Example\ExampleScheduleProvider;
+use PhoneBurner\SaltLite\App\Example\ExampleScheduleProvider;
 
 return [
     'scheduler' => [

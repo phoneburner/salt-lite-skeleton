@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http\RequestHandler;
+namespace PhoneBurner\SaltLite\Framework\Http\RequestHandler;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpStatus;
-use PhoneBurner\SaltLiteFramework\Http\Response\EmptyResponse;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpStatus;
+use PhoneBurner\SaltLite\Framework\Http\Response\EmptyResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

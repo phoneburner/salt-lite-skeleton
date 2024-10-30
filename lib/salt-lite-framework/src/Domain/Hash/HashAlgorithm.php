@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Domain\Hash;
+namespace PhoneBurner\SaltLite\Framework\Domain\Hash;
 
 enum HashAlgorithm: string
 {

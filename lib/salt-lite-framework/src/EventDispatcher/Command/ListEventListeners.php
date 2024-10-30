@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\EventDispatcher\Command;
+namespace PhoneBurner\SaltLite\Framework\EventDispatcher\Command;
 
-use PhoneBurner\SaltLiteFramework\EventDispatcher\LazyListener;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Arr;
+use PhoneBurner\SaltLite\Framework\EventDispatcher\LazyListener;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Arr;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

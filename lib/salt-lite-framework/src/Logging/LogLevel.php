@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Logging;
+namespace PhoneBurner\SaltLite\Framework\Logging;
 
 use Psr\Log\LogLevel as PsrLogLevel;
 

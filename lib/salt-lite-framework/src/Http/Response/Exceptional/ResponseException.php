@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http\Response\Exceptional;
+namespace PhoneBurner\SaltLite\Framework\Http\Response\Exceptional;
 
 use PhoneBurner\Http\Message\ResponseWrapper;
 use Psr\Http\Message\ResponseInterface;

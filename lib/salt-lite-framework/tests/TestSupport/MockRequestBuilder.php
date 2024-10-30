@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\TestSupport;
+namespace PhoneBurner\Tests\SaltLite\Framework\TestSupport;
 
 use GuzzleHttp\Psr7\Uri;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpHeader;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Str;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpHeader;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
 use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Http\Message\ServerRequestInterface;
 

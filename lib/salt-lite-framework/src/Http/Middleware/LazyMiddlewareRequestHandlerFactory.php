@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http\Middleware;
+namespace PhoneBurner\SaltLite\Framework\Http\Middleware;
 
-use PhoneBurner\SaltLiteFramework\Http\Middleware\Exception\InvalidMiddlewareConfiguration;
+use PhoneBurner\SaltLite\Framework\Http\Middleware\Exception\InvalidMiddlewareConfiguration;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;

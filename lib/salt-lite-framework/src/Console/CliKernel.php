@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Console;
+namespace PhoneBurner\SaltLite\Framework\Console;
 
-use PhoneBurner\SaltLiteFramework\App\Kernel;
+use PhoneBurner\SaltLite\Framework\App\Kernel;
 use Symfony\Component\Console\Application;
 
 class CliKernel implements Kernel

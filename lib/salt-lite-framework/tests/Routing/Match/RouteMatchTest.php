@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\Match;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Match;
 
 use Generator;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch as SUT;
-use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\NullHandler;
-use PhoneBurner\Tests\SaltLiteFramework\Fixtures\TestRequestHandler;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch as SUT;
+use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\NullHandler;
+use PhoneBurner\Tests\SaltLite\Framework\Fixtures\TestRequestHandler;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

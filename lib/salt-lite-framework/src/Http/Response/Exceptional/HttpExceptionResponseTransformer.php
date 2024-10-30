@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http\Response\Exceptional;
+namespace PhoneBurner\SaltLite\Framework\Http\Response\Exceptional;
 
-use PhoneBurner\SaltLiteFramework\Http\Response\ApiProblemResponse;
-use PhoneBurner\SaltLiteFramework\Http\Response\HtmlResponse;
-use PhoneBurner\SaltLiteFramework\Logging\LogTrace;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Psr7;
+use PhoneBurner\SaltLite\Framework\Http\Response\ApiProblemResponse;
+use PhoneBurner\SaltLite\Framework\Http\Response\HtmlResponse;
+use PhoneBurner\SaltLite\Framework\Logging\LogTrace;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Psr7;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\FastRoute;
+namespace PhoneBurner\SaltLite\Framework\Routing\FastRoute;
 
 use FastRoute\Dispatcher;
 use FastRoute\RouteCollector;
 use LogicException;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\DefinitionList;
-use PhoneBurner\SaltLiteFramework\Routing\Result\RouteFound;
-use PhoneBurner\SaltLiteFramework\Routing\Result\RouteNotFound;
-use PhoneBurner\SaltLiteFramework\Routing\Router;
-use PhoneBurner\SaltLiteFramework\Routing\RouterResult;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\DefinitionList;
+use PhoneBurner\SaltLite\Framework\Routing\Result\RouteFound;
+use PhoneBurner\SaltLite\Framework\Routing\Result\RouteNotFound;
+use PhoneBurner\SaltLite\Framework\Routing\Router;
+use PhoneBurner\SaltLite\Framework\Routing\RouterResult;
 use Psr\Http\Message\ServerRequestInterface;
 
 class FastRouter implements Router

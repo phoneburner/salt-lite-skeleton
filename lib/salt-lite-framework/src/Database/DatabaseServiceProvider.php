@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Database;
+namespace PhoneBurner\SaltLite\Framework\Database;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Tools\Console\ConnectionProvider as DoctrineConnectionProvider;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider as DoctrineEntityManagerProvider;
-use PhoneBurner\SaltLiteFramework\App\Environment;
-use PhoneBurner\SaltLiteFramework\Cache\CacheItemPoolFactory;
-use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
-use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
-use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\ConnectionFactory;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\ConnectionProvider;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\Orm\EntityManagerFactory;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\Orm\EntityManagerProvider;
-use PhoneBurner\SaltLiteFramework\Database\Redis\CachingRedisManager;
-use PhoneBurner\SaltLiteFramework\Database\Redis\RedisManager;
+use PhoneBurner\SaltLite\Framework\App\Environment;
+use PhoneBurner\SaltLite\Framework\Cache\CacheItemPoolFactory;
+use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
+use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
+use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Database\Doctrine\ConnectionFactory;
+use PhoneBurner\SaltLite\Framework\Database\Doctrine\ConnectionProvider;
+use PhoneBurner\SaltLite\Framework\Database\Doctrine\Orm\EntityManagerFactory;
+use PhoneBurner\SaltLite\Framework\Database\Doctrine\Orm\EntityManagerProvider;
+use PhoneBurner\SaltLite\Framework\Database\Redis\CachingRedisManager;
+use PhoneBurner\SaltLite\Framework\Database\Redis\RedisManager;
 use Psr\Container\ContainerInterface;
 
 class DatabaseServiceProvider implements ServiceProvider

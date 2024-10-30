@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\Middleware;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Middleware;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\MethodNotAllowedResponse;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
-use PhoneBurner\SaltLiteFramework\Routing\Middleware\AttachRouteToRequest;
-use PhoneBurner\SaltLiteFramework\Routing\Result\MethodNotAllowed;
-use PhoneBurner\SaltLiteFramework\Routing\Result\RouteFound;
-use PhoneBurner\SaltLiteFramework\Routing\Result\RouteNotFound;
-use PhoneBurner\SaltLiteFramework\Routing\Router;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\MethodNotAllowedResponse;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch;
+use PhoneBurner\SaltLite\Framework\Routing\Middleware\AttachRouteToRequest;
+use PhoneBurner\SaltLite\Framework\Routing\Result\MethodNotAllowed;
+use PhoneBurner\SaltLite\Framework\Routing\Result\RouteFound;
+use PhoneBurner\SaltLite\Framework\Routing\Result\RouteNotFound;
+use PhoneBurner\SaltLite\Framework\Routing\Router;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;

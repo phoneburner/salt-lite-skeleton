@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Routing\Result;
+namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Result;
 
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\NullHandler;
-use PhoneBurner\SaltLiteFramework\Routing\Result\RouteFound as SUT;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\NullHandler;
+use PhoneBurner\SaltLite\Framework\Routing\Result\RouteFound as SUT;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Server\MiddlewareInterface;

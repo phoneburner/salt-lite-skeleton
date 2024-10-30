@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Database\Doctrine;
+namespace PhoneBurner\SaltLite\Framework\Database\Doctrine;
 
 use Doctrine\DBAL\Configuration as ConnectionConfiguration;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Tools\Console\ConnectionNotFound;
-use PhoneBurner\SaltLiteFramework\App\BuildStage;
-use PhoneBurner\SaltLiteFramework\App\Context;
-use PhoneBurner\SaltLiteFramework\App\Environment;
-use PhoneBurner\SaltLiteFramework\Cache\CacheDriver;
-use PhoneBurner\SaltLiteFramework\Cache\CacheItemPoolFactory;
-use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
+use PhoneBurner\SaltLite\Framework\App\BuildStage;
+use PhoneBurner\SaltLite\Framework\App\Context;
+use PhoneBurner\SaltLite\Framework\App\Environment;
+use PhoneBurner\SaltLite\Framework\Cache\CacheDriver;
+use PhoneBurner\SaltLite\Framework\Cache\CacheItemPoolFactory;
+use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
 
 class ConnectionFactory
 {

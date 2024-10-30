@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Util\Helper;
+namespace PhoneBurner\SaltLite\Framework\Util\Helper;
 
 use Laminas\Diactoros\Stream;
-use PhoneBurner\SaltLiteFramework\Domain\RegExp;
+use PhoneBurner\SaltLite\Framework\Domain\RegExp;
 use Psr\Http\Message\StreamInterface;
 use RuntimeException;
 use Stringable;

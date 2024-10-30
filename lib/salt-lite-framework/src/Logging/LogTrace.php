@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Logging;
+namespace PhoneBurner\SaltLite\Framework\Logging;
 
-use PhoneBurner\SaltLiteFramework\Util\Helper\Uuid;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
 readonly final class LogTrace implements \Stringable, \JsonSerializable

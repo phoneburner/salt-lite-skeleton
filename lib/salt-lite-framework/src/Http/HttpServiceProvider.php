@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http;
+namespace PhoneBurner\SaltLite\Framework\Http;
 
 use Laminas\HttpHandlerRunner\Emitter\EmitterInterface;
 use Laminas\HttpHandlerRunner\Emitter\SapiStreamEmitter;
-use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
-use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
-use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
-use PhoneBurner\SaltLiteFramework\Http\Middleware\LazyMiddlewareRequestHandlerFactory;
-use PhoneBurner\SaltLiteFramework\Http\Middleware\MiddlewareRequestHandlerFactory;
-use PhoneBurner\SaltLiteFramework\Http\Middleware\TransformHttpExceptionResponses;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\HttpExceptionResponseTransformer;
-use PhoneBurner\SaltLiteFramework\Logging\LogTrace;
-use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\NullHandler;
+use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
+use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
+use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Http\Middleware\LazyMiddlewareRequestHandlerFactory;
+use PhoneBurner\SaltLite\Framework\Http\Middleware\MiddlewareRequestHandlerFactory;
+use PhoneBurner\SaltLite\Framework\Http\Middleware\TransformHttpExceptionResponses;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\HttpExceptionResponseTransformer;
+use PhoneBurner\SaltLite\Framework\Logging\LogTrace;
+use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\NullHandler;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;

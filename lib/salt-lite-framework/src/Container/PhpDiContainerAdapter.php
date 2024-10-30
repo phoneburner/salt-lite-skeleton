@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Container;
+namespace PhoneBurner\SaltLite\Framework\Container;
 
 use DI\Container as PhpDiContainer;
 use DI\ContainerBuilder;

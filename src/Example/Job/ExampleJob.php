@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteSkeleton\Example\Job;
+namespace PhoneBurner\SaltLite\App\Example\Job;
 
-use PhoneBurner\SaltLiteFramework\Queue\Job;
+use PhoneBurner\SaltLite\Framework\Queue\Job;
 use Psr\Log\LoggerInterface;
 
 class ExampleJob implements Job

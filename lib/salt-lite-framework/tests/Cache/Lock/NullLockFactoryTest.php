@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Cache\Lock;
+namespace PhoneBurner\Tests\SaltLite\Framework\Cache\Lock;
 
-use PhoneBurner\SaltLiteFramework\Cache\Lock\NullLock;
-use PhoneBurner\SaltLiteFramework\Cache\Lock\NullLockFactory;
-use PhoneBurner\SaltLiteFramework\Domain\Time\Ttl;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\NullLock;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\NullLockFactory;
+use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

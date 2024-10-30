@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing;
+namespace PhoneBurner\SaltLite\Framework\Routing;
 
 use Psr\Http\Message\UriInterface;
 

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Logging\Monolog\Processor;
+namespace PhoneBurner\SaltLite\Framework\Logging\Monolog\Processor;
 
 use Monolog\LogRecord;
 use Monolog\Processor\ProcessorInterface;
-use PhoneBurner\SaltLiteFramework\Logging\LogTrace;
+use PhoneBurner\SaltLite\Framework\Logging\LogTrace;
 
 class LogTraceProcessor implements ProcessorInterface
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Domain\Hash;
+namespace PhoneBurner\SaltLite\Framework\Domain\Hash;
 
-use PhoneBurner\SaltLiteFramework\Domain\Hash\Exceptions\InvalidHash;
-use PhoneBurner\SaltLiteFramework\Util\Filesystem\FileReader;
+use PhoneBurner\SaltLite\Framework\Domain\Hash\Exceptions\InvalidHash;
+use PhoneBurner\SaltLite\Framework\Util\Filesystem\FileReader;
 
 readonly class Hash implements MessageDigest
 {

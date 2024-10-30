@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http\Response\Exceptional;
+namespace PhoneBurner\SaltLite\Framework\Http\Response\Exceptional;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpReasonPhrase;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpStatus;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpReasonPhrase;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpStatus;
 
 class PermissionDeniedResponse extends GenericHttpExceptionResponse
 {

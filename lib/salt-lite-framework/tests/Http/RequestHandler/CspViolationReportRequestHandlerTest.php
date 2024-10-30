@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Http\RequestHandler;
+namespace PhoneBurner\Tests\SaltLite\Framework\Http\RequestHandler;
 
 use Laminas\Diactoros\ServerRequest;
-use PhoneBurner\SaltLiteFramework\Http\Domain\ContentType;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpHeader;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpStatus;
-use PhoneBurner\SaltLiteFramework\Http\RequestHandler\CspViolationReportRequestHandler;
-use PhoneBurner\SaltLiteFramework\Http\Response\EmptyResponse;
+use PhoneBurner\SaltLite\Framework\Http\Domain\ContentType;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpHeader;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpStatus;
+use PhoneBurner\SaltLite\Framework\Http\RequestHandler\CspViolationReportRequestHandler;
+use PhoneBurner\SaltLite\Framework\Http\Response\EmptyResponse;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;

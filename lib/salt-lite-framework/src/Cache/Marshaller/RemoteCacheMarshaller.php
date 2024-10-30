@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Cache\Marshaller;
+namespace PhoneBurner\SaltLite\Framework\Cache\Marshaller;
 
-use PhoneBurner\SaltLiteFramework\App\PhpRuntimeConfig;
-use PhoneBurner\SaltLiteFramework\Cache\Exception\CacheMarshallingError;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Str;
+use PhoneBurner\SaltLite\Framework\App\PhpRuntimeConfig;
+use PhoneBurner\SaltLite\Framework\Cache\Exception\CacheMarshallingError;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Cache\Marshaller\MarshallerInterface;
 

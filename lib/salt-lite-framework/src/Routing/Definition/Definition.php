@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Definition;
+namespace PhoneBurner\SaltLite\Framework\Routing\Definition;
 
-use PhoneBurner\SaltLiteFramework\Domain\PhpSerializable;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Domain\PhpSerializable;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 

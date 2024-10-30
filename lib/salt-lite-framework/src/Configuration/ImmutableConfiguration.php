@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Configuration;
+namespace PhoneBurner\SaltLite\Framework\Configuration;
 
 final readonly class ImmutableConfiguration implements Configuration
 {

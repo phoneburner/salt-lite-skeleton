@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLite\Phpstan\Type;
 
-use PhoneBurner\SaltLiteFramework\Util\Helper\Str;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
 use PhpParser\Node\Expr\StaticCall;
 use PHPStan\Analyser\Scope;
 use PHPStan\Analyser\SpecifiedTypes;

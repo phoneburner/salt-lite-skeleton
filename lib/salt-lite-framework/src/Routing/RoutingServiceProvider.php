@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing;
+namespace PhoneBurner\SaltLite\Framework\Routing;
 
-use PhoneBurner\SaltLiteFramework\App\BuildStage;
-use PhoneBurner\SaltLiteFramework\Configuration\Configuration;
-use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
-use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\DefinitionList;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\LazyConfigDefinitionList;
-use PhoneBurner\SaltLiteFramework\Routing\FastRoute\FastRouteDispatcherFactory;
-use PhoneBurner\SaltLiteFramework\Routing\FastRoute\FastRouter;
-use PhoneBurner\SaltLiteFramework\Routing\FastRoute\FastRouteResultFactory;
-use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\NullHandler;
+use PhoneBurner\SaltLite\Framework\App\BuildStage;
+use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
+use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
+use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\DefinitionList;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\LazyConfigDefinitionList;
+use PhoneBurner\SaltLite\Framework\Routing\FastRoute\FastRouteDispatcherFactory;
+use PhoneBurner\SaltLite\Framework\Routing\FastRoute\FastRouter;
+use PhoneBurner\SaltLite\Framework\Routing\FastRoute\FastRouteResultFactory;
+use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\NullHandler;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 

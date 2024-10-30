@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Configuration;
+namespace PhoneBurner\Tests\SaltLite\Framework\Configuration;
 
-use PhoneBurner\SaltLiteFramework\Configuration\ImmutableConfiguration;
+use PhoneBurner\SaltLite\Framework\Configuration\ImmutableConfiguration;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

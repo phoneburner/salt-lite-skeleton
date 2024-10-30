@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteSkeleton\Example\RequestHandler;
+namespace PhoneBurner\SaltLite\App\Example\RequestHandler;
 
 use Doctrine\ORM\EntityManagerInterface;
-use PhoneBurner\SaltLiteFramework\Http\Response\HtmlResponse;
-use PhoneBurner\SaltLiteSkeleton\Example\Entity\User;
+use PhoneBurner\SaltLite\App\Example\Entity\User;
+use PhoneBurner\SaltLite\Framework\Http\Response\HtmlResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

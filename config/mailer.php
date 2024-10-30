@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLiteFramework\Mailer\TransportDriver;
+use PhoneBurner\SaltLite\Framework\Mailer\TransportDriver;
 
-use function PhoneBurner\SaltLiteFramework\env;
+use function PhoneBurner\SaltLite\Framework\env;
 
 return [
     'mailer' => [

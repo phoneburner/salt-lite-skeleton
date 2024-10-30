@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Database\Doctrine\Orm;
+namespace PhoneBurner\SaltLite\Framework\Database\Doctrine\Orm;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider as DoctrineEntityManagerProvider;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\UnknownManagerException;
-use PhoneBurner\SaltLiteFramework\Database\Doctrine\ConnectionFactory;
+use PhoneBurner\SaltLite\Framework\Database\Doctrine\ConnectionFactory;
 use Psr\Container\ContainerInterface;
 
 class EntityManagerProvider implements DoctrineEntityManagerProvider

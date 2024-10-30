@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Domain\Time;
+namespace PhoneBurner\SaltLite\Framework\Domain\Time;
 
 final readonly class Ttl
 {

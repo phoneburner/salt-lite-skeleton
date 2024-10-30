@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\FastRoute;
+namespace PhoneBurner\SaltLite\Framework\Routing\FastRoute;
 
 use FastRoute\Dispatcher;
-use PhoneBurner\SaltLiteFramework\Http\Domain\HttpMethod;
-use PhoneBurner\SaltLiteFramework\Routing\Result\MethodNotAllowed;
-use PhoneBurner\SaltLiteFramework\Routing\Result\RouteFound;
-use PhoneBurner\SaltLiteFramework\Routing\Result\RouteNotFound;
-use PhoneBurner\SaltLiteFramework\Routing\RouterResult;
+use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
+use PhoneBurner\SaltLite\Framework\Routing\Result\MethodNotAllowed;
+use PhoneBurner\SaltLite\Framework\Routing\Result\RouteFound;
+use PhoneBurner\SaltLite\Framework\Routing\Result\RouteNotFound;
+use PhoneBurner\SaltLite\Framework\Routing\RouterResult;
 
 class FastRouteResultFactory
 {

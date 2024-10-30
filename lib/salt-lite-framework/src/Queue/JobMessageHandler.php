@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Queue;
+namespace PhoneBurner\SaltLite\Framework\Queue;
 
-use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
-use PhoneBurner\SaltLiteFramework\Queue\Event\JobHandlingComplete;
-use PhoneBurner\SaltLiteFramework\Queue\Event\JobHandlingFailed;
-use PhoneBurner\SaltLiteFramework\Queue\Event\JobHandlingStart;
+use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
+use PhoneBurner\SaltLite\Framework\Queue\Event\JobHandlingComplete;
+use PhoneBurner\SaltLite\Framework\Queue\Event\JobHandlingFailed;
+use PhoneBurner\SaltLite\Framework\Queue\Event\JobHandlingStart;
 use Psr\EventDispatcher\EventDispatcherInterface;
 
 class JobMessageHandler

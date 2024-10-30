@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\App;
+namespace PhoneBurner\SaltLite\Framework\App;
 
 use josegonzalez\Dotenv\Loader;
 

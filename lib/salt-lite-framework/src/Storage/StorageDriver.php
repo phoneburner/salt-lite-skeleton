@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Storage;
+namespace PhoneBurner\SaltLite\Framework\Storage;
 
 enum StorageDriver: string
 {

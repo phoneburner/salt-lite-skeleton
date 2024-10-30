@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Util\Crypto\Paseto;
+namespace PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto;
 
-use PhoneBurner\SaltLiteFramework\Util\Crypto\Paseto\Exception\PasetoCryptoException;
-use PhoneBurner\SaltLiteFramework\Util\Crypto\Paseto\Exception\PasetoLogicException;
+use PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto\Exception\PasetoCryptoException;
+use PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto\Exception\PasetoLogicException;
 use Stringable;
 
 /**

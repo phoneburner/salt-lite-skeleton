@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteSkeleton\Example\Listener;
+namespace PhoneBurner\SaltLite\App\Example\Listener;
 
-use PhoneBurner\SaltLiteSkeleton\Example\Event\ExampleEvent;
+use PhoneBurner\SaltLite\App\Example\Event\ExampleEvent;
 use Psr\Log\LoggerInterface;
 
 class ExampleListener

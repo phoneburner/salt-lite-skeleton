@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Util\Crypto\Paseto;
+namespace PhoneBurner\Tests\SaltLite\Framework\Util\Crypto\Paseto;
 
-use PhoneBurner\SaltLiteFramework\Util\Crypto\Paseto\Exception\PasetoCryptoException;
-use PhoneBurner\SaltLiteFramework\Util\Crypto\Paseto\Paseto;
-use PhoneBurner\SaltLiteFramework\Util\Crypto\Paseto\PasetoKey;
-use PhoneBurner\SaltLiteFramework\Util\Crypto\Paseto\PasetoMessage;
-use PhoneBurner\SaltLiteFramework\Util\Crypto\Paseto\PasetoPurpose;
-use PhoneBurner\SaltLiteFramework\Util\Crypto\Paseto\PasetoVersion;
+use PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto\Exception\PasetoCryptoException;
+use PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto\Paseto;
+use PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto\PasetoKey;
+use PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto\PasetoMessage;
+use PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto\PasetoPurpose;
+use PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto\PasetoVersion;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

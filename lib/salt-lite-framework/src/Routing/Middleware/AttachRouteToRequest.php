@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Middleware;
+namespace PhoneBurner\SaltLite\Framework\Routing\Middleware;
 
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\MethodNotAllowedResponse;
-use PhoneBurner\SaltLiteFramework\Routing\Match\RouteMatch;
-use PhoneBurner\SaltLiteFramework\Routing\Result\MethodNotAllowed;
-use PhoneBurner\SaltLiteFramework\Routing\Result\RouteFound;
-use PhoneBurner\SaltLiteFramework\Routing\Router;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\MethodNotAllowedResponse;
+use PhoneBurner\SaltLite\Framework\Routing\Match\RouteMatch;
+use PhoneBurner\SaltLite\Framework\Routing\Result\MethodNotAllowed;
+use PhoneBurner\SaltLite\Framework\Routing\Result\RouteFound;
+use PhoneBurner\SaltLite\Framework\Routing\Router;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;

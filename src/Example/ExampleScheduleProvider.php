@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteSkeleton\Example;
+namespace PhoneBurner\SaltLite\App\Example;
 
-use PhoneBurner\SaltLiteSkeleton\Example\Job\ExampleJob;
+use PhoneBurner\SaltLite\App\Example\Job\ExampleJob;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Scheduler\Attribute\AsSchedule;
 use Symfony\Component\Scheduler\RecurringMessage;

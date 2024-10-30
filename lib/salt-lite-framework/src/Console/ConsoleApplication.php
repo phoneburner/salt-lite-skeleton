@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Console;
+namespace PhoneBurner\SaltLite\Framework\Console;
 
 use Symfony\Component\Console\Application as SymfonyConsoleApplication;
 use Symfony\Component\Console\Formatter\OutputFormatterStyle;

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Domain\Hash;
+namespace PhoneBurner\Tests\SaltLite\Framework\Domain\Hash;
 
-use PhoneBurner\SaltLiteFramework\Domain\Hash\Exceptions\InvalidHash;
-use PhoneBurner\SaltLiteFramework\Domain\Hash\Hash;
-use PhoneBurner\SaltLiteFramework\Domain\Hash\HashAlgorithm;
-use PhoneBurner\SaltLiteFramework\Util\Filesystem\FileReader;
+use PhoneBurner\SaltLite\Framework\Domain\Hash\Exceptions\InvalidHash;
+use PhoneBurner\SaltLite\Framework\Domain\Hash\Hash;
+use PhoneBurner\SaltLite\Framework\Domain\Hash\HashAlgorithm;
+use PhoneBurner\SaltLite\Framework\Util\Filesystem\FileReader;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
-use const PhoneBurner\SaltLiteFramework\UNIT_TEST_ROOT;
+use const PhoneBurner\SaltLite\Framework\UNIT_TEST_ROOT;
 
 class HashTest extends TestCase
 {

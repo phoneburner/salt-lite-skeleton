@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Util\Helper;
+namespace PhoneBurner\SaltLite\Framework\Util\Helper;
 
 abstract class Func
 {

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteSkeleton;
+namespace PhoneBurner\SaltLite\App;
 
-use PhoneBurner\SaltLiteFramework\Http\RequestHandler\CspViolationReportRequestHandler;
-use PhoneBurner\SaltLiteFramework\Http\RequestHandler\ErrorRequestHandler;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\RouteProvider;
+use PhoneBurner\SaltLite\Framework\Http\RequestHandler\CspViolationReportRequestHandler;
+use PhoneBurner\SaltLite\Framework\Http\RequestHandler\ErrorRequestHandler;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\RouteProvider;
 
 class AppRouteProvider implements RouteProvider
 {

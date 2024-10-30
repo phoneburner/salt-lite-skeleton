@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Domain;
+namespace PhoneBurner\SaltLite\Framework\Routing\Domain;
 
-use PhoneBurner\SaltLiteFramework\Http\Domain\ContentType;
+use PhoneBurner\SaltLite\Framework\Http\Domain\ContentType;
 
 /**
  * Represents a static file for an asset on the *local* file system that can be

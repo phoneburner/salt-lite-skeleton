@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Domain\Hash;
+namespace PhoneBurner\Tests\SaltLite\Framework\Domain\Hash;
 
-use PhoneBurner\SaltLiteFramework\Domain\Hash\HmacKey;
+use PhoneBurner\SaltLite\Framework\Domain\Hash\HmacKey;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

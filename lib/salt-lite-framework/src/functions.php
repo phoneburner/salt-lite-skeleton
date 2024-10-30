@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework;
+namespace PhoneBurner\SaltLite\Framework;
 
-use PhoneBurner\SaltLiteFramework\App\App;
+use PhoneBurner\SaltLite\Framework\App\App;
 
 function app(): App
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Cache\Lock;
+namespace PhoneBurner\SaltLite\Framework\Cache\Lock;
 
-use PhoneBurner\SaltLiteFramework\Util\Helper\Str;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
 use Symfony\Component\Lock\Key;
 
 final readonly class NamedKey implements \Stringable

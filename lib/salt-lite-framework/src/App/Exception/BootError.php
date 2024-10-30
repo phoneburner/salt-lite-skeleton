@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\App\Exception;
+namespace PhoneBurner\SaltLite\Framework\App\Exception;
 
 interface BootError
 {

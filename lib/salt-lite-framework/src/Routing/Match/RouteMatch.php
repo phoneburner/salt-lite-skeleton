@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Routing\Match;
+namespace PhoneBurner\SaltLite\Framework\Routing\Match;
 
 use PhoneBurner\Http\Message\UriWrapper;
-use PhoneBurner\SaltLiteFramework\Routing\Definition\RouteDefinition;
-use PhoneBurner\SaltLiteFramework\Routing\RequestHandler\NullHandler;
-use PhoneBurner\SaltLiteFramework\Routing\Route;
-use PhoneBurner\SaltLiteFramework\Util\Helper\Arr;
+use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
+use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\NullHandler;
+use PhoneBurner\SaltLite\Framework\Routing\Route;
+use PhoneBurner\SaltLite\Framework\Util\Helper\Arr;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 

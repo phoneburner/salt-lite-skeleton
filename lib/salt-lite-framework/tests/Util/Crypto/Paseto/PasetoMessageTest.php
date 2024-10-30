@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Util\Crypto\Paseto;
+namespace PhoneBurner\Tests\SaltLite\Framework\Util\Crypto\Paseto;
 
-use PhoneBurner\SaltLiteFramework\Util\Crypto\Paseto\PasetoMessage;
+use PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto\PasetoMessage;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

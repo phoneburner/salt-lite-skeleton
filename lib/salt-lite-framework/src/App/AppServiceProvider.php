@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\App;
+namespace PhoneBurner\SaltLite\Framework\App;
 
 use Crell\AttributeUtils\Analyzer;
 use Crell\AttributeUtils\ClassAnalyzer;
 use Crell\AttributeUtils\MemoryCacheAnalyzer;
 use Crell\AttributeUtils\Psr6CacheAnalyzer;
-use PhoneBurner\SaltLiteFramework\App\Exception\KernelError;
-use PhoneBurner\SaltLiteFramework\Cache\CacheDriver;
-use PhoneBurner\SaltLiteFramework\Cache\CacheItemPoolFactory;
-use PhoneBurner\SaltLiteFramework\Console\CliKernel;
-use PhoneBurner\SaltLiteFramework\Container\MutableContainer;
-use PhoneBurner\SaltLiteFramework\Container\PhpDiContainerAdapter;
-use PhoneBurner\SaltLiteFramework\Container\ServiceProvider;
-use PhoneBurner\SaltLiteFramework\Http\HttpKernel;
-use PhoneBurner\SaltLiteFramework\Util\Clock\Clock;
-use PhoneBurner\SaltLiteFramework\Util\Clock\HighResolutionTimer;
-use PhoneBurner\SaltLiteFramework\Util\Clock\SystemClock;
-use PhoneBurner\SaltLiteFramework\Util\Clock\SystemHighResolutionTimer;
+use PhoneBurner\SaltLite\Framework\App\Exception\KernelError;
+use PhoneBurner\SaltLite\Framework\Cache\CacheDriver;
+use PhoneBurner\SaltLite\Framework\Cache\CacheItemPoolFactory;
+use PhoneBurner\SaltLite\Framework\Console\CliKernel;
+use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
+use PhoneBurner\SaltLite\Framework\Container\PhpDiContainerAdapter;
+use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Http\HttpKernel;
+use PhoneBurner\SaltLite\Framework\Util\Clock\Clock;
+use PhoneBurner\SaltLite\Framework\Util\Clock\HighResolutionTimer;
+use PhoneBurner\SaltLite\Framework\Util\Clock\SystemClock;
+use PhoneBurner\SaltLite\Framework\Util\Clock\SystemHighResolutionTimer;
 use Psr\Clock\ClockInterface;
 use Psr\Container\ContainerInterface;
 

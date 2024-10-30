@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Queue;
+namespace PhoneBurner\SaltLite\Framework\Queue;
 
-use PhoneBurner\SaltLiteFramework\Attribute\Contract;
+use PhoneBurner\SaltLite\Framework\Attribute\Contract;
 
 #[Contract]
 interface JobDispatcher

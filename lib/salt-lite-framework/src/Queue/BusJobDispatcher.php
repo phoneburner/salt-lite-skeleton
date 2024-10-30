@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Queue;
+namespace PhoneBurner\SaltLite\Framework\Queue;
 
 use Symfony\Component\Messenger\MessageBusInterface;
 

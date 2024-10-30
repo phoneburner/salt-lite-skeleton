@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLite\Phpstan\Rules;
 
-use PhoneBurner\SaltLiteFramework\Queue\Job;
+use PhoneBurner\SaltLite\Framework\Queue\Job;
 use PhpParser\Node;
 use PHPStan\Analyser\Scope;
 use PHPStan\Node\InClassNode;

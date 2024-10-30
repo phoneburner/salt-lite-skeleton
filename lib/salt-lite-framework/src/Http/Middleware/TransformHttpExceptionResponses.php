@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Http\Middleware;
+namespace PhoneBurner\SaltLite\Framework\Http\Middleware;
 
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\HttpExceptionResponse;
-use PhoneBurner\SaltLiteFramework\Http\Response\Exceptional\HttpExceptionResponseTransformer;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\HttpExceptionResponse;
+use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\HttpExceptionResponseTransformer;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;

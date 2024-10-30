@@ -6,5 +6,5 @@ CREATE TABLE doctrine_migration_versions
     execution_time INT          NULL
 );
 
-INSERT INTO `salt-lite-skeleton`.doctrine_migration_versions (version, executed_at, execution_time)
-VALUES ('PhoneBurner\\SaltLiteSkeleton\\Migrations\\Version20241017031636', '2024-10-18 20:24:08', 3);
+INSERT INTO `salt-lite-app`.doctrine_migration_versions (version, executed_at, execution_time)
+VALUES ('PhoneBurner\\SaltLite\\Migrations\\Version20241017031636', '2024-10-18 20:24:08', 3);

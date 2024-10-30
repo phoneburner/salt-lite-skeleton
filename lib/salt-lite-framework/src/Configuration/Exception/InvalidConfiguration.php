@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLiteFramework\Configuration\Exception;
+namespace PhoneBurner\SaltLite\Framework\Configuration\Exception;
 
 class InvalidConfiguration extends \RuntimeException
 {

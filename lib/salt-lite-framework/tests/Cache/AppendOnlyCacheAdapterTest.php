@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLiteFramework\Cache;
+namespace PhoneBurner\Tests\SaltLite\Framework\Cache;
 
-use PhoneBurner\SaltLiteFramework\Cache\AppendOnlyCacheAdapter;
-use PhoneBurner\SaltLiteFramework\Cache\Lock\NamedKey;
-use PhoneBurner\SaltLiteFramework\Domain\Hash\Hash;
+use PhoneBurner\SaltLite\Framework\Cache\AppendOnlyCacheAdapter;
+use PhoneBurner\SaltLite\Framework\Cache\Lock\NamedKey;
+use PhoneBurner\SaltLite\Framework\Domain\Hash\Hash;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestWith;
