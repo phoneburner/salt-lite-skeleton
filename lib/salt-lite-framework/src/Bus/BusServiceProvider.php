@@ -13,6 +13,7 @@ use Psr\Clock\ClockInterface;
 use Psr\Container\ContainerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\EventDispatcher\EventDispatcher as SymfonyEventDispatcher;
 use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpTransport;
 use Symfony\Component\Messenger\Bridge\Amqp\Transport\Connection;
 use Symfony\Component\Messenger\Command\ConsumeMessagesCommand;
@@ -93,7 +94,7 @@ class BusServiceProvider implements ServiceProvider
                 return new ConsumeMessagesCommand(
                     $container->get(RoutableMessageBus::class),
                     $container,
-                    $container->get(EventDispatcherInterface::class),
+                    $container->get(SymfonyEventDispatcher::class),
                     $container->get(LoggerInterface::class),
                     [
                         AmqpTransport::class,

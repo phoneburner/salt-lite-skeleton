@@ -57,16 +57,6 @@ services:
       RABBITMQ_DEFAULT_USER: "${SALT_RABBITMQ_USER:-user}"
       RABBITMQ_DEFAULT_PASS: "${SALT_RABBITMQ_PASS:-password}"
 
-  jaeger:
-    container_name: "salt-lite-skeleton-jaeger"
-    image: jaegertracing/all-in-one:latest
-    platform: linux/amd64
-    environment:
-      COLLECTOR_ZIPKIN_HTTP_PORT: 9411
-      COLLECTOR_OTLP_ENABLED: true
-    ports:
-      - "${DOCKER_HOST_JAEGER_PORT:-16686}:16686"
-
   mailhog:
     container_name: "salt-lite-skeleton-mailhog"
     image: mailhog/mailhog:latest

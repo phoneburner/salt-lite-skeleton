@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLiteFramework\Cache;
 
+use PhoneBurner\SaltLiteFramework\Attribute\Contract;
 use PhoneBurner\SaltLiteFramework\Domain\Time\Ttl;
 
 /**
@@ -17,6 +18,7 @@ use PhoneBurner\SaltLiteFramework\Domain\Time\Ttl;
  * as "has" method, which is subject to race condition errors. Instead, you can
  * check that the return of get() is not null.
  */
+#[Contract]
 interface Cache
 {
     /**

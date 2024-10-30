@@ -5,18 +5,19 @@ ENV COMPOSER_HOME "/home/dev/composer"
 EXPOSE 80
 
 RUN <<-EOF
+  set -eux
   groupadd --gid 1000 dev
   useradd --system --create-home --uid 1000 --gid 1000 --shell /bin/bash dev
   apt-get update
+  apt-get upgrade -y
   apt-get install -y -q \
     apt-transport-https \
     autoconf  \
     build-essential \
     curl \
     git \
+    jq \
     less \
-    lynx \
-    nano \
     libgmp-dev \
     libicu-dev \
     libzip-dev \
@@ -32,15 +33,17 @@ EOF
 
 # Install PHP Extensions
 RUN <<-EOF
-  docker-php-ext-install -j$(nproc) bcmath exif gmp intl opcache pcntl pdo_mysql zip \
-  && MAKEFLAGS="-j $(nproc)" pecl install amqp grpc igbinary opentelemetry protobuf redis timezonedb \
-  && docker-php-ext-enable amqp grpc igbinary opentelemetry protobuf redis timezonedb \
-  && rm -rf /tmp/pear \
-  && find "$(php-config --extension-dir)" -name '*.so' -type f -exec strip --strip-all {} \;
+  set -eux
+  docker-php-ext-install -j$(nproc) bcmath exif gmp intl opcache pcntl pdo_mysql zip
+  MAKEFLAGS="-j $(nproc)" pecl install amqp igbinary redis timezonedb
+  docker-php-ext-enable amqp igbinary redis timezonedb
+  find "$(php-config --extension-dir)" -name '*.so' -type f -exec strip --strip-all {} \;
+  rm -rf /tmp/pear
 EOF
 
 # Apache Webserver Configuration
 RUN <<-EOF
+  set -eux
   a2enmod rewrite
   a2enmod deflate
   a2enmod env
@@ -59,6 +62,7 @@ ENV XDEBUG_MODE "off"
 WORKDIR /var/www
 COPY --link php-development.ini /usr/local/etc/php/conf.d/settings.ini
 RUN <<-EOF
+  set -eux
   MAKEFLAGS="-j $(nproc)" pecl install xdebug
   docker-php-ext-enable xdebug
   rm -rf /tmp/pear
@@ -70,3 +74,17 @@ ENV SALT_BUILD_STAGE "production"
 WORKDIR /var/www
 COPY --link . /var/www
 RUN composer install --optimize-autoloader --no-dev
+
+FROM base as development-otel
+ENV SALT_BUILD_STAGE "development"
+ENV XDEBUG_MODE "off"
+WORKDIR /var/www
+COPY --link php-development.ini /usr/local/etc/php/conf.d/settings.ini
+RUN <<-EOF
+  set -eux
+  MAKEFLAGS="-j $(nproc)" pecl install grpc opentelemetry protobuf xdebug
+  docker-php-ext-enable grpc opentelemetry protobuf xdebug
+  find "$(php-config --extension-dir)" -name '*.so' -type f -exec strip --strip-all {} \;
+  rm -rf /tmp/pear
+EOF
+USER dev

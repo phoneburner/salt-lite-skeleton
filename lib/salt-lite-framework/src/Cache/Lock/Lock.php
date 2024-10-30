@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLiteFramework\Cache\Lock;
 
+use PhoneBurner\SaltLiteFramework\Attribute\Contract;
 use PhoneBurner\SaltLiteFramework\Domain\Time\Ttl;
 
+#[Contract]
 interface Lock
 {
     /**

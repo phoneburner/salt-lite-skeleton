@@ -55,6 +55,15 @@ a significant upgrade from the previous version. Notably unit tests are defined
 with attributes and data providers must be defined as static functions.
 
 
+### Backwards Capability Guarantees
+Classes and interfaces with the `#[PhoneBurner\SaltLiteFramework\Attribute\Contract]` attribute
+are considered part of the public API of the framework and should not be changed without
+a major version bump. These "contracts" can be freely used in application code.
+
+Conversely, classes and interfaces with the `#[PhoneBurner\SaltLiteFramework\Attribute\Internal]`
+attribute are very tightly coupled to third-party vendor and/or framework logic,
+and should not be used in application code.
+
 ### Configuration
 By convention, configuration files are located in the `config` directory. Each
 file should return an array of configuration values, with the top-level key identical
@@ -98,6 +107,12 @@ docker compose run --rm -it web php salt
 
 Resolve `League\Flysystem\FilesystemOperator` from the container.
 
+### Queue Jobs
+
+1. Create a job class that implements `PhoneBurner\SaltLiteFramework\Queue\JobInterface`. The class must be invokable and serializable.
+2. Dispatch the job using the `MessageBusInterface` service.
+
+
 ### Testing
 
 Running `make tests` will run the full test suite via ParaTest, which will execute tests in parallel for faster execution.
@@ -137,10 +152,10 @@ docker compose run --rm -it web composer -d lib/salt-lite-framework --no-install
 - [x] Crypto (Paseto, Int to UUID, etc.)
 - [x] Open Telemetry
 - [x] Local/Remote Filesystem Storage via Flysystem
-- [ ] Event Sourcing / EventSauce
+- [x] Event Sourcing / EventSauce
 - [ ] Front-End Scaffolding
-- [ ] PSR-14 Event Dispatcher
-- [ ] Queueing/Async Job/Listener Processing
+- [x] PSR-14 Event Dispatcher
+- [x] Queueing/Async Job/Listener Processing
 - [ ] Task Scheduling (Cron Replacement)
 - [ ] Behat BDD Testing Framework (or Codeception)
 - [ ] API Handler
@@ -148,7 +163,8 @@ docker compose run --rm -it web composer -d lib/salt-lite-framework --no-install
 - [ ] ACL/Permissions
 - [ ] API Authentication (OAuth2, JWT, etc.)
 - [ ] API Rate Limiting
-- [ ] Mailer / Notifications
+- [x] Mailer
+- [ ] Slack Notifications
 - [ ] Document creating and running migrations
 
 Domain Specific

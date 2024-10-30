@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLiteFramework\Cache;
 
+use PhoneBurner\SaltLiteFramework\Attribute\Contract;
+
+#[Contract]
 interface AppendOnlyCache
 {
     /**

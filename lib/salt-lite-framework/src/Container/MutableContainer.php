@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLiteFramework\Container;
 
+use PhoneBurner\SaltLiteFramework\Attribute\Contract;
 use Psr\Container\ContainerInterface;
 
+#[Contract]
 interface MutableContainer extends ContainerInterface
 {
     /**
@@ -35,13 +37,12 @@ interface MutableContainer extends ContainerInterface
      * @param Override|Override[]|OverrideCollection $overrides
      * @return T
      */
-    public function make(string $class, $overrides = []): object;
+    public function make(string $class, Override|OverrideCollection|array $overrides = []): object;
 
     /**
      * Invoke a method on an object.
      *
      * @param Override|Override[]|OverrideCollection $overrides
-     * @return mixed
      */
-    public function call(object $object, string $method, $overrides = []);
+    public function call(object $object, string $method, Override|OverrideCollection|array $overrides = []): mixed;
 }

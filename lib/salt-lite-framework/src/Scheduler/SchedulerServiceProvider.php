@@ -18,10 +18,12 @@ use Psr\Clock\ClockInterface;
 use Psr\Container\ContainerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Cache\Adapter\ProxyAdapter;
+use Symfony\Component\Clock\Clock as SymfonyClock;
 use Symfony\Component\Scheduler\Attribute\AsSchedule;
 use Symfony\Component\Scheduler\Command\DebugCommand;
 use Symfony\Component\Scheduler\EventListener\DispatchSchedulerEventListener;
 use Symfony\Component\Scheduler\Schedule;
+use Symfony\Component\Scheduler\ScheduleProviderInterface;
 use Symfony\Component\Scheduler\Scheduler;
 
 class SchedulerServiceProvider implements ServiceProvider
@@ -41,7 +43,7 @@ class SchedulerServiceProvider implements ServiceProvider
                     $container->get(Configuration::class)->get('bus.handlers') ?: [],
                 ),
                 $container->get(ScheduleCollection::class)->getProvidedServices(),
-                $container->get(ClockInterface::class),
+                new SymfonyClock($container->get(ClockInterface::class)),
                 $container->get(EventDispatcherInterface::class),
             );
         });
@@ -54,6 +56,7 @@ class SchedulerServiceProvider implements ServiceProvider
             $cache = new ProxyAdapter($container->get(CacheItemPoolInterface::class), 'scheduler');
 
             foreach ($container->get(Configuration::class)->get('scheduler.schedule_providers') ?: [] as $provider) {
+                \assert(\is_string($provider) && \is_a($provider, ScheduleProviderInterface::class, true));
                 $name = $class_analyzer->analyze($provider, AsSchedule::class)->name;
                 if ($name === $default_attribute->name) {
                     $name = $provider;

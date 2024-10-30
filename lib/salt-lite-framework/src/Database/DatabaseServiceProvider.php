@@ -6,7 +6,6 @@ namespace PhoneBurner\SaltLiteFramework\Database;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Tools\Console\ConnectionProvider as DoctrineConnectionProvider;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider as DoctrineEntityManagerProvider;
 use PhoneBurner\SaltLiteFramework\App\Environment;
@@ -35,23 +34,32 @@ class DatabaseServiceProvider implements ServiceProvider
             },
         );
 
-        $container->set(\Redis::class, static function (ContainerInterface $container): \Redis {
-            return $container->get(RedisManager::class)->connect();
-        });
+        $container->set(
+            \Redis::class,
+            static function (ContainerInterface $container): \Redis {
+                return $container->get(RedisManager::class)->connect();
+            },
+        );
 
         $container->bind(DoctrineConnectionProvider::class, ConnectionProvider::class);
-        $container->set(ConnectionProvider::class, static function (ContainerInterface $container): ConnectionProvider {
-            return new ConnectionProvider($container);
-        });
+        $container->set(
+            ConnectionProvider::class,
+            static function (ContainerInterface $container): ConnectionProvider {
+                return new ConnectionProvider($container);
+            },
+        );
 
-        $container->set(ConnectionFactory::class, static function (ContainerInterface $container): ConnectionFactory {
-            $environment = $container->get(Environment::class);
-            return new ConnectionFactory(
-                $environment,
-                $container->get(Configuration::class),
-                $container->get(CacheItemPoolFactory::class),
-            );
-        });
+        $container->set(
+            ConnectionFactory::class,
+            static function (ContainerInterface $container): ConnectionFactory {
+                $environment = $container->get(Environment::class);
+                return new ConnectionFactory(
+                    $environment,
+                    $container->get(Configuration::class),
+                    $container->get(CacheItemPoolFactory::class),
+                );
+            },
+        );
 
         $container->set(
             Connection::class,
@@ -62,22 +70,31 @@ class DatabaseServiceProvider implements ServiceProvider
 
         $container->bind(DoctrineEntityManagerProvider::class, EntityManagerProvider::class);
 
-        $container->set(EntityManagerProvider::class, static function (ContainerInterface $container): EntityManagerProvider {
-            return new EntityManagerProvider($container);
-        });
+        $container->set(
+            EntityManagerProvider::class,
+            static function (ContainerInterface $container): EntityManagerProvider {
+                return new EntityManagerProvider($container);
+            },
+        );
 
-        $container->set(EntityManagerFactory::class, static function (ContainerInterface $container): EntityManagerFactory {
-            return new EntityManagerFactory(
-                $container,
-                $container->get(Environment::class),
-                $container->get(Configuration::class),
-                $container->get(DoctrineConnectionProvider::class),
-                $container->get(CacheItemPoolFactory::class),
-            );
-        });
+        $container->set(
+            EntityManagerFactory::class,
+            static function (ContainerInterface $container): EntityManagerFactory {
+                return new EntityManagerFactory(
+                    $container,
+                    $container->get(Environment::class),
+                    $container->get(Configuration::class),
+                    $container->get(DoctrineConnectionProvider::class),
+                    $container->get(CacheItemPoolFactory::class),
+                );
+            },
+        );
 
-        $container->set(EntityManagerInterface::class, static function (ContainerInterface $container): EntityManager {
-            return $container->get(EntityManagerFactory::class)->init();
-        });
+        $container->set(
+            EntityManagerInterface::class,
+            static function (ContainerInterface $container): EntityManagerInterface {
+                return $container->get(EntityManagerFactory::class)->init();
+            },
+        );
     }
 }

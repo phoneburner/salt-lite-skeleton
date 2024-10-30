@@ -17,6 +17,7 @@ class LazyMessageHandler
     public function __invoke(object $message): void
     {
         $handler = $this->container->get($this->handler_class);
+        \assert(\is_callable($handler));
         $handler($message);
     }
 }

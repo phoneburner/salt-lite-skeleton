@@ -1,0 +1,52 @@
+{
+  "name": "phoneburner/salt-lite-phpstan",
+  "description": "Custom PHPStan Rules for the Salt-Lite Framework",
+  "type": "library",
+  "license": "proprietary",
+  "config": {
+    "sort-packages": true
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../composer-replacements",
+      "options": {
+        "canonical": true,
+        "symlink": true,
+        "versions": {
+          "phoneburner/composer-replacements": "dev-main"
+        }
+      }
+    },
+    {
+      "type": "path",
+      "url": "../salt-lite-framework",
+      "options": {
+        "canonical": true,
+        "symlink": true,
+        "versions": {
+          "phoneburner/salt-lite-framework": "dev-main"
+        }
+      }
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "PhoneBurner\\SaltLite\\Phpstan\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.3 || ^8.4",
+    "phpstan/phpstan": "^1.12",
+    "phoneburner/composer-replacements": "dev-main",
+    "phoneburner/salt-lite-framework": "dev-main"
+  },
+  "extra": {
+    "phpstan": {
+      "includes": [
+        "config/extension.neon",
+        "config/rules.neon"
+      ]
+    }
+  }
+}

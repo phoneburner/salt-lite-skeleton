@@ -17,10 +17,15 @@ class LazyListener
 
     public function __invoke(object $event): void
     {
+        $listener = $this->container->get($this->listener_class);
+
         if ($this->listener_method === null) {
-            $this->container->get($this->listener_class)($event);
-        } else {
-            $this->container->get($this->listener_class)->{$this->listener_method}($event);
+            \assert(\is_callable($listener));
+            $listener($event);
+            return;
         }
+
+        \assert(\method_exists($listener, $this->listener_method));
+        $listener->{$this->listener_method}($event);
     }
 }

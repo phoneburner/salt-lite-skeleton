@@ -30,5 +30,10 @@ return [
                 EmailMessageHandler::class,
             ],
         ],
+        'transports' => [
+            AmqpTransport::class => [
+                'dsn' => env('SALT_AMQP_DSN'),
+            ],
+        ],
     ],
 ];
