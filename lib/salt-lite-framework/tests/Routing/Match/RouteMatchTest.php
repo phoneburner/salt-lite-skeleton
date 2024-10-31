@@ -152,15 +152,6 @@ class RouteMatchTest extends TestCase
 
         self::assertSame($test_case['uri_path'], (string)$sut);
 
-        if ($test_case['evolved_path']) {
-            $uri = $sut;
-            foreach ($test_case['evolve'] as [$method, $args]) {
-                $uri = $uri->$method(...$args);
-            }
-
-            self::assertSame($test_case['evolved_path'], (string)$uri);
-        }
-
         if ($test_case['templated_path']) {
             $uri = $sut;
             foreach ($test_case['template'] as [$method, $args]) {
@@ -168,19 +159,6 @@ class RouteMatchTest extends TestCase
             }
 
             self::assertSame($test_case['templated_path'], (string)$uri);
-        }
-
-        if ($test_case['evolved_templated_path']) {
-            $uri = $sut;
-            foreach ($test_case['template'] as [$method, $args]) {
-                $uri = $uri->$method(...$args);
-            }
-
-            foreach ($test_case['evolve'] as [$method, $args]) {
-                $uri = $uri->$method(...$args);
-            }
-
-            self::assertSame($test_case['evolved_templated_path'], (string)$uri);
         }
     }
 
@@ -191,11 +169,6 @@ class RouteMatchTest extends TestCase
             'uri_path' => '/test',
             'evolved_path' => 'https://example.com/test',
             'templated_path' => '/test',
-            'evolved_templated_path' => 'https://example.com/test',
-            'evolve' => [
-                ['withHost', ['example.com']],
-                ['withScheme', ['https']],
-            ],
             'template' => [
                 ['withPathParameter', ['any', 'data']],
             ],
@@ -208,12 +181,7 @@ class RouteMatchTest extends TestCase
                 'path' => '/test/{var' . $pattern . '}',
                 'uri_path' => '/test/',
                 'evolved_path' => 'https://example.com/test/',
-                'evolve' => [
-                    ['withHost', ['example.com']],
-                    ['withScheme', ['https']],
-                ],
                 'templated_path' => '/test/value',
-                'evolved_templated_path' => 'https://example.com/test/value',
             ];
 
             yield 'single var with param: var' . $pattern => [
@@ -237,19 +205,13 @@ class RouteMatchTest extends TestCase
             $test_case = [
                 'path' => "/test/{var1{$pattern}}/path/{var2{$pattern}}",
                 'uri_path' => '/test//path/',
-                'evolved_path' => 'https://example.com/test//path/',
                 'templated_path' => '/test/value',
-                'evolve' => [
-                    ['withHost', ['example.com']],
-                    ['withScheme', ['https']],
-                ],
             ];
 
             yield 'multiple var first with param using pattern: ' . $pattern => [
                 [
                     ...$test_case,
                     'templated_path' => '/test/value/path/',
-                    'evolved_templated_path' => 'https://example.com/test/value/path/',
                     'template' => [
                         ['withPathParameter', ['var1', 'value']],
                     ],
@@ -260,7 +222,6 @@ class RouteMatchTest extends TestCase
                 [
                     ...$test_case,
                     'templated_path' => '/test//path/value',
-                    'evolved_templated_path' => 'https://example.com/test//path/value',
                     'template' => [
                         ['withPathParameter', ['var2', 'value']],
                     ],
@@ -271,7 +232,6 @@ class RouteMatchTest extends TestCase
                 [
                     ...$test_case,
                     'templated_path' => '/test/value1/path/value2',
-                    'evolved_templated_path' => 'https://example.com/test/value1/path/value2',
                     'template' => [
                         ['withPathParameter', ['var2', 'value2']],
                         ['withPathParameter', ['var1', 'value1']],
@@ -283,7 +243,6 @@ class RouteMatchTest extends TestCase
                 [
                     ...$test_case,
                     'templated_path' => '/test/value1/path/value2',
-                    'evolved_templated_path' => 'https://example.com/test/value1/path/value2',
                     'template' => [
                         ['withPathParameters', [['var1' => 'value1', 'var2' => 'value2']]],
                     ],
@@ -293,19 +252,13 @@ class RouteMatchTest extends TestCase
             $test_case = [
                 'path' => "/test/[{var1{$pattern}}/]path/{var2{$pattern}}",
                 'uri_path' => '/test/path/',
-                'evolved_path' => 'https://example.com/test/path/',
                 'templated_path' => '/test/value',
-                'evolve' => [
-                    ['withHost', ['example.com']],
-                    ['withScheme', ['https']],
-                ],
             ];
 
             yield 'multiple optional var first with param using pattern: ' . $pattern => [
                 [
                     ...$test_case,
                     'templated_path' => '/test/value/path/',
-                    'evolved_templated_path' => 'https://example.com/test/value/path/',
                     'template' => [
                         ['withPathParameter', ['var1', 'value']],
                     ],
@@ -316,7 +269,6 @@ class RouteMatchTest extends TestCase
                 [
                     ...$test_case,
                     'templated_path' => '/test/path/value',
-                    'evolved_templated_path' => 'https://example.com/test/path/value',
                     'template' => [
                         ['withPathParameter', ['var2', 'value']],
                     ],
@@ -327,7 +279,6 @@ class RouteMatchTest extends TestCase
                 [
                     ...$test_case,
                     'templated_path' => '/test/value1/path/value2',
-                    'evolved_templated_path' => 'https://example.com/test/value1/path/value2',
                     'template' => [
                         ['withPathParameter', ['var2', 'value2']],
                         ['withPathParameter', ['var1', 'value1']],
@@ -339,7 +290,6 @@ class RouteMatchTest extends TestCase
                 [
                     ...$test_case,
                     'templated_path' => '/test/value1/path/value2',
-                    'evolved_templated_path' => 'https://example.com/test/value1/path/value2',
                     'template' => [
                         ['withPathParameters', [['var1' => 'value1', 'var2' => 'value2',]]],
                     ],

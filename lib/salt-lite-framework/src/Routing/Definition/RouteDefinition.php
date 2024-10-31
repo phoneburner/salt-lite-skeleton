@@ -273,41 +273,49 @@ class RouteDefinition implements Route, Definition, JsonSerializable
         );
     }
 
+    #[\Override]
     protected function wrap(UriInterface $uri): never
     {
         throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
     }
 
+    #[\Override]
     public function withScheme(string $scheme): never
     {
         throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
     }
 
-    public function withUserInfo(string $user, ?string $password = null): never
+    #[\Override]
+    public function withUserInfo(string $user, string|null $password = null): never
     {
         throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
     }
 
+    #[\Override]
     public function withHost(string $host): never
     {
         throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
     }
 
-    public function withPort(?int $port): never
+    #[\Override]
+    public function withPort(int|null $port): never
     {
         throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
     }
 
+    #[\Override]
     public function withPath(string $path): never
     {
         throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
     }
 
+    #[\Override]
     public function withQuery(string $query): never
     {
         throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
     }
 
+    #[\Override]
     public function withFragment(string $fragment): never
     {
         throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');

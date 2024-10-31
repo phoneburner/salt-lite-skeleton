@@ -19,4 +19,11 @@ class ResponseException extends \RuntimeException implements ResponseInterface
         parent::__construct($message, $response->getStatusCode(), $previous);
         $this->setWrapped($response);
     }
+
+    #[\Override]
+    final protected function wrap(ResponseInterface $response): static
+    {
+        $this->setWrapped($response);
+        return $this;
+    }
 }

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * Application configuration.
  *
@@ -9,6 +7,8 @@ declare(strict_types=1);
  * to your application. This file is included in the application bootstrap process,
  * along with the other configuration files
  */
+
+declare(strict_types=1);
 
 return [
     'app' => [
