@@ -9,6 +9,7 @@ use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
 use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\NullHandler;
 use PhoneBurner\SaltLite\Framework\Routing\Route;
 use PhoneBurner\SaltLite\Framework\Util\Helper\Arr;
+use Psr\Http\Message\UriInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
@@ -42,7 +43,7 @@ class RouteMatch implements Route
 
     private function __construct(private readonly RouteDefinition $definition, private readonly array $path_vars)
     {
-        $this->setWrapped($this->definition);
+        $this->setWrapped($this->definition->getWrapped());
     }
 
     public function getAttributes(): array
@@ -86,5 +87,45 @@ class RouteMatch implements Route
     public function withPathParameters(array $params): self
     {
         return new self($this->definition->withPathParameters($params), $this->path_vars);
+    }
+
+    protected function wrap(UriInterface $uri): never
+    {
+        throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
+    }
+
+    public function withScheme(string $scheme): never
+    {
+        throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
+    }
+
+    public function withUserInfo(string $user, ?string $password = null): never
+    {
+        throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
+    }
+
+    public function withHost(string $host): never
+    {
+        throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
+    }
+
+    public function withPort(?int $port): never
+    {
+        throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
+    }
+
+    public function withPath(string $path): never
+    {
+        throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
+    }
+
+    public function withQuery(string $query): never
+    {
+        throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
+    }
+
+    public function withFragment(string $fragment): never
+    {
+        throw new \LogicException(self::class . ' does not support URI with methods directly, use `getWrapped()` to get the underlying URI');
     }
 }
