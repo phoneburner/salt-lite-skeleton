@@ -18,6 +18,14 @@
   },
   "repositories": [
     {
+      "type": "github",
+      "url": "https://github.com/andysnell/http-tortilla"
+    },
+    {
+        "type": "github",
+        "url": "https://github.com/tjlytle/api-handler"
+    },
+    {
       "type": "path",
       "url": "./lib/composer-replacements",
       "options": {
@@ -89,8 +97,8 @@
     "ext-zlib": "*",
     "phoneburner/composer-replacements": "dev-main",
     "phoneburner/salt-lite-framework": "dev-main",
-    "phoneburner/api-handler": "v1.0-RC1@dev",
-    "phoneburner/http-tortilla": "^1.0.0@dev"
+    "phoneburner/http-tortilla": "dev-v2.x-dev as 2.0.0",
+    "phoneburner/api-handler": "dev-RC2-dev as 1.0.0"
   },
   "require-dev": {
     "brianium/paratest": "^7.5",

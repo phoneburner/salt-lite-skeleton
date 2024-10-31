@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ea3bb2c066a027a72e654c89109c26c",
+    "content-hash": "7a30cf5bf64aea7d16ee76d4daec0dcd",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -62,16 +62,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.324.13",
+            "version": "3.325.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "781cb9594f7d1754c888452f980748115fd159d3"
+                "reference": "5ac57c98062f1c45d094c2baa94a7e557989465f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/781cb9594f7d1754c888452f980748115fd159d3",
-                "reference": "781cb9594f7d1754c888452f980748115fd159d3",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5ac57c98062f1c45d094c2baa94a7e557989465f",
+                "reference": "5ac57c98062f1c45d094c2baa94a7e557989465f",
                 "shasum": ""
             },
             "require": {
@@ -154,9 +154,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.324.13"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.325.1"
             },
-            "time": "2024-10-29T18:11:10+00:00"
+            "time": "2024-10-31T18:15:14+00:00"
         },
         {
             "name": "brick/math",
@@ -1312,16 +1312,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "3.3.3",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "b337726451f5d530df338fc7f68dee8781b49779"
+                "reference": "0ea965320cec355dba75031c1b23d4c78362e3ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/b337726451f5d530df338fc7f68dee8781b49779",
-                "reference": "b337726451f5d530df338fc7f68dee8781b49779",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/0ea965320cec355dba75031c1b23d4c78362e3ff",
+                "reference": "0ea965320cec355dba75031c1b23d4c78362e3ff",
                 "shasum": ""
             },
             "require": {
@@ -1335,12 +1335,11 @@
             "require-dev": {
                 "doctrine/coding-standard": "^12",
                 "doctrine/common": "^3.0",
-                "phpstan/phpstan": "1.11.1",
+                "phpstan/phpstan": "1.12.7",
                 "phpstan/phpstan-phpunit": "^1",
                 "phpstan/phpstan-strict-rules": "^1.1",
-                "phpunit/phpunit": "^8.5 || ^9.5",
-                "symfony/cache": "^4.4 || ^5.4 || ^6.0",
-                "vimeo/psalm": "4.30.0 || 5.24.0"
+                "phpunit/phpunit": "^8.5.38 || ^9.5",
+                "symfony/cache": "^4.4 || ^5.4 || ^6.0 || ^7.0"
             },
             "type": "library",
             "autoload": {
@@ -1389,7 +1388,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/persistence/issues",
-                "source": "https://github.com/doctrine/persistence/tree/3.3.3"
+                "source": "https://github.com/doctrine/persistence/tree/3.4.0"
             },
             "funding": [
                 {
@@ -1405,7 +1404,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-06-20T10:14:30+00:00"
+            "time": "2024-10-30T19:48:12+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -1670,16 +1669,16 @@
         },
         {
             "name": "eventsauce/object-hydrator",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EventSaucePHP/ObjectHydrator.git",
-                "reference": "abbe6d2ccde8d5c6bbb92311ccf136133985a056"
+                "reference": "98941783b5d2373f02295707ece60275d3ecb89a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/abbe6d2ccde8d5c6bbb92311ccf136133985a056",
-                "reference": "abbe6d2ccde8d5c6bbb92311ccf136133985a056",
+                "url": "https://api.github.com/repos/EventSaucePHP/ObjectHydrator/zipball/98941783b5d2373f02295707ece60275d3ecb89a",
+                "reference": "98941783b5d2373f02295707ece60275d3ecb89a",
                 "shasum": ""
             },
             "require": {
@@ -1722,7 +1721,7 @@
             ],
             "support": {
                 "issues": "https://github.com/EventSaucePHP/ObjectHydrator/issues",
-                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/1.5.0"
+                "source": "https://github.com/EventSaucePHP/ObjectHydrator/tree/1.6.0"
             },
             "funding": [
                 {
@@ -1730,7 +1729,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-08-17T12:23:19+00:00"
+            "time": "2024-10-30T18:48:59+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3018,23 +3017,23 @@
         },
         {
             "name": "phoneburner/api-handler",
-            "version": "v1.0-RC1",
+            "version": "dev-RC2-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/PhoneBurnerOpenSource/api-handler.git",
-                "reference": "06d1f0ecddc15a0a462a883056e92d1aa7f2db6f"
+                "url": "https://github.com/tjlytle/api-handler.git",
+                "reference": "356ca1c8236de52b317d4bd5f5715479e50e8cd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PhoneBurnerOpenSource/api-handler/zipball/06d1f0ecddc15a0a462a883056e92d1aa7f2db6f",
-                "reference": "06d1f0ecddc15a0a462a883056e92d1aa7f2db6f",
+                "url": "https://api.github.com/repos/tjlytle/api-handler/zipball/356ca1c8236de52b317d4bd5f5715479e50e8cd1",
+                "reference": "356ca1c8236de52b317d4bd5f5715479e50e8cd1",
                 "shasum": ""
             },
             "require": {
-                "phoneburner/http-tortilla": "^1.0",
+                "phoneburner/http-tortilla": "dev-v2.x-dev as 2.0.0",
                 "php": "8.2.* || 8.3.*",
                 "psr/http-factory": "^1.0",
-                "psr/http-message": "^1.0",
+                "psr/http-message": "^2.0",
                 "psr/http-server-middleware": "^1.0"
             },
             "require-dev": {
@@ -3054,7 +3053,34 @@
                     "PhoneBurner\\ApiHandler\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "PhoneBurner\\Tests\\ApiHandler\\": "tests/"
+                }
+            },
+            "scripts": {
+                "phpcbf": [
+                    "@php vendor/bin/phpcbf --report=full"
+                ],
+                "phpcs": [
+                    "@php vendor/bin/phpcs --report=full"
+                ],
+                "phpstan": [
+                    "@php vendor/bin/phpstan analyze --memory-limit=-1"
+                ],
+                "phpunit": [
+                    "@php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-text"
+                ],
+                "rector": [
+                    "@php vendor/bin/rector process"
+                ],
+                "ci": [
+                    "@phpcs",
+                    "@phpunit",
+                    "@phpstan",
+                    "@php vendor/bin/rector process --dry-run"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -3112,10 +3138,9 @@
                 "response"
             ],
             "support": {
-                "issues": "https://github.com/PhoneBurnerOpenSource/api-handler/issues",
-                "source": "https://github.com/PhoneBurnerOpenSource/api-handler/tree/v1.0-RC1"
+                "source": "https://github.com/tjlytle/api-handler/tree/RC2-dev"
             },
-            "time": "2024-04-19T15:18:24+00:00"
+            "time": "2024-10-22T02:28:16+00:00"
         },
         {
             "name": "phoneburner/composer-replacements",
@@ -3160,27 +3185,30 @@
         },
         {
             "name": "phoneburner/http-tortilla",
-            "version": "1.0.0-rc1",
+            "version": "dev-v2.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/PhoneBurnerOpenSource/http-tortilla.git",
-                "reference": "74fd5613c6fcea3d1ed13c6933058e083f0ba689"
+                "url": "https://github.com/andysnell/http-tortilla.git",
+                "reference": "fee0ad83a4184f848036c879fd8ce41c2b603d87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PhoneBurnerOpenSource/http-tortilla/zipball/74fd5613c6fcea3d1ed13c6933058e083f0ba689",
-                "reference": "74fd5613c6fcea3d1ed13c6933058e083f0ba689",
+                "url": "https://api.github.com/repos/andysnell/http-tortilla/zipball/fee0ad83a4184f848036c879fd8ce41c2b603d87",
+                "reference": "fee0ad83a4184f848036c879fd8ce41c2b603d87",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.4 || ^8.0",
-                "psr/http-message": "^1.0"
+                "php": "~8.2.0 || ~8.3.0",
+                "psr/http-message": "^1.1 || ^2.0"
             },
             "require-dev": {
-                "escapestudios/symfony2-coding-standard": "^3.9",
-                "phpspec/prophecy-phpunit": "^2.0",
-                "phpunit/phpunit": "^9",
-                "squizlabs/php_codesniffer": "3.*"
+                "phpspec/prophecy-phpunit": "^2.2",
+                "phpstan/phpstan": "^1.12.6",
+                "phpstan/phpstan-phpunit": "^1.4",
+                "phpunit/phpunit": "^11.4.1",
+                "rector/rector": "^1.2.7",
+                "slevomat/coding-standard": "^8.15",
+                "squizlabs/php_codesniffer": "^3.10.3"
             },
             "type": "library",
             "autoload": {
@@ -3188,7 +3216,34 @@
                     "PhoneBurner\\Http\\Message\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "PhoneBurner\\Tests\\Http\\Message\\": "tests/"
+                }
+            },
+            "scripts": {
+                "phpcbf": [
+                    "php vendor/bin/phpcbf --report=full"
+                ],
+                "phpcs": [
+                    "php vendor/bin/phpcs --report=full"
+                ],
+                "phpstan": [
+                    "php vendor/bin/phpstan analyze --memory-limit=-1"
+                ],
+                "phpunit": [
+                    "XDEBUG_MODE=coverage php vendor/bin/phpunit --coverage-text"
+                ],
+                "rector": [
+                    "php vendor/bin/rector process"
+                ],
+                "ci": [
+                    "@phpcs",
+                    "@phpunit",
+                    "@phpstan",
+                    "php vendor/bin/rector process --dry-run"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -3208,10 +3263,9 @@
                 "response"
             ],
             "support": {
-                "issues": "https://github.com/PhoneBurnerOpenSource/http-tortilla/issues",
-                "source": "https://github.com/PhoneBurnerOpenSource/http-tortilla/tree/1.0.0-rc1"
+                "source": "https://github.com/andysnell/http-tortilla/tree/v2.x-dev"
             },
-            "time": "2020-12-17T21:09:39+00:00"
+            "time": "2024-10-22T00:28:58+00:00"
         },
         {
             "name": "phoneburner/salt-lite-framework",
@@ -3219,7 +3273,7 @@
             "dist": {
                 "type": "path",
                 "url": "./lib/salt-lite-framework",
-                "reference": "007bde2f2e97553e8e8f474037300bb61ed63e5a"
+                "reference": "a6c29aee4c09fb7e49ff4126ae2f1c0a0633db13"
             },
             "require": {
                 "brick/varexporter": "^0.5.0",
@@ -3256,9 +3310,9 @@
                 "monolog/monolog": "^3.7",
                 "nesbot/carbon": "^3.8",
                 "nikic/fast-route": "^1.3",
-                "phoneburner/api-handler": "v1.0-RC1@dev",
+                "phoneburner/api-handler": "dev-RC2-dev as 1.0.0",
                 "phoneburner/composer-replacements": "dev-main",
-                "phoneburner/http-tortilla": "^1.0.0@dev",
+                "phoneburner/http-tortilla": "dev-v2.x-dev as 2.0.0",
                 "php": "^8.3 || ^8.4",
                 "php-di/php-di": "^7.0",
                 "psr/cache": "^3.0.0",
@@ -3267,7 +3321,7 @@
                 "psr/event-dispatcher": "^1.0.0",
                 "psr/http-client": "^1.0.3",
                 "psr/http-factory": "^1.1.0",
-                "psr/http-message": "^1.0.0",
+                "psr/http-message": "^2.0.0",
                 "psr/http-server-handler": "^1.0.2",
                 "psr/http-server-middleware": "^1.0.2",
                 "psr/link": "^2.0.1",
@@ -3794,16 +3848,16 @@
         },
         {
             "name": "psr/http-message",
-            "version": "1.1",
+            "version": "2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
-                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba"
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
-                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71",
                 "shasum": ""
             },
             "require": {
@@ -3812,7 +3866,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -3827,7 +3881,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for HTTP messages",
@@ -3841,9 +3895,9 @@
                 "response"
             ],
             "support": {
-                "source": "https://github.com/php-fig/http-message/tree/1.1"
+                "source": "https://github.com/php-fig/http-message/tree/2.0"
             },
-            "time": "2023-04-04T09:50:52+00:00"
+            "time": "2023-04-04T09:54:51+00:00"
         },
         {
             "name": "psr/http-server-handler",
@@ -8267,12 +8321,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "622ede44e079ad5c341a40013ef0e16fab2902ab"
+                "reference": "e3b44e38648ef5386687032582759f9c616c8d19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/622ede44e079ad5c341a40013ef0e16fab2902ab",
-                "reference": "622ede44e079ad5c341a40013ef0e16fab2902ab",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e3b44e38648ef5386687032582759f9c616c8d19",
+                "reference": "e3b44e38648ef5386687032582759f9c616c8d19",
                 "shasum": ""
             },
             "conflict": {
@@ -8450,7 +8504,7 @@
                 "ezsystems/ezpublish-legacy": "<=2017.12.7.3|>=2018.6,<=2019.03.5.1",
                 "ezsystems/platform-ui-assets-bundle": ">=4.2,<4.2.3",
                 "ezsystems/repository-forms": ">=2.3,<2.3.2.1-dev|>=2.5,<2.5.15",
-                "ezyang/htmlpurifier": "<4.1.1",
+                "ezyang/htmlpurifier": "<=4.2",
                 "facade/ignition": "<1.16.15|>=2,<2.4.2|>=2.5,<2.5.2",
                 "facturascripts/facturascripts": "<=2022.08",
                 "fastly/magento2": "<1.2.26",
@@ -8592,6 +8646,7 @@
                 "laravel/fortify": "<1.11.1",
                 "laravel/framework": "<6.20.44|>=7,<7.30.6|>=8,<8.75",
                 "laravel/laravel": ">=5.4,<5.4.22",
+                "laravel/reverb": "<1.4",
                 "laravel/socialite": ">=1,<2.0.10",
                 "latte/latte": "<2.10.8",
                 "lavalite/cms": "<=9|==10.1",
@@ -8626,7 +8681,7 @@
                 "mautic/core-lib": ">=1.0.0.0-beta,<4.4.13|>=5.0.0.0-alpha,<5.1.1",
                 "mdanter/ecc": "<2",
                 "mediawiki/cargo": "<3.6.1",
-                "mediawiki/core": "<1.36.2",
+                "mediawiki/core": "<1.39.5|==1.40",
                 "mediawiki/matomo": "<2.4.3",
                 "mediawiki/semantic-media-wiki": "<4.0.2",
                 "melisplatform/melis-asset-manager": "<5.0.1",
@@ -8725,7 +8780,7 @@
                 "phenx/php-svg-lib": "<0.5.2",
                 "php-censor/php-censor": "<2.0.13|>=2.1,<2.1.5",
                 "php-mod/curl": "<2.3.2",
-                "phpbb/phpbb": "<3.2.10|>=3.3,<3.3.1",
+                "phpbb/phpbb": "<3.3.11",
                 "phpems/phpems": ">=6,<=6.1.3",
                 "phpfastcache/phpfastcache": "<6.1.5|>=7,<7.1.2|>=8,<8.0.7",
                 "phpmailer/phpmailer": "<6.5",
@@ -8931,7 +8986,7 @@
                 "tobiasbg/tablepress": "<=2.0.0.0-RC1",
                 "topthink/framework": "<6.0.17|>=6.1,<=8.0.4",
                 "topthink/think": "<=6.1.1",
-                "topthink/thinkphp": "<=3.2.3",
+                "topthink/thinkphp": "<=3.2.3|>=6.1.3,<=8.0.4",
                 "torrentpier/torrentpier": "<=2.4.3",
                 "tpwd/ke_search": "<4.0.3|>=4.1,<4.6.6|>=5,<5.0.2",
                 "tribalsystems/zenario": "<=9.7.61188",
@@ -9002,7 +9057,7 @@
                 "xataface/xataface": "<3",
                 "xpressengine/xpressengine": "<3.0.15",
                 "yab/quarx": "<2.4.5",
-                "yeswiki/yeswiki": "<4.1",
+                "yeswiki/yeswiki": "<=4.4.4",
                 "yetiforce/yetiforce-crm": "<=6.4",
                 "yidashi/yii2cmf": "<=2",
                 "yii2mod/yii2-cms": "<1.9.2",
@@ -9093,7 +9148,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-10-28T19:04:33+00:00"
+            "time": "2024-10-31T18:06:19+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -9267,16 +9322,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "6.1.1",
+            "version": "6.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "5ef523a49ae7a302b87b2102b72b1eda8918d686"
+                "reference": "43d129d6a0f81c78bee378b46688293eb7ea3739"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/5ef523a49ae7a302b87b2102b72b1eda8918d686",
-                "reference": "5ef523a49ae7a302b87b2102b72b1eda8918d686",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/43d129d6a0f81c78bee378b46688293eb7ea3739",
+                "reference": "43d129d6a0f81c78bee378b46688293eb7ea3739",
                 "shasum": ""
             },
             "require": {
@@ -9287,12 +9342,12 @@
                 "sebastian/exporter": "^6.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^11.3"
+                "phpunit/phpunit": "^11.4"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "6.1-dev"
+                    "dev-main": "6.2-dev"
                 }
             },
             "autoload": {
@@ -9332,7 +9387,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/comparator/issues",
                 "security": "https://github.com/sebastianbergmann/comparator/security/policy",
-                "source": "https://github.com/sebastianbergmann/comparator/tree/6.1.1"
+                "source": "https://github.com/sebastianbergmann/comparator/tree/6.2.1"
             },
             "funding": [
                 {
@@ -9340,7 +9395,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-18T15:00:48+00:00"
+            "time": "2024-10-31T05:30:08+00:00"
         },
         {
             "name": "sebastian/complexity",
@@ -10364,13 +10419,26 @@
             "time": "2024-03-03T12:36:25+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "phoneburner/api-handler",
+            "version": "dev-RC2-dev",
+            "alias": "1.0.0",
+            "alias_normalized": "1.0.0.0"
+        },
+        {
+            "package": "phoneburner/http-tortilla",
+            "version": "dev-v2.x-dev",
+            "alias": "2.0.0",
+            "alias_normalized": "2.0.0.0"
+        }
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "phoneburner/composer-replacements": 20,
-        "phoneburner/salt-lite-framework": 20,
         "phoneburner/api-handler": 20,
+        "phoneburner/composer-replacements": 20,
         "phoneburner/http-tortilla": 20,
+        "phoneburner/salt-lite-framework": 20,
         "phoneburner/salt-lite-phpstan": 20,
         "roave/security-advisories": 20
     },
@@ -10396,7 +10464,7 @@
         "ext-zip": "*",
         "ext-zlib": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.3"
     },
