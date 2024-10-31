@@ -49,11 +49,9 @@ navigating to this URL should display the friendly 404 response page.
 - Configuration is defined by the environment, and not by the path value of a request.
 - Overriding configuration values is done via environment variables, not by adding local configuration files.
 - Database migrations are handled by the [Doctrine Migrations](https://www.doctrine-project.org/projects/migrations.html) library, as opposed to Phinx.
-
 - PHPUnit 11 is used for testing, with ParaTest for parallel execution, this is 
 a significant upgrade from the previous version. Notably unit tests are defined
 with attributes and data providers must be defined as static functions.
-
 
 ### Backwards Capability Guarantees
 Classes and interfaces with the `#[PhoneBurner\SaltLite\Framework\Util\Attribute\Contract]` attribute
@@ -126,50 +124,3 @@ http://localhost:8000/html/phpunit
 docker compose run --rm -it web composer -d lib/salt-lite-framework --no-install --no-update require nesbot/carbon \
   && docker compose run --rm -it web composer update
 ```
-
-## Functionality To-Do Checklist
-- [x] Dockerized PHP 8.3 Runtime with Redis and MySQL Database Services
-- [x] PHPUnit/ParaTest Testing Frameworks with HTML Code Coverage
-- [x] PHPStan Static Analysis Tool
-- [x] PHP_CodeSniffer Coding Standard Tooling
-- [x] Rector Refactor Tooling
-- [x] Configuration with Caching
-- [x] "Whoops" Error Handling
-- [x] PSR-11 Dependency Injection Container with Service Providers
-- [x] Logging with Monolog to PHP Error Handler & Daily File
-- [x] Symfony Console Commands
-- [x] Interactive PsySH Shell Execution in Application Runtime
-- [x] PSR-7/PSR-15 Request/Response Handling
-- [x] Standard and Exceptional Responses (via HTTP Tortilla)
-- [x] Routing
-- [x] Doctrine DBAL Database Connection
-- [x] Doctrine ORM Configuration and Entity Mapping
-- [x] Doctrine Migrations
-- [x] Redis Connection Configuration
-- [x] Remote Cache/Append-Only Cache/In-Memory Cache Support
-- [x] Crypto (Paseto, Int to UUID, etc.)
-- [x] Local/Remote Filesystem Storage via Flysystem
-- [x] Event Sourcing / EventSauce
-- [ ] Front-End Scaffolding
-- [x] PSR-14 Event Dispatcher
-- [x] Queueing/Async Job/Listener Processing
-- [ ] Task Scheduling (Cron Replacement)
-- [ ] Behat BDD Testing Framework (or Codeception)
-- [ ] API Handler
-- [ ] Session Management
-- [ ] ACL/Permissions
-- [ ] API Authentication (OAuth2, JWT, etc.)
-- [ ] API Rate Limiting
-- [x] Mailer
-- [ ] Slack Notifications
-- [ ] Document creating and running migrations
-
-Domain Specific
-- [ ] Time Domain Code
-- [ ] Phone Number Domain Code
-
-Maybe?
-- [ ] "Debugbar" Tooling
-- [ ] Validation
-- [ ] API Documentation Tooling
-- [ ] Enforce Invokable Jobs with PHPStan Rule
