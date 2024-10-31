@@ -1,0 +1,1 @@
+# PhoneBurner Coding Standard

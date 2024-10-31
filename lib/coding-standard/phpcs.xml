@@ -1,18 +1,12 @@
 <?xml version="1.0"?>
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
+         xsi:noNamespaceSchemaLocation="../../vendor/squizlabs/php_codesniffer/phpcs.xsd">
     <arg name="report" value="full"/>
     <arg name="cache" value="build/phpcs"/>
     <arg name="extensions" value="php"/>
     <arg name="colors"/>
     <arg value="spn"/>
     <ini name="memory_limit" value="-1"/>
-    <file>config</file>
-    <file>html</file>
-    <file>includes</file>
-    <file>lib</file>
-    <file>src</file>
-    <file>tests</file>
-    <file>rector.php</file>
+    <file>PhoneBurner</file>
     <rule ref="PhoneBurner"/>
 </ruleset>

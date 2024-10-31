@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a30cf5bf64aea7d16ee76d4daec0dcd",
+    "content-hash": "56c36e887d876e6ed058cc327bef2fba",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -3148,7 +3148,7 @@
             "dist": {
                 "type": "path",
                 "url": "./lib/composer-replacements",
-                "reference": "e9cd4367fd14e19bb1850ccc07c5630ebb1d2a77"
+                "reference": "75135bbe4768bb04e7c45f0e38d5250cd7b1456f"
             },
             "require": {
                 "ext-ctype": "*",
@@ -3180,7 +3180,6 @@
             "type": "library",
             "description": "A 'no-op' package with no dependencies used to cleanly replace other packages",
             "transport-options": {
-                "symlink": true,
                 "relative": true
             }
         },
@@ -3274,7 +3273,7 @@
             "dist": {
                 "type": "path",
                 "url": "./lib/salt-lite-framework",
-                "reference": "baccb4f46d5b18bf81d69f9242d242d67f4a198f"
+                "reference": "25683d8f87b5a424a5037e27b1bd079c1ad3288e"
             },
             "require": {
                 "brick/varexporter": "^0.5.0",
@@ -3311,9 +3310,9 @@
                 "monolog/monolog": "^3.7",
                 "nesbot/carbon": "^3.8",
                 "nikic/fast-route": "^1.3",
-                "phoneburner/api-handler": "dev-RC2-dev as 1.0.0",
+                "phoneburner/api-handler": "^1.0.0",
                 "phoneburner/composer-replacements": "dev-main",
-                "phoneburner/http-tortilla": "dev-v2.x-dev as 2.0.0",
+                "phoneburner/http-tortilla": "^2.0.0",
                 "php": "^8.3 || ^8.4",
                 "php-di/php-di": "^7.0",
                 "psr/cache": "^3.0.0",
@@ -3344,8 +3343,8 @@
             },
             "require-dev": {
                 "brianium/paratest": "^7.5",
-                "dealerdirect/phpcodesniffer-composer-installer": "^1",
                 "filp/whoops": "^2.16",
+                "phoneburner/coding-standard": "dev-main",
                 "php-parallel-lint/php-parallel-lint": "^1.4",
                 "phpstan/phpstan": "^1.12.6",
                 "phpstan/phpstan-deprecation-rules": "^1.2.1",
@@ -3354,8 +3353,6 @@
                 "phpunit/phpunit": "^11",
                 "rector/rector": "^1.2.7",
                 "roave/security-advisories": "dev-latest",
-                "slevomat/coding-standard": "^8.15",
-                "squizlabs/php_codesniffer": "^3.10.3",
                 "symfony/var-dumper": "^7.1.5"
             },
             "type": "library",
@@ -3386,11 +3383,15 @@
                     "@php vendor/bin/phpstan analyze --memory-limit=-1"
                 ],
                 "test": [
-                    "@php vendor/bin/paratest"
+                    "@putenv XDEBUG_MODE=off",
+                    "@php vendor/bin/phpunit"
                 ],
                 "test-coverage": [
                     "@putenv XDEBUG_MODE=coverage",
-                    "@php vendor/bin/paratest --coverage-html=html/phpunit"
+                    "@php vendor/bin/phpunit --coverage-html=html/phpunit"
+                ],
+                "test-parallel": [
+                    "@php vendor/bin/paratest"
                 ],
                 "rector": [
                     "@php vendor/bin/rector process"
@@ -3408,7 +3409,6 @@
             ],
             "description": "Salt-Lite Framework",
             "transport-options": {
-                "symlink": true,
                 "relative": true
             }
         },
@@ -6962,18 +6962,50 @@
             "time": "2022-02-21T01:04:05+00:00"
         },
         {
+            "name": "phoneburner/coding-standard",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./lib/coding-standard",
+                "reference": "2aed7746da045b571e5700449f494880ca32a03d"
+            },
+            "require": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+                "phoneburner/composer-replacements": "dev-main",
+                "php": "^8.3 || ^8.4",
+                "slevomat/coding-standard": "^8.15",
+                "squizlabs/php_codesniffer": "^3.10"
+            },
+            "type": "phpcodesniffer-standard",
+            "autoload": {
+                "psr-4": {
+                    "PhoneBurner\\CodingStandard\\": "PhoneBurner/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "PhoneBurner PHP Coding Standards",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "phoneburner/salt-lite-phpstan",
             "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "./lib/salt-lite-phpstan",
-                "reference": "0956059d234c46f1dac3e808d42761a872c7a19b"
+                "reference": "77eb3627439441a895e51df5ba62e6ec31c6c216"
             },
             "require": {
                 "phoneburner/composer-replacements": "dev-main",
                 "phoneburner/salt-lite-framework": "dev-main",
                 "php": "^8.3 || ^8.4",
                 "phpstan/phpstan": "^1.12"
+            },
+            "require-dev": {
+                "phoneburner/coding-standard": "dev-main"
             },
             "type": "library",
             "extra": {
@@ -6994,7 +7026,6 @@
             ],
             "description": "Custom PHPStan Rules for the Salt-Lite Framework",
             "transport-options": {
-                "symlink": true,
                 "relative": true
             }
         },
@@ -10365,6 +10396,7 @@
         "phoneburner/http-tortilla": 20,
         "phoneburner/api-handler": 20,
         "phoneburner/salt-lite-phpstan": 20,
+        "phoneburner/coding-standard": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

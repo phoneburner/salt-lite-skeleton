@@ -6,30 +6,6 @@
   "config": {
     "sort-packages": true
   },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "../composer-replacements",
-      "options": {
-        "canonical": true,
-        "symlink": true,
-        "versions": {
-          "phoneburner/composer-replacements": "dev-main"
-        }
-      }
-    },
-    {
-      "type": "path",
-      "url": "../salt-lite-framework",
-      "options": {
-        "canonical": true,
-        "symlink": true,
-        "versions": {
-          "phoneburner/salt-lite-framework": "dev-main"
-        }
-      }
-    }
-  ],
   "autoload": {
     "psr-4": {
       "PhoneBurner\\SaltLite\\Phpstan\\": "src/"
@@ -40,6 +16,9 @@
     "phpstan/phpstan": "^1.12",
     "phoneburner/composer-replacements": "dev-main",
     "phoneburner/salt-lite-framework": "dev-main"
+  },
+  "require-dev": {
+    "phoneburner/coding-standard": "dev-main"
   },
   "extra": {
     "phpstan": {
