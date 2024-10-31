@@ -8,6 +8,9 @@ use Random\Engine\Secure;
 use Random\Randomizer;
 use UnitEnum;
 
+/**
+ * Dependency-injection-friendly random number generator that should allow for easy mocking in tests.
+ */
 class Random
 {
     public function __construct(private readonly Randomizer $randomizer = new Randomizer(new Secure()))
