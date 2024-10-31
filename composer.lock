@@ -3148,7 +3148,7 @@
             "dist": {
                 "type": "path",
                 "url": "./lib/composer-replacements",
-                "reference": "77a3af3f5a0e66b6c48df927b349c90deb8628c8"
+                "reference": "e9cd4367fd14e19bb1850ccc07c5630ebb1d2a77"
             },
             "require": {
                 "ext-ctype": "*",
@@ -3157,7 +3157,7 @@
                 "ext-mbstring": "*",
                 "ext-random": "*",
                 "ext-sodium": "*",
-                "php": "^8.2"
+                "php": "^8.3 || ^8.4"
             },
             "replace": {
                 "paragonie/random_compat": ">=v2.0.0",
@@ -3174,7 +3174,8 @@
                 "symfony/polyfill-php73": "*",
                 "symfony/polyfill-php80": "*",
                 "symfony/polyfill-php81": "*",
-                "symfony/polyfill-php82": "*"
+                "symfony/polyfill-php82": "*",
+                "symfony/polyfill-php83": "*"
             },
             "type": "library",
             "description": "A 'no-op' package with no dependencies used to cleanly replace other packages",
@@ -3273,7 +3274,7 @@
             "dist": {
                 "type": "path",
                 "url": "./lib/salt-lite-framework",
-                "reference": "a6c29aee4c09fb7e49ff4126ae2f1c0a0633db13"
+                "reference": "baccb4f46d5b18bf81d69f9242d242d67f4a198f"
             },
             "require": {
                 "brick/varexporter": "^0.5.0",
@@ -5609,82 +5610,6 @@
                 }
             ],
             "time": "2024-10-25T15:11:02+00:00"
-        },
-        {
-            "name": "symfony/polyfill-php83",
-            "version": "v1.31.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php83.git",
-                "reference": "2fb86d65e2d424369ad2905e83b236a8805ba491"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php83/zipball/2fb86d65e2d424369ad2905e83b236a8805ba491",
-                "reference": "2fb86d65e2d424369ad2905e83b236a8805ba491",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2"
-            },
-            "type": "library",
-            "extra": {
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ],
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php83\\": ""
-                },
-                "classmap": [
-                    "Resources/stubs"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 8.3+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-php83/tree/v1.31.0"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2024-09-09T11:45:10+00:00"
         },
         {
             "name": "symfony/process",
@@ -10435,10 +10360,10 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "phoneburner/api-handler": 20,
         "phoneburner/composer-replacements": 20,
-        "phoneburner/http-tortilla": 20,
         "phoneburner/salt-lite-framework": 20,
+        "phoneburner/http-tortilla": 20,
+        "phoneburner/api-handler": 20,
         "phoneburner/salt-lite-phpstan": 20,
         "roave/security-advisories": 20
     },
@@ -10464,7 +10389,7 @@
         "ext-zip": "*",
         "ext-zlib": "*"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "platform-overrides": {
         "php": "8.3"
     },
