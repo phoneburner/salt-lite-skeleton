@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLite\Framework\Bus;
+namespace PhoneBurner\SaltLite\Framework\MessageBus;
 
 use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
 use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
@@ -26,7 +26,6 @@ use Symfony\Component\Messenger\EventListener\StopWorkerOnMessageLimitListener;
 use Symfony\Component\Messenger\EventListener\StopWorkerOnRestartSignalListener;
 use Symfony\Component\Messenger\EventListener\StopWorkerOnTimeLimitListener;
 use Symfony\Component\Messenger\Handler\HandlersLocator;
-use Symfony\Component\Messenger\MessageBus;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Middleware\HandleMessageMiddleware;
 use Symfony\Component\Messenger\Middleware\SendMessageMiddleware;
@@ -35,17 +34,18 @@ use Symfony\Component\Messenger\Transport\Sender\SendersLocator;
 use Symfony\Component\Scheduler\Generator\MessageGenerator;
 use Symfony\Component\Scheduler\Messenger\SchedulerTransport;
 
-class BusServiceProvider implements ServiceProvider
+class MessageBusServiceProvider implements ServiceProvider
 {
     #[\Override]
     public function register(MutableContainer $container): void
     {
-        $container->bind(MessageBusInterface::class, MessageBus::class);
+        $container->bind(MessageBusInterface::class, SymfonyMessageBusAdapter::class);
+        $container->bind(MessageBus::class, SymfonyMessageBusAdapter::class);
         $container->set(
-            MessageBus::class,
-            static function (ContainerInterface $container): MessageBus {
+            SymfonyMessageBusAdapter::class,
+            static function (ContainerInterface $container): SymfonyMessageBusAdapter {
                 $config = $container->get(Configuration::class);
-                return new MessageBus([
+                return new SymfonyMessageBusAdapter([
                     new SendMessageMiddleware(
                         new SendersLocator($config->get('bus.senders') ?: [], $container),
                         $container->get(EventDispatcherInterface::class),

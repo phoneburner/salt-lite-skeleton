@@ -10,6 +10,10 @@ use Symfony\Component\Messenger\Bridge\Amqp\Transport\AmqpTransport;
 
 use function PhoneBurner\SaltLite\Framework\env;
 
+/**
+ * Message bus configuration
+ */
+
 return [
     'bus' => [
         'worker' => [

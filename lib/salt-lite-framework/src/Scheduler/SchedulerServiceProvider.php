@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace PhoneBurner\SaltLite\Framework\Scheduler;
 
 use Crell\AttributeUtils\ClassAnalyzer;
-use PhoneBurner\SaltLite\Framework\Bus\LazyMessageHandler;
 use PhoneBurner\SaltLite\Framework\Cache\CacheKey;
 use PhoneBurner\SaltLite\Framework\Cache\Lock\LockFactory;
 use PhoneBurner\SaltLite\Framework\Cache\Lock\SymfonyLockAdapter;
@@ -13,6 +12,7 @@ use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
 use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
 use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
 use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;
+use PhoneBurner\SaltLite\Framework\MessageBus\LazyMessageHandler;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Clock\ClockInterface;
 use Psr\Container\ContainerInterface;

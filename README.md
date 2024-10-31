@@ -20,6 +20,7 @@ To build the application containers and install the dependencies, run the follow
 ```shell
 make
 ```
+
 You can confirm a successful installation by running the following:
 ```shell
 make test
@@ -43,7 +44,6 @@ make down
 By default, the application server will be available at http://localhost:8888,
 navigating to this URL should display the friendly 404 response page.
 
-
 ### Notable Differences from Salt
 - The time zone configuration for PHP and the database is set to UTC by default.
 - Configuration is defined by the environment, and not by the path value of a request.
@@ -56,11 +56,11 @@ with attributes and data providers must be defined as static functions.
 
 
 ### Backwards Capability Guarantees
-Classes and interfaces with the `#[PhoneBurner\SaltLite\Framework\Attribute\Contract]` attribute
+Classes and interfaces with the `#[PhoneBurner\SaltLite\Framework\Util\Attribute\Contract]` attribute
 are considered part of the public API of the framework and should not be changed without
 a major version bump. These "contracts" can be freely used in application code.
 
-Conversely, classes and interfaces with the `#[PhoneBurner\SaltLite\Framework\Attribute\Internal]`
+Conversely, classes and interfaces with the `#[PhoneBurner\SaltLite\Framework\Util\Attribute\Internal]`
 attribute are very tightly coupled to third-party vendor and/or framework logic,
 and should not be used in application code.
 
@@ -87,31 +87,29 @@ The resolved configuration array is cached for performance as a static PHP array
 with realized environmental variables from the point in time it was cached. Using
 objects or expressions as values will be problematic.
 
-### Routing
-Application routes should be defined in classes that implement the 
-`\PhoneBurner\SaltLite\Framework\Routing\RouteProvider` interface. That interface
-defines an invokable class that returns an array of PhoneBurner\SaltLite\Framework\Routing\Definition\Definition
-instances. The DQL for defining routes is as follows is the same as the full Salt 
-codebase. The `RouteProvider` should then be registered with the application
-in the `config/routes.php` file.
+## Component Documentation
 
-the implementation of the `getRoutes()` method, which should return an array of routes. Each route should be an associative array with the following keys:
+Documentation
+[Application Runtime & Bootstrapping](vendor/phoneburner/salt-lite-framework/src/App/README.md)
+[Cache](vendor/phoneburner/salt-lite-framework/src/Cache/README.md)
+[Application Configuration](vendor/phoneburner/salt-lite-framework/src/Configuration/README.md)
+[Console Commands](vendor/phoneburner/salt-lite-framework/src/Console/README.md)
+[Database](vendor/phoneburner/salt-lite-framework/src/Database/README.md)
+[Service Container/Dependency Injection](vendor/phoneburner/salt-lite-framework/src/Container/README.md)
+[Event Dispatcher](vendor/phoneburner/salt-lite-framework/src/EventDispatcher/README.md)
+[HTTP Request/Response Handling](vendor/phoneburner/salt-lite-framework/src/Http/README.md)
+[Logging](vendor/phoneburner/salt-lite-framework/src/Logging/README.md)
+[Routing](vendor/phoneburner/salt-lite-framework/src/Routing/README.md)
+[Queue](vendor/phoneburner/salt-lite-framework/src/Queue/README.md)
+[Task Scheduling](vendor/phoneburner/salt-lite-framework/src/Scheduler/README.md)
+[Utilities](vendor/phoneburner/salt-lite-framework/src/Util/README.md)
 
 ### Console Commands
 
+Run the following to see a list of available console commands:
 ```shell
-docker compose run --rm -it web php salt
+docker compose run --rm -it web php salt list
 ```
-
-### Filesystem/Storage
-
-Resolve `League\Flysystem\FilesystemOperator` from the container.
-
-### Queue Jobs
-
-1. Create a job class that implements `PhoneBurner\SaltLite\Framework\Queue\JobInterface`. The class must be invokable and serializable.
-2. Dispatch the job using the `MessageBusInterface` service.
-
 
 ### Testing
 
@@ -150,7 +148,6 @@ docker compose run --rm -it web composer -d lib/salt-lite-framework --no-install
 - [x] Redis Connection Configuration
 - [x] Remote Cache/Append-Only Cache/In-Memory Cache Support
 - [x] Crypto (Paseto, Int to UUID, etc.)
-- [x] Open Telemetry
 - [x] Local/Remote Filesystem Storage via Flysystem
 - [x] Event Sourcing / EventSauce
 - [ ] Front-End Scaffolding

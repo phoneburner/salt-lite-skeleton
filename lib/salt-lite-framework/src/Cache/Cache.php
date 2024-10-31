@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLite\Framework\Cache;
 
-use PhoneBurner\SaltLite\Framework\Attribute\Contract;
 use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Contract;
 
 /**
  * This is not a PSR-16 implementation, rather this interface defines is a

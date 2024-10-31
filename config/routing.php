@@ -12,7 +12,7 @@ use const PhoneBurner\SaltLite\Framework\APP_ROOT;
 return [
     'routing' => [
         'route_cache' => [
-            'enable' => env('SALT_ENABLE_ROUTE_CACHE'),
+            'enable' => (bool)env('SALT_ENABLE_ROUTE_CACHE'),
             'filepath' => APP_ROOT . '/storage/bootstrap/routes.cache.php',
         ],
         'route_providers' => [

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLite\Framework\Configuration;
 
-use PhoneBurner\SaltLite\Framework\Attribute\Contract;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Contract;
 
 #[Contract]
 interface Configuration

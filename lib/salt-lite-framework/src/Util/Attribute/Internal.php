@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLite\Framework\Attribute;
+namespace PhoneBurner\SaltLite\Framework\Util\Attribute;
 
 #[\Attribute(\Attribute::TARGET_CLASS)]
-final class Contract
+final class Internal
 {
 }
