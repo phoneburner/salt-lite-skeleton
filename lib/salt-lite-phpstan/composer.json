@@ -13,9 +13,15 @@
   },
   "require": {
     "php": "^8.3 || ^8.4",
-    "phpstan/phpstan": "^1.12",
+    "jangregor/phpstan-prophecy": "^1.0",
     "phoneburner/composer-replacements": "dev-main",
-    "phoneburner/salt-lite-framework": "dev-main"
+    "phoneburner/salt-lite-framework": "dev-main",
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "^1.12",
+    "phpstan/phpstan-deprecation-rules": "^1.2.1",
+    "phpstan/phpstan-doctrine": "^1.5.3",
+    "phpstan/phpstan-phpunit": "^1.4",
+    "spaze/phpstan-disallowed-calls": "^3.5"
   },
   "require-dev": {
     "phoneburner/coding-standard": "dev-main"

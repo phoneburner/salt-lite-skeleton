@@ -11,9 +11,7 @@
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "phpstan/extension-installer": true,
-      "sllh/composer-lint": true,
-      "php-http/discovery": true,
-      "tbachert/spi": true
+      "sllh/composer-lint": true
     }
   },
   "repositories": [
@@ -26,13 +24,12 @@
         "url": "https://github.com/tjlytle/api-handler"
     },
     {
-      "type": "path",
-      "url": "./lib/composer-replacements",
-      "options": {
-        "versions": {
-          "phoneburner/composer-replacements": "dev-main"
-        }
-      }
+      "type": "github",
+      "url": "https://github.com/PhoneBurnerOpenSource/composer-replacements"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/PhoneBurnerOpenSource/php-coding-standard"
     },
     {
       "type": "path",
@@ -40,15 +37,6 @@
       "options": {
         "versions": {
           "phoneburner/salt-lite-framework": "dev-main"
-        }
-      }
-    },
-    {
-      "type": "path",
-      "url": "./lib/coding-standard",
-      "options": {
-        "versions": {
-          "phoneburner/coding-standard": "dev-main"
         }
       }
     },
@@ -106,22 +94,15 @@
   "require-dev": {
     "brianium/paratest": "^7.5",
     "filp/whoops": "^2.16",
-    "jangregor/phpstan-prophecy": "^1.0",
     "phoneburner/salt-lite-phpstan": "dev-main",
     "phoneburner/coding-standard": "dev-main",
     "php-parallel-lint/php-parallel-lint": "^1.4",
     "phpspec/prophecy": "^1.19",
     "phpspec/prophecy-phpunit": "^2.2",
-    "phpstan/extension-installer": "^1.4",
-    "phpstan/phpstan": "^1.12.6",
-    "phpstan/phpstan-deprecation-rules": "^1.2.1",
-    "phpstan/phpstan-doctrine": "^1.5.3",
-    "phpstan/phpstan-phpunit": "^1.4",
     "phpunit/phpunit": "^11",
     "psy/psysh": "^0.12.4",
     "rector/rector": "^1.2.7",
     "roave/security-advisories": "dev-latest",
-    "spaze/phpstan-disallowed-calls": "^3.5",
     "symfony/var-dumper": "^7.1.5"
   },
   "scripts": {

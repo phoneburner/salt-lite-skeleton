@@ -11,6 +11,24 @@
       "sllh/composer-lint": true
     }
   },
+  "repositories": [
+    {
+      "type": "github",
+      "url": "https://github.com/andysnell/http-tortilla"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/tjlytle/api-handler"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/PhoneBurnerOpenSource/composer-replacements"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/PhoneBurnerOpenSource/php-coding-standard"
+    }
+  ],
   "autoload": {
     "files": [
       "src/functions.php"
@@ -94,11 +112,8 @@
     "brianium/paratest": "^7.5",
     "filp/whoops": "^2.16",
     "phoneburner/coding-standard": "dev-main",
+    "phoneburner/salt-lite-phpstan": "dev-main",
     "php-parallel-lint/php-parallel-lint": "^1.4",
-    "phpstan/phpstan": "^1.12.6",
-    "phpstan/phpstan-deprecation-rules": "^1.2.1",
-    "phpstan/phpstan-doctrine": "^1.5.3",
-    "phpstan/phpstan-phpunit": "^1.4",
     "phpunit/phpunit": "^11",
     "rector/rector": "^1.2.7",
     "roave/security-advisories": "dev-latest",

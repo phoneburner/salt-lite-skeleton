@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "56c36e887d876e6ed058cc327bef2fba",
+    "content-hash": "d39254a42455ec0d0226e311bd242ec0",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -3145,10 +3145,16 @@
         {
             "name": "phoneburner/composer-replacements",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhoneBurnerOpenSource/composer-replacements.git",
+                "reference": "573a6410b8d1a8134734d876685f228929416434"
+            },
             "dist": {
-                "type": "path",
-                "url": "./lib/composer-replacements",
-                "reference": "75135bbe4768bb04e7c45f0e38d5250cd7b1456f"
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhoneBurnerOpenSource/composer-replacements/zipball/573a6410b8d1a8134734d876685f228929416434",
+                "reference": "573a6410b8d1a8134734d876685f228929416434",
+                "shasum": ""
             },
             "require": {
                 "ext-ctype": "*",
@@ -3157,7 +3163,7 @@
                 "ext-mbstring": "*",
                 "ext-random": "*",
                 "ext-sodium": "*",
-                "php": "^8.3 || ^8.4"
+                "php": "~8.3.0 || ~8.4.0"
             },
             "replace": {
                 "paragonie/random_compat": ">=v2.0.0",
@@ -3177,11 +3183,20 @@
                 "symfony/polyfill-php82": "*",
                 "symfony/polyfill-php83": "*"
             },
+            "default-branch": true,
             "type": "library",
+            "authors": [
+                {
+                    "name": "Andy Snell",
+                    "email": "andy@phoneburner.com"
+                }
+            ],
             "description": "A 'no-op' package with no dependencies used to cleanly replace other packages",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/PhoneBurnerOpenSource/composer-replacements/tree/main",
+                "issues": "https://github.com/PhoneBurnerOpenSource/composer-replacements/issues"
+            },
+            "time": "2024-11-01T01:27:24+00:00"
         },
         {
             "name": "phoneburner/http-tortilla",
@@ -3273,7 +3288,7 @@
             "dist": {
                 "type": "path",
                 "url": "./lib/salt-lite-framework",
-                "reference": "25683d8f87b5a424a5037e27b1bd079c1ad3288e"
+                "reference": "18930c3940881f111e8c0f59ccfa9ee8bd3efb1f"
             },
             "require": {
                 "brick/varexporter": "^0.5.0",
@@ -3345,11 +3360,8 @@
                 "brianium/paratest": "^7.5",
                 "filp/whoops": "^2.16",
                 "phoneburner/coding-standard": "dev-main",
+                "phoneburner/salt-lite-phpstan": "dev-main",
                 "php-parallel-lint/php-parallel-lint": "^1.4",
-                "phpstan/phpstan": "^1.12.6",
-                "phpstan/phpstan-deprecation-rules": "^1.2.1",
-                "phpstan/phpstan-doctrine": "^1.5.3",
-                "phpstan/phpstan-phpunit": "^1.4",
                 "phpunit/phpunit": "^11",
                 "rector/rector": "^1.2.7",
                 "roave/security-advisories": "dev-latest",
@@ -6964,18 +6976,24 @@
         {
             "name": "phoneburner/coding-standard",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhoneBurnerOpenSource/php-coding-standard.git",
+                "reference": "ebfe93183a1515d4b16e0d2817c200ab6f43635a"
+            },
             "dist": {
-                "type": "path",
-                "url": "./lib/coding-standard",
-                "reference": "2aed7746da045b571e5700449f494880ca32a03d"
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhoneBurnerOpenSource/php-coding-standard/zipball/ebfe93183a1515d4b16e0d2817c200ab6f43635a",
+                "reference": "ebfe93183a1515d4b16e0d2817c200ab6f43635a",
+                "shasum": ""
             },
             "require": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phoneburner/composer-replacements": "dev-main",
                 "php": "^8.3 || ^8.4",
                 "slevomat/coding-standard": "^8.15",
                 "squizlabs/php_codesniffer": "^3.10"
             },
+            "default-branch": true,
             "type": "phpcodesniffer-standard",
             "autoload": {
                 "psr-4": {
@@ -6986,9 +7004,11 @@
                 "MIT"
             ],
             "description": "PhoneBurner PHP Coding Standards",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/PhoneBurnerOpenSource/php-coding-standard/tree/main",
+                "issues": "https://github.com/PhoneBurnerOpenSource/php-coding-standard/issues"
+            },
+            "time": "2024-11-01T01:37:32+00:00"
         },
         {
             "name": "phoneburner/salt-lite-phpstan",
@@ -6996,13 +7016,19 @@
             "dist": {
                 "type": "path",
                 "url": "./lib/salt-lite-phpstan",
-                "reference": "77eb3627439441a895e51df5ba62e6ec31c6c216"
+                "reference": "de668c0f02cf5b971cebd2debc2a0b0c5038d117"
             },
             "require": {
+                "jangregor/phpstan-prophecy": "^1.0",
                 "phoneburner/composer-replacements": "dev-main",
                 "phoneburner/salt-lite-framework": "dev-main",
                 "php": "^8.3 || ^8.4",
-                "phpstan/phpstan": "^1.12"
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^1.12",
+                "phpstan/phpstan-deprecation-rules": "^1.2.1",
+                "phpstan/phpstan-doctrine": "^1.5.3",
+                "phpstan/phpstan-phpunit": "^1.4",
+                "spaze/phpstan-disallowed-calls": "^3.5"
             },
             "require-dev": {
                 "phoneburner/coding-standard": "dev-main"
@@ -10391,12 +10417,12 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "phoneburner/composer-replacements": 20,
-        "phoneburner/salt-lite-framework": 20,
-        "phoneburner/http-tortilla": 20,
         "phoneburner/api-handler": 20,
-        "phoneburner/salt-lite-phpstan": 20,
         "phoneburner/coding-standard": 20,
+        "phoneburner/composer-replacements": 20,
+        "phoneburner/http-tortilla": 20,
+        "phoneburner/salt-lite-framework": 20,
+        "phoneburner/salt-lite-phpstan": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
@@ -10421,7 +10447,7 @@
         "ext-zip": "*",
         "ext-zlib": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.3"
     },
