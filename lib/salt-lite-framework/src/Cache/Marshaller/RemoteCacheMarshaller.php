@@ -6,10 +6,12 @@ namespace PhoneBurner\SaltLite\Framework\Cache\Marshaller;
 
 use PhoneBurner\SaltLite\Framework\App\PhpRuntimeConfig;
 use PhoneBurner\SaltLite\Framework\Cache\Exception\CacheMarshallingError;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Cache\Marshaller\MarshallerInterface;
 
+#[Internal]
 class RemoteCacheMarshaller implements MarshallerInterface
 {
     /**

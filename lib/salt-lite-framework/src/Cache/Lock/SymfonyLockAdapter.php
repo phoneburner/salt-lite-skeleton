@@ -6,10 +6,12 @@ namespace PhoneBurner\SaltLite\Framework\Cache\Lock;
 
 use PhoneBurner\SaltLite\Framework\Domain\Time\StopWatch;
 use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use Psr\Log\LoggerAwareInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Lock\SharedLockInterface;
 
+#[Internal]
 class SymfonyLockAdapter implements Lock, LoggerAwareInterface
 {
     public function __construct(private readonly SharedLockInterface $lock)

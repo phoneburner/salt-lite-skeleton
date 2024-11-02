@@ -10,7 +10,9 @@ use PhoneBurner\SaltLite\Framework\Routing\Result\MethodNotAllowed;
 use PhoneBurner\SaltLite\Framework\Routing\Result\RouteFound;
 use PhoneBurner\SaltLite\Framework\Routing\Result\RouteNotFound;
 use PhoneBurner\SaltLite\Framework\Routing\RouterResult;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 
+#[Internal]
 class FastRouteResultFactory
 {
     public function make(FastRouteMatch $match): RouterResult

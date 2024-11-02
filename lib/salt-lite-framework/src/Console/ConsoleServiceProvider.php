@@ -15,6 +15,7 @@ use PhoneBurner\SaltLite\Framework\App\Context;
 use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
 use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
 use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Application;
@@ -23,6 +24,7 @@ use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[Internal('Override Definitions in Application Service Providers')]
 class ConsoleServiceProvider implements ServiceProvider
 {
     #[\Override]

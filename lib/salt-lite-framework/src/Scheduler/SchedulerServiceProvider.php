@@ -13,6 +13,7 @@ use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
 use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
 use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;
 use PhoneBurner\SaltLite\Framework\MessageBus\LazyMessageHandler;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Clock\ClockInterface;
 use Psr\Container\ContainerInterface;
@@ -26,6 +27,7 @@ use Symfony\Component\Scheduler\Schedule;
 use Symfony\Component\Scheduler\ScheduleProviderInterface;
 use Symfony\Component\Scheduler\Scheduler;
 
+#[Internal('Override Definitions in Application Service Providers')]
 class SchedulerServiceProvider implements ServiceProvider
 {
     #[\Override]

@@ -8,6 +8,7 @@ use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
 use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
 use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
 use PhoneBurner\SaltLite\Framework\Scheduler\ScheduleCollection;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Clock\ClockInterface;
 use Psr\Container\ContainerInterface;
@@ -34,6 +35,7 @@ use Symfony\Component\Messenger\Transport\Sender\SendersLocator;
 use Symfony\Component\Scheduler\Generator\MessageGenerator;
 use Symfony\Component\Scheduler\Messenger\SchedulerTransport;
 
+#[Internal('Override Definitions in Application Service Providers')]
 class MessageBusServiceProvider implements ServiceProvider
 {
     #[\Override]

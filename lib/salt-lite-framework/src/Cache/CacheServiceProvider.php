@@ -13,6 +13,7 @@ use PhoneBurner\SaltLite\Framework\Cache\Lock\SymfonyLockFactoryAdapter;
 use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
 use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
 use PhoneBurner\SaltLite\Framework\Database\Redis\RedisManager;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
@@ -22,6 +23,7 @@ use Symfony\Component\Lock\LockFactory as SymfonyLockFactory;
 use Symfony\Component\Lock\Store\InMemoryStore;
 use Symfony\Component\Lock\Store\RedisStore;
 
+#[Internal('Override Definitions in Application Service Providers')]
 class CacheServiceProvider implements ServiceProvider
 {
     #[\Override]

@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace PhoneBurner\SaltLite\Framework\Routing\FastRoute;
 
 use FastRoute\Dispatcher;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 
+#[Internal]
 class FastRouteMatch
 {
     /** @var array<string> */

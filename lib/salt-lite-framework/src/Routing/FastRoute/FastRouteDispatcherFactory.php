@@ -10,9 +10,11 @@ use FastRoute\Dispatcher;
 use FastRoute\Dispatcher\GroupCountBased as GroupCountBasedDispatcher;
 use FastRoute\RouteCollector;
 use FastRoute\RouteParser\Std as StdRouteParser;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use PhoneBurner\SaltLite\Framework\Util\Filesystem\FileWriter;
 use Psr\Log\LoggerInterface;
 
+#[Internal]
 class FastRouteDispatcherFactory
 {
     private const int EXPORT_OPTIONS = VarExporter::ADD_RETURN | VarExporter::TRAILING_COMMA_IN_ARRAY;

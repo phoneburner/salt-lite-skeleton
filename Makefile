@@ -34,6 +34,25 @@ define check-token
 	fi
 endef
 
+# Define behavior to generate a new 256-bit key for the application, if it is
+# not already set in the .env file.
+define generate-key
+	if grep -q "^$(1)=" ".env"; then \
+		KEY_VALUE=$$(grep "^$(1)=" ".env" | cut -d'=' -f2); \
+		if [ -z "$$KEY_VALUE" ]; then \
+			NEW_KEY=$$(docker compose run --rm web php -r 'echo "base64:" . \base64_encode(\random_bytes(32));'); \
+			sed -i "s;^$(1)=.*;$(1)=$$NEW_KEY;" ".env"; \
+			echo "New $(1) generated successfully!"; \
+		else \
+			echo "$(1) is already set."; \
+		fi; \
+	else \
+		NEW_KEY=$$(docker compose run --rm web php -r 'echo "base64:" . \base64_encode(\random_bytes(32));'); \
+		echo -e "\$(1)=$$NEW_KEY" >> ".env"; \
+		echo "New $(1) generated successfully!"; \
+	fi
+endef
+
 phpunit.xml:
 	@$(call copy-safe,phpunit.dist.xml,phpunit.xml)
 
@@ -48,6 +67,7 @@ phpstan.neon:
 build: | phpstan.neon phpunit.xml .env
 	@$(call check-token,GITHUB_TOKEN)
 	@docker compose build --pull
+	@$(call generate-key,SALT_APP_KEY)
 	@$(app) composer install
 	@$(app) mkdir --parents build
 	@touch build
@@ -56,6 +76,10 @@ build: | phpstan.neon phpunit.xml .env
 clean:
 	$(app) -rf ./build ./vendor html/phpunit
 	$(app) find /var/www/storage/ -type f -not -name .gitignore -delete
+
+.PHONY: app-key
+app-key: .env
+	@$(call generate-key,SALT_APP_KEY)
 
 .PHONY: up
 up:
@@ -96,6 +120,10 @@ phpstan: build
 .PHONY: rector
 rector: build
 	@$(app) composer run-script rector
+
+.PHONY: rector-dry-run
+rector-dry-run: build
+	@$(app) composer run-script rector-dry-run
 
 .PHONY: ci
 ci: build

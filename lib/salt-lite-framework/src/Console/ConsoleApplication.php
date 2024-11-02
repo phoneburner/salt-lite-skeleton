@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLite\Framework\Console;
 
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use Symfony\Component\Console\Application as SymfonyConsoleApplication;
 use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+#[Internal]
 class ConsoleApplication extends SymfonyConsoleApplication
 {
     /**

@@ -15,10 +15,12 @@ use PhoneBurner\SaltLite\Framework\Http\Middleware\TransformHttpExceptionRespons
 use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\HttpExceptionResponseTransformer;
 use PhoneBurner\SaltLite\Framework\Logging\LogTrace;
 use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\NullHandler;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
 
+#[Internal('Override Definitions in Application Service Providers')]
 class HttpServiceProvider implements ServiceProvider
 {
     #[\Override]

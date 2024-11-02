@@ -7,33 +7,44 @@ namespace PhoneBurner\SaltLite\Framework\Mailer;
 use PhoneBurner\SaltLite\Framework\Configuration\Configuration;
 use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
 use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\Framework\Domain\Email\EmailAddress;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use Psr\Container\ContainerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\Mailer as SymfonyMailer;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Transport\TransportInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 
+#[Internal('Override Definitions in Application Service Providers')]
 class MailerServiceProvider implements ServiceProvider
 {
     #[\Override]
     public function register(MutableContainer $container): void
     {
         $container->set(
+            Mailer::class,
+            static function (MutableContainer $container): Mailer {
+                return new SymfonyMailerAdapter(
+                    $container->get(MailerInterface::class),
+                    new EmailAddress($container->get(Configuration::class)->get('mailer.default_from')),
+                );
+            },
+        );
+
+        $container->set(
             MailerInterface::class,
             static function (MutableContainer $container): MailerInterface {
-                if ($container->get(Configuration::class)->get('mailer.async')) {
-                    return new Mailer(
-                        $container->get(TransportInterface::class),
-                        $container->get(MessageBusInterface::class),
-                        $container->get(EventDispatcherInterface::class),
-                    );
+                if (! $container->get(Configuration::class)->get('mailer.async')) {
+                    return new SymfonyMailer($container->get(TransportInterface::class));
                 }
 
-                return new Mailer(
+                return new SymfonyMailer(
                     $container->get(TransportInterface::class),
+                    $container->get(MessageBusInterface::class),
+                    $container->get(EventDispatcherInterface::class),
                 );
             },
         );
@@ -41,7 +52,7 @@ class MailerServiceProvider implements ServiceProvider
         $container->set(
             TransportInterface::class,
             static function (ContainerInterface $container): TransportInterface {
-                $transport_driver = (string)$container->get(Configuration::class)->get('mailer.default');
+                $transport_driver = (string)$container->get(Configuration::class)->get('mailer.default_driver');
                 $transport_config = $container->get(Configuration::class)->get('mailer.drivers.' . $transport_driver) ?? [];
 
                 $dns = match (TransportDriver::tryFrom($transport_driver)) {

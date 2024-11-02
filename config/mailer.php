@@ -8,7 +8,8 @@ use function PhoneBurner\SaltLite\Framework\env;
 
 return [
     'mailer' => [
-        'default' => env('SALT_MAILER_DRIVER') ?: TransportDriver::Smtp->value,
+        'default_from_address' => env('SALT_MAILER_DEFAULT_FROM_ADDRESS') ?? 'nobody@example.com',
+        'default_driver' => env('SALT_MAILER_DRIVER') ?: TransportDriver::Smtp->value,
         'async' => (bool)env('SALT_MAILER_ASYNC'),
         'drivers' => [
             TransportDriver::Smtp->value => [

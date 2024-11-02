@@ -6,7 +6,9 @@ namespace PhoneBurner\SaltLite\Framework\Container;
 
 use PhoneBurner\SaltLite\Framework\Container\Exception\OverriddenArgumentNotSet;
 use PhoneBurner\SaltLite\Framework\Container\Exception\UnableToAutoResolveParameterException;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 
+#[Internal]
 class ReflectionMethodAutoResolver
 {
     public static function usingContainer(MutableContainer $container): self

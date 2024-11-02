@@ -14,9 +14,11 @@ use PhoneBurner\SaltLite\Framework\Routing\FastRoute\FastRouteDispatcherFactory;
 use PhoneBurner\SaltLite\Framework\Routing\FastRoute\FastRouter;
 use PhoneBurner\SaltLite\Framework\Routing\FastRoute\FastRouteResultFactory;
 use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\NullHandler;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 
+#[Internal('Override Definitions in Application Service Providers')]
 class RoutingServiceProvider implements ServiceProvider
 {
     #[\Override]

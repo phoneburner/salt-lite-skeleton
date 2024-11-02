@@ -6,6 +6,7 @@ namespace PhoneBurner\SaltLite\Framework\Cache;
 
 use PhoneBurner\SaltLite\Framework\Cache\Exception\CacheWriteFailed;
 use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\SimpleCache\CacheInterface;
 use Symfony\Component\Cache\Psr16Cache;
@@ -15,6 +16,7 @@ use Symfony\Component\Cache\Psr16Cache;
  *
  * @link https://www.php-fig.org/psr/psr-16/
  */
+#[Internal]
 class CacheAdapter implements Cache
 {
     private readonly CacheInterface $cache;

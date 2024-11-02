@@ -12,8 +12,10 @@ use PhoneBurner\SaltLite\Framework\Routing\Result\RouteFound;
 use PhoneBurner\SaltLite\Framework\Routing\Result\RouteNotFound;
 use PhoneBurner\SaltLite\Framework\Routing\Router;
 use PhoneBurner\SaltLite\Framework\Routing\RouterResult;
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Internal;
 use Psr\Http\Message\ServerRequestInterface;
 
+#[Internal]
 class FastRouter implements Router
 {
     private Dispatcher|null $dispatcher = null;

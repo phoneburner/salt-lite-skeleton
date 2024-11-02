@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLite\Framework\Queue;
 
-use Symfony\Component\Messenger\MessageBusInterface;
+use PhoneBurner\SaltLite\Framework\MessageBus\MessageBus;
 
 /**
  * @api
  * @internal
  */
-class BusJobDispatcher implements JobDispatcher
+class MessageBusJobDispatcher implements JobDispatcher
 {
     public function __construct(
-        private readonly MessageBusInterface $bus,
+        private readonly MessageBus $bus,
     ) {
     }
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace PhoneBurner\SaltLite\Framework\Cache;
 
+use PhoneBurner\SaltLite\Framework\Util\Attribute\Contract;
 use PhoneBurner\SaltLite\Framework\Util\Helper\Cast\NullableCast;
 use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
 
@@ -12,6 +13,7 @@ use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
  *
  * eg. (string)CacheKey::make('user', 1, 'FooBarProfile') would return 'user.1.foo_bar_profile'
  */
+#[Contract]
 readonly class CacheKey implements \Stringable
 {
     private const array RESERVED_CHARACTERS = [':', '{', '}', '(', ')', '/', '\\', '@'];
