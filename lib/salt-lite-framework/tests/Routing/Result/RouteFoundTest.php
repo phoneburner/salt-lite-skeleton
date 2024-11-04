@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Result;
+namespace PhoneBurner\SaltLite\Framework\Tests\Routing\Result;
 
 use PhoneBurner\SaltLite\Framework\Routing\Definition\RouteDefinition;
 use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\NullHandler;

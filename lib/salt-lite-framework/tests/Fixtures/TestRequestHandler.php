@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Fixtures;
+namespace PhoneBurner\SaltLite\Framework\Tests\Fixtures;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util\Helper;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util\Helper;
 
 use ArrayAccess;
 use ArrayIterator;
@@ -11,11 +11,11 @@ use Iterator;
 use IteratorAggregate;
 use IteratorIterator;
 use PhoneBurner\SaltLite\Framework\Domain\Arrayable;
+use PhoneBurner\SaltLite\Framework\Tests\Util\Helper\Fixture\NestedObject;
+use PhoneBurner\SaltLite\Framework\Tests\Util\Helper\Fixture\NestingObject;
 use PhoneBurner\SaltLite\Framework\Util\Helper\Arr;
 use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
 use PhoneBurner\SaltLite\Framework\Util\NullArrayAccess;
-use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\NestedObject;
-use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\NestingObject;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

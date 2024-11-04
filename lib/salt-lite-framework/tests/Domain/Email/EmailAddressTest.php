@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Domain\Email;
+namespace PhoneBurner\SaltLite\Framework\Tests\Domain\Email;
 
 use PhoneBurner\SaltLite\Framework\Domain\Email\EmailAddress;
 use PhoneBurner\SaltLite\Framework\Domain\Email\Exception\InvalidEmailAddress;

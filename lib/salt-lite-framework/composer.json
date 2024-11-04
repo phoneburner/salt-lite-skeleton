@@ -39,7 +39,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "PhoneBurner\\Tests\\SaltLite\\Framework\\": "tests/"
+      "PhoneBurner\\SaltLite\\Framework\\Tests\\": "tests/"
     }
   },
   "require": {

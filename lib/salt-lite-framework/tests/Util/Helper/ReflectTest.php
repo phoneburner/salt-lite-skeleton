@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util\Helper;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util\Helper;
 
 use Generator;
 use Iterator;
+use PhoneBurner\SaltLite\Framework\Tests\Util\Helper\Fixture\AbsorbsLightWaves;
+use PhoneBurner\SaltLite\Framework\Tests\Util\Helper\Fixture\Mirror;
+use PhoneBurner\SaltLite\Framework\Tests\Util\Helper\Fixture\PropertyFixture;
+use PhoneBurner\SaltLite\Framework\Tests\Util\Helper\Fixture\ReflectsLightWaves;
+use PhoneBurner\SaltLite\Framework\Tests\Util\Helper\Fixture\ShinyThing;
 use PhoneBurner\SaltLite\Framework\Util\Helper\Reflect;
 use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
-use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\AbsorbsLightWaves;
-use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\Mirror;
-use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\PropertyFixture;
-use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\ReflectsLightWaves;
-use PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture\ShinyThing;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestWith;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util\Crypto;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util\Crypto;
 
 use Generator;
 use InvalidArgumentException;

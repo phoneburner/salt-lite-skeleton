@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Http\Stream;
+namespace PhoneBurner\SaltLite\Framework\Tests\Http\Stream;
 
 use PhoneBurner\SaltLite\Framework\Http\Stream\IteratorStream;
 use PHPUnit\Framework\Attributes\DataProvider;

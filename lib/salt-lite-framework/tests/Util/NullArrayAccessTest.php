@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util;
 
 use PhoneBurner\SaltLite\Framework\Util\Helper\Str;
 use PhoneBurner\SaltLite\Framework\Util\NullArrayAccess;

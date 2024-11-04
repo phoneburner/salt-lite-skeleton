@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util\Crypto\Paseto;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util\Crypto\Paseto;
 
 use PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto\Exception\PasetoCryptoException;
 use PhoneBurner\SaltLite\Framework\Util\Crypto\Paseto\Paseto;

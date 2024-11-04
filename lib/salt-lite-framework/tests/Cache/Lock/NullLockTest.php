@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Cache\Lock;
+namespace PhoneBurner\SaltLite\Framework\Tests\Cache\Lock;
 
 use PhoneBurner\SaltLite\Framework\Cache\Lock\NullLock;
 use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;

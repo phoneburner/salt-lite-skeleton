@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util\Iterator;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util\Iterator;
 
 use PhoneBurner\SaltLite\Framework\Util\Iterator\ObservableIterator;
 use PHPUnit\Framework\Attributes\Test;

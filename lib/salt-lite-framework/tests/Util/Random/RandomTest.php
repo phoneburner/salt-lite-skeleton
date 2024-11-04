@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util\Random;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util\Random;
 
 use PhoneBurner\SaltLite\Framework\Logging\LogLevel;
+use PhoneBurner\SaltLite\Framework\Tests\Fixtures\NotAnEnum;
 use PhoneBurner\SaltLite\Framework\Util\Random\Random;
-use PhoneBurner\Tests\SaltLite\Framework\Fixtures\NotAnEnum;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;

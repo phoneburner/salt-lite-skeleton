@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util\Clock;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util\Clock;
 
 use Carbon\CarbonImmutable;
 use PhoneBurner\SaltLite\Framework\Util\Clock\StaticClock;

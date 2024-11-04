@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\Unit\SaltLite\App;
+namespace PhoneBurner\SaltLite\App\Tests\Unit\Example;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;

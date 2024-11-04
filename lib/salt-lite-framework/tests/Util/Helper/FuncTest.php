@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util\Helper;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util\Helper;
 
 use Carbon\CarbonImmutable;
 use PhoneBurner\SaltLite\Framework\Domain\Time\TimeZone\Tz;

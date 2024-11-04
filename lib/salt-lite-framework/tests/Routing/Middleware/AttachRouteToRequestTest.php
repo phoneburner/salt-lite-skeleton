@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Middleware;
+namespace PhoneBurner\SaltLite\Framework\Tests\Routing\Middleware;
 
 use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;
 use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\MethodNotAllowedResponse;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Domain\Time\TimeZone;
+namespace PhoneBurner\SaltLite\Framework\Tests\Domain\Time\TimeZone;
 
 use PhoneBurner\SaltLite\Framework\Domain\Time\TimeZone\TimeZoneCollection;
 use PhoneBurner\SaltLite\Framework\Domain\Time\TimeZone\TimeZoneFactory;

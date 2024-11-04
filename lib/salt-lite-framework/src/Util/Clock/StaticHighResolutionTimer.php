@@ -6,10 +6,11 @@ namespace PhoneBurner\SaltLite\Framework\Util\Clock;
 
 class StaticHighResolutionTimer implements HighResolutionTimer
 {
-    public function __construct(private int $now)
+    public function __construct(private readonly int $now)
     {
     }
 
+    #[\Override]
     public function now(): int
     {
         return $this->now;

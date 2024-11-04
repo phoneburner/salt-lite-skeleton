@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Routing\FastRoute;
+namespace PhoneBurner\SaltLite\Framework\Tests\Routing\FastRoute;
 
 use FastRoute\Dispatcher;
 use PhoneBurner\SaltLite\Framework\Http\Domain\HttpMethod;

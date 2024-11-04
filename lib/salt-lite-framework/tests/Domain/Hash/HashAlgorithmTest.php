@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Domain\Hash;
+namespace PhoneBurner\SaltLite\Framework\Tests\Domain\Hash;
 
 use PhoneBurner\SaltLite\Framework\Domain\Hash\HashAlgorithm;
 use PHPUnit\Framework\Attributes\Test;

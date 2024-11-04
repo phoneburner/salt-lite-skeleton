@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util\Helper\Fixture;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util\Helper\Fixture;
 
 enum Stoplight: string
 {

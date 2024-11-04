@@ -8,7 +8,7 @@ use Carbon\CarbonImmutable;
 
 class StaticClock implements Clock
 {
-    public function __construct(private CarbonImmutable $now)
+    public function __construct(private readonly CarbonImmutable $now)
     {
     }
 

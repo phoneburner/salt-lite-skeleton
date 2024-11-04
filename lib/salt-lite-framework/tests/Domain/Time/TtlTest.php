@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Domain\Time;
+namespace PhoneBurner\SaltLite\Framework\Tests\Domain\Time;
 
 use PhoneBurner\SaltLite\Framework\Domain\Time\TimeConstant;
 use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;

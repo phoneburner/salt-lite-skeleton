@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Definition;
+namespace PhoneBurner\SaltLite\Framework\Tests\Routing\Definition;
 
 use ArrayIterator;
 use Generator;
@@ -16,9 +16,9 @@ use PhoneBurner\SaltLite\Framework\Routing\Domain\StaticFile;
 use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\RedirectRequestHandler;
 use PhoneBurner\SaltLite\Framework\Routing\RequestHandler\StaticFileRequestHandler;
 use PhoneBurner\SaltLite\Framework\Routing\Route;
+use PhoneBurner\SaltLite\Framework\Tests\Fixtures\TestRequestHandler;
 use PhoneBurner\SaltLite\Framework\Util\Helper\Arr;
 use PhoneBurner\SaltLite\Framework\Util\Helper\Enum;
-use PhoneBurner\Tests\SaltLite\Framework\Fixtures\TestRequestHandler;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\TestWith;

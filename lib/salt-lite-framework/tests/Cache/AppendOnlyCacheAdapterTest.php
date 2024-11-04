@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Cache;
+namespace PhoneBurner\SaltLite\Framework\Tests\Cache;
 
 use PhoneBurner\SaltLite\Framework\Cache\AppendOnlyCacheAdapter;
 use PhoneBurner\SaltLite\Framework\Cache\Lock\NamedKey;

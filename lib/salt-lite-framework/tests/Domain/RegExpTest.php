@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Domain;
+namespace PhoneBurner\SaltLite\Framework\Tests\Domain;
 
 use PhoneBurner\SaltLite\Framework\Domain\RegExp;
 use PHPUnit\Framework\Attributes\DataProvider;

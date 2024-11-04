@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Routing\RequestHandler;
+namespace PhoneBurner\SaltLite\Framework\Tests\Routing\RequestHandler;
 
 use Laminas\Diactoros\Uri;
 use PhoneBurner\SaltLite\Framework\Http\Response\Exceptional\PageNotFoundResponse;

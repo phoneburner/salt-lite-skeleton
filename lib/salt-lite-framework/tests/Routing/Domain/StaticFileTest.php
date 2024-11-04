@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Routing\Domain;
+namespace PhoneBurner\SaltLite\Framework\Tests\Routing\Domain;
 
 use PhoneBurner\SaltLite\Framework\Http\Domain\ContentType;
 use PhoneBurner\SaltLite\Framework\Routing\Domain\StaticFile;

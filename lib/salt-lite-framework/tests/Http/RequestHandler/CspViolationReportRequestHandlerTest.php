@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Http\RequestHandler;
+namespace PhoneBurner\SaltLite\Framework\Tests\Http\RequestHandler;
 
 use Laminas\Diactoros\ServerRequest;
 use PhoneBurner\SaltLite\Framework\Http\Domain\ContentType;

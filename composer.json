@@ -63,8 +63,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "PhoneBurner\\Tests\\SaltLite\\App\\Unit\\": "tests/unit/",
-      "PhoneBurner\\Tests\\SaltLite\\Framework\\": "lib/salt-lite-framework/tests/"
+      "PhoneBurner\\SaltLite\\App\\Tests\\Unit\\": "tests/unit/",
+      "PhoneBurner\\SaltLite\\Framework\\Tests\\": "lib/salt-lite-framework/tests/"
     }
   },
   "require": {

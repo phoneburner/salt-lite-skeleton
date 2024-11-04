@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Routing\FastRoute;
+namespace PhoneBurner\SaltLite\Framework\Tests\Routing\FastRoute;
 
 use ArrayIterator;
 use FastRoute\Dispatcher;
@@ -25,7 +25,7 @@ use PhoneBurner\SaltLite\Framework\Routing\Result\MethodNotAllowed;
 use PhoneBurner\SaltLite\Framework\Routing\Result\RouteFound;
 use PhoneBurner\SaltLite\Framework\Routing\Result\RouteNotFound;
 use PhoneBurner\SaltLite\Framework\Routing\RouterResult;
-use PhoneBurner\Tests\SaltLite\Framework\TestSupport\MockRequest;
+use PhoneBurner\SaltLite\Framework\Tests\TestSupport\MockRequest;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

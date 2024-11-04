@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util\Filesystem;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util\Filesystem;
 
 use PhoneBurner\SaltLite\Framework\Util\Filesystem\FileWriter;
 use PHPUnit\Framework\Attributes\Test;

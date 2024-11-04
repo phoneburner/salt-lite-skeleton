@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Routing\RequestHandler;
+namespace PhoneBurner\SaltLite\Framework\Tests\Routing\RequestHandler;
 
 use PhoneBurner\SaltLite\Framework\Http\Domain\ContentType;
 use PhoneBurner\SaltLite\Framework\Http\Domain\HttpHeader;

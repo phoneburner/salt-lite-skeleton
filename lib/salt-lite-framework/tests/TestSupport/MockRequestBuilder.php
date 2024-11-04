@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\TestSupport;
+namespace PhoneBurner\SaltLite\Framework\Tests\TestSupport;
 
 use GuzzleHttp\Psr7\Uri;
 use PhoneBurner\SaltLite\Framework\Http\Domain\HttpHeader;

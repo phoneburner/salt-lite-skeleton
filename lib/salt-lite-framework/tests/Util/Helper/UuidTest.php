@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\Tests\SaltLite\Framework\Util\Helper;
+namespace PhoneBurner\SaltLite\Framework\Tests\Util\Helper;
 
 use Generator;
 use PhoneBurner\SaltLite\Framework\Util\Helper\Uuid;
