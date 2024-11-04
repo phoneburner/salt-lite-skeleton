@@ -32,22 +32,12 @@
       "url": "https://github.com/PhoneBurnerOpenSource/php-coding-standard"
     },
     {
-      "type": "path",
-      "url": "./lib/salt-lite-framework",
-      "options": {
-        "versions": {
-          "phoneburner/salt-lite-framework": "dev-main"
-        }
-      }
+      "type": "github",
+      "url": "https://github.com/phoneburner/salt-lite-framework"
     },
     {
-      "type": "path",
-      "url": "./lib/salt-lite-phpstan",
-      "options": {
-        "versions": {
-          "phoneburner/salt-lite-phpstan": "dev-main"
-        }
-      }
+      "type": "github",
+      "url": "https://github.com/phoneburner/salt-lite-phpstan"
     }
   ],
   "autoload": {
@@ -63,8 +53,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "PhoneBurner\\SaltLite\\App\\Tests\\Unit\\": "tests/unit/",
-      "PhoneBurner\\SaltLite\\Framework\\Tests\\": "lib/salt-lite-framework/tests/"
+      "PhoneBurner\\SaltLite\\App\\Tests\\Unit\\": "tests/unit/"
     }
   },
   "require": {

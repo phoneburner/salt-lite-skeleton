@@ -10,7 +10,6 @@ parameters:
         - config
         - html
         - includes
-        - lib
         - src
         - tests
 

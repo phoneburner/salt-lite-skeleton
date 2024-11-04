@@ -15,7 +15,6 @@ return RectorConfig::configure()
         __DIR__ . '/config',
         __DIR__ . '/html',
         __DIR__ . '/includes',
-        __DIR__ . '/lib',
         __DIR__ . '/src',
         __DIR__ . '/tests',
     ])

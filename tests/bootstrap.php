@@ -17,6 +17,4 @@ use const PhoneBurner\SaltLite\Framework\APP_ROOT;
 
 define('PhoneBurner\SaltLite\Framework\CONTEXT', Context::Test);
 
-define('PhoneBurner\SaltLite\Framework\UNIT_TEST_ROOT', APP_ROOT . '/lib/salt-lite-framework/tests');
-
 define('PhoneBurner\SaltLite\App\UNIT_TEST_ROOT', APP_ROOT . '/tests/unit');

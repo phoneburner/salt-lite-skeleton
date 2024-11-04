@@ -10,7 +10,6 @@
     <file>config</file>
     <file>html</file>
     <file>includes</file>
-    <file>lib</file>
     <file>src</file>
     <file>tests</file>
     <file>rector.php</file>
