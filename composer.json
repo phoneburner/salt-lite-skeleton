@@ -33,6 +33,10 @@
     },
     {
       "type": "github",
+      "url": "https://github.com/PhoneBurnerOpenSource/link-tortilla"
+    },
+    {
+      "type": "github",
       "url": "https://github.com/phoneburner/salt-lite-framework"
     },
     {
@@ -75,10 +79,11 @@
     "ext-timezonedb": "*",
     "ext-zip": "*",
     "ext-zlib": "*",
+    "phoneburner/api-handler": "dev-RC2-dev as 1.0.0",
     "phoneburner/composer-replacements": "dev-main",
-    "phoneburner/salt-lite-framework": "dev-main",
     "phoneburner/http-tortilla": "dev-v2.x-dev as 2.0.0",
-    "phoneburner/api-handler": "dev-RC2-dev as 1.0.0"
+    "phoneburner/link-tortilla": "dev-main",
+    "phoneburner/salt-lite-framework": "dev-main"
   },
   "require-dev": {
     "brianium/paratest": "^7.5",

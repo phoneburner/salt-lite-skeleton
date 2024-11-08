@@ -48,7 +48,7 @@ define generate-key
 		fi; \
 	else \
 		NEW_KEY=$$(docker compose run --rm web php -r 'echo "base64:" . \base64_encode(\random_bytes(32));'); \
-		echo -e "\$(1)=$$NEW_KEY" >> ".env"; \
+		echo -e "$(1)=$$NEW_KEY" >> ".env"; \
 		echo "New $(1) generated successfully!"; \
 	fi
 endef
@@ -74,7 +74,7 @@ build: | phpstan.neon phpunit.xml .env
 
 .PHONY: clean
 clean:
-	$(app) -rf ./build ./vendor html/phpunit
+	$(app) rm -rf ./build ./vendor html/phpunit
 	$(app) find /var/www/storage/ -type f -not -name .gitignore -delete
 
 .PHONY: app-key

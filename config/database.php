@@ -49,6 +49,8 @@ return [
                             'entity' => env('SALT_DOCTRINE_ENTITY_CACHE_DRIVER'),
                         ],
                         'event_subscribers' => [],
+                        /** @link https://www.doctrine-project.org/projects/doctrine-orm/en/3.3/reference/typedfieldmapper.html */
+                        'mapped_field_types' => [],
                     ],
                     'migrations' => [
                         'table_storage' => [
@@ -58,6 +60,8 @@ return [
                             'PhoneBurner\SaltLite\Migrations' => APP_ROOT . '/database/migrations',
                         ],
                     ],
+                    /** @link https://www.doctrine-project.org/projects/doctrine-orm/en/3.3/cookbook/custom-mapping-types.html */
+                    'types' => [],
                 ],
             ],
 
