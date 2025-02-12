@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-use function PhoneBurner\SaltLite\Framework\env;
+use PhoneBurner\SaltLite\Framework\Cache\CacheDriver;
 
-use const PhoneBurner\SaltLite\Framework\APP_ROOT;
+use function PhoneBurner\SaltLite\Framework\env;
+use function PhoneBurner\SaltLite\Framework\path;
 
 return [
     'database' => [
@@ -39,14 +40,14 @@ return [
                     'charset' => 'utf8mb4',
                     'entity_manager' => [
                         'entity_paths' => [
-                            APP_ROOT . '/src/',
+                            path('/src/'),
                         ],
-                        'cache_path' => APP_ROOT . '/storage/doctrine/default/',
+                        'cache_path' => path('/storage/doctrine/default/'),
                         'cache_driver' => [
-                            'metadata' => env('SALT_DOCTRINE_METADATA_CACHE_DRIVER'),
-                            'query' => env('SALT_DOCTRINE_QUERY_CACHE_DRIVER'),
-                            'result' => env('SALT_DOCTRINE_RESULT_CACHE_DRIVER'),
-                            'entity' => env('SALT_DOCTRINE_ENTITY_CACHE_DRIVER'),
+                            'metadata' => env('SALT_DOCTRINE_METADATA_CACHE_DRIVER', CacheDriver::File->value, CacheDriver::Memory->value),
+                            'query' => env('SALT_DOCTRINE_QUERY_CACHE_DRIVER', CacheDriver::File->value, CacheDriver::Memory->value),
+                            'result' => env('SALT_DOCTRINE_RESULT_CACHE_DRIVER', CacheDriver::Remote->value, CacheDriver::Memory->value),
+                            'entity' => env('SALT_DOCTRINE_ENTITY_CACHE_DRIVER', CacheDriver::Remote->value, CacheDriver::Memory->value),
                         ],
                         'event_subscribers' => [],
                         /** @link https://www.doctrine-project.org/projects/doctrine-orm/en/3.3/reference/typedfieldmapper.html */
@@ -57,14 +58,16 @@ return [
                             'table_name' => 'doctrine_migration_versions',
                         ],
                         'migrations_paths' => [
-                            'PhoneBurner\SaltLite\Migrations' => APP_ROOT . '/database/migrations',
+                            'PhoneBurner\NumberManagement\Migrations' => path('/database/migrations'),
                         ],
                     ],
-                    /** @link https://www.doctrine-project.org/projects/doctrine-orm/en/3.3/cookbook/custom-mapping-types.html */
-                    'types' => [],
+                    'enable_logging' => env('SALT_DOCTRINE_ENABLE_LOGGING', false),
                 ],
             ],
-
+            /** @link https://www.doctrine-project.org/projects/doctrine-orm/en/3.3/cookbook/custom-mapping-types.html */
+            'types' => [
+                // Register custom Doctrine types here
+            ],
         ],
     ],
 ];

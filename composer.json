@@ -5,7 +5,7 @@
   "license": "proprietary",
   "config": {
     "platform": {
-      "php": "8.3"
+      "php": "8.4"
     },
     "sort-packages": true,
     "allow-plugins": {
@@ -17,11 +17,11 @@
   "repositories": [
     {
       "type": "github",
-      "url": "https://github.com/andysnell/http-tortilla"
+      "url": "https://github.com/PhoneBurnerOpenSource/http-tortilla"
     },
     {
-        "type": "github",
-        "url": "https://github.com/tjlytle/api-handler"
+      "type": "github",
+      "url": "https://github.com/PhoneBurnerOpenSource/api-handler"
     },
     {
       "type": "github",
@@ -45,23 +45,19 @@
     }
   ],
   "autoload": {
-    "classmap": [
-    ],
     "psr-4": {
       "PhoneBurner\\SaltLite\\App\\": "src/",
       "PhoneBurner\\SaltLite\\Migrations\\": "database/migrations/"
-    },
-    "files": [
-      "includes/bootstrap.php"
-    ]
+    }
   },
   "autoload-dev": {
     "psr-4": {
-      "PhoneBurner\\SaltLite\\App\\Tests\\Unit\\": "tests/unit/"
+      "PhoneBurner\\SaltLite\\App\\Tests\\Unit\\": "tests/unit/",
+      "PhoneBurner\\SaltLite\\App\\Tests\\Behat\\": "tests/behat/"
     }
   },
   "require": {
-    "php": "^8.3",
+    "php": "~8.4.0",
     "ext-bcmath": "*",
     "ext-ctype": "*",
     "ext-curl": "*",
@@ -79,27 +75,31 @@
     "ext-timezonedb": "*",
     "ext-zip": "*",
     "ext-zlib": "*",
-    "phoneburner/api-handler": "dev-RC2-dev as 1.0.0",
+    "eventsauce/message-repository-for-doctrine": "^1.2.1",
+    "phoneburner/api-handler": "dev-develop",
     "phoneburner/composer-replacements": "dev-main",
-    "phoneburner/http-tortilla": "dev-v2.x-dev as 2.0.0",
+    "phoneburner/http-tortilla": "dev-develop",
     "phoneburner/link-tortilla": "dev-main",
     "phoneburner/salt-lite-framework": "dev-main"
   },
   "require-dev": {
-    "brianium/paratest": "^7.5",
-    "filp/whoops": "^2.16",
-    "phoneburner/salt-lite-phpstan": "dev-main",
+    "behat/behat": "^3.18.1",
+    "brianium/paratest": "^7.8.0",
+    "eventsauce/test-utilities": "dev-main",
+    "filp/whoops": "^2.17",
+    "league/openapi-psr7-validator": "^0.22.0",
     "phoneburner/coding-standard": "dev-main",
+    "phoneburner/salt-lite-phpstan": "dev-main",
     "php-parallel-lint/php-parallel-lint": "^1.4",
-    "phpspec/prophecy": "^1.19",
-    "phpspec/prophecy-phpunit": "^2.2",
-    "phpunit/phpunit": "^11",
-    "psy/psysh": "^0.12.4",
-    "rector/rector": "^1.2.7",
+    "phpspec/prophecy": "^1.20",
+    "phpspec/prophecy-phpunit": "^2.3",
+    "phpunit/phpunit": "^11.5.7",
+    "rector/rector": "^2.0.9",
     "roave/security-advisories": "dev-latest",
-    "symfony/var-dumper": "^7.1.5"
+    "symfony/var-dumper": "^7.2.3"
   },
   "scripts": {
+    "behat": "@php vendor/bin/behat",
     "lint": "@php vendor/bin/parallel-lint -j $(nproc) --show-deprecated --exclude vendor --exclude build .",
     "phpcbf": "@php vendor/bin/phpcbf --parallel=$(nproc) --report=full",
     "phpcs": "@php vendor/bin/phpcs --parallel=$(nproc) --report=full",
@@ -110,7 +110,7 @@
     ],
     "test-coverage": [
       "@putenv XDEBUG_MODE=coverage",
-      "@php vendor/bin/phpunit --coverage-html=html/phpunit"
+      "@php vendor/bin/phpunit --coverage-html=public/phpunit"
     ],
     "test-parallel": [
       "@php vendor/bin/paratest"
@@ -120,9 +120,10 @@
     "ci": [
       "@lint",
       "@phpcs",
-      "@test",
       "@phpstan",
-      "@php vendor/bin/rector process --dry-run --clear-cache"
+      "@php vendor/bin/rector process --dry-run --clear-cache",
+      "@test",
+      "@behat"
     ]
   },
   "extra": {

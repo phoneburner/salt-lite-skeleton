@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLite\App\Example\ExampleScheduleProvider;
+use PhoneBurner\SaltLite\App\ApplicationServiceProvider;
 
 return [
     'scheduler' => [
         'schedule_providers' => [
-            ExampleScheduleProvider::class,
+           'default' => ApplicationServiceProvider::class,
         ],
     ],
 ];

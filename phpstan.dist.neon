@@ -3,13 +3,13 @@ includes:
 
 parameters:
     level: 8
-
+    phpVersion: 80400
     tmpDir: build/phpstan
 
     paths:
+        - bin
         - config
-        - html
-        - includes
+        - public
         - src
         - tests
 

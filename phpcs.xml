@@ -8,8 +8,7 @@
     <arg value="spn"/>
     <ini name="memory_limit" value="-1"/>
     <file>config</file>
-    <file>html</file>
-    <file>includes</file>
+    <file>public</file>
     <file>src</file>
     <file>tests</file>
     <file>rector.php</file>

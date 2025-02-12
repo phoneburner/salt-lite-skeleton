@@ -1,13 +1,13 @@
 # syntax=docker/dockerfile:1
-FROM php:8.3-apache as base
-ENV PATH "/var/www/vendor/bin:/home/dev/composer/bin:$PATH"
+FROM php:8.4-fpm AS base
+ENV PATH "/var/www/bin:/var/www/vendor/bin:/home/dev/composer/bin:$PATH"
 ENV COMPOSER_HOME "/home/dev/composer"
-EXPOSE 80
+ENV PHP_PEAR_PHP_BIN="php -d error_reporting=E_ALL&~E_DEPRECATED"
 
 RUN <<-EOF
   set -eux
   groupadd --gid 1000 dev
-  useradd --system --create-home --uid 1000 --gid 1000 --shell /bin/bash dev
+  useradd --system --create-home --uid 1000 --gid 1000 --groups www-data --shell /bin/bash dev
   apt-get update
   apt-get upgrade -y
   apt-get install -y -q \
@@ -29,6 +29,7 @@ RUN <<-EOF
     zip \
     zlib1g-dev
   apt-get clean
+  ln -s /usr/bin/vim.tiny /usr/bin/vim
 EOF
 
 # Install PHP Extensions
@@ -39,24 +40,13 @@ RUN <<-EOF
   docker-php-ext-enable amqp igbinary redis timezonedb
   find "$(php-config --extension-dir)" -name '*.so' -type f -exec strip --strip-all {} \;
   rm -rf /tmp/pear
-EOF
-
-# Apache Webserver Configuration
-RUN <<-EOF
-  set -eux
-  a2enmod rewrite
-  a2enmod deflate
-  a2enmod env
-  a2enmod ssl
-  a2enmod expires
-  a2enmod headers
   mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 EOF
 
 COPY --link php-production.ini /usr/local/etc/php/conf.d/settings.ini
-COPY --link --from=composer/composer:latest-bin /composer /usr/bin/composer
+COPY --link --from=composer/composer:latest-bin /composer /usr/local/bin/composer
 
-FROM base as development
+FROM base AS development-php
 ENV SALT_BUILD_STAGE "development"
 ENV XDEBUG_MODE "off"
 WORKDIR /var/www
@@ -69,22 +59,41 @@ RUN <<-EOF
 EOF
 USER dev
 
-FROM base as production
+FROM redocly/cli AS production-redocly
+COPY --link openapi.yaml redocly.yaml /spec/
+RUN <<-EOF
+    set -eux;
+    redocly bundle openapi.yaml --output=openapi.json
+    redocly build-docs openapi.yaml --output=openapi.html
+EOF
+
+FROM base AS production-php
 ENV SALT_BUILD_STAGE "production"
 WORKDIR /var/www
-COPY --link . /var/www
-RUN composer install --optimize-autoloader --no-dev
-
-FROM base as development-otel
-ENV SALT_BUILD_STAGE "development"
-ENV XDEBUG_MODE "off"
-WORKDIR /var/www
-COPY --link php-development.ini /usr/local/etc/php/conf.d/settings.ini
+COPY --link --chown=1000:1000 . /var/www
+COPY --link --chown=1000:1000 --from=production-redocly /spec/openapi.yaml /var/www/resources/views/openapi.yaml
+COPY --link --chown=1000:1000 --from=production-redocly /spec/openapi.html /var/www/resources/views/openapi.html
 RUN <<-EOF
-  set -eux
-  MAKEFLAGS="-j $(nproc)" pecl install grpc opentelemetry protobuf xdebug
-  docker-php-ext-enable grpc opentelemetry protobuf xdebug
-  find "$(php-config --extension-dir)" -name '*.so' -type f -exec strip --strip-all {} \;
-  rm -rf /tmp/pear
+    set -eux;
+    mkdir -p /home/dev/composer;
+    chown -R dev:dev /var/www /home/dev/
+    find /var/www/storage -type d -exec chmod 0777 {} \;
+    find /var/www/storage -type f -exec chmod 0666 {} \;
 EOF
+
 USER dev
+RUN --mount=type=cache,mode=0777,uid=1000,gid=1000,target=/home/dev/composer/cache \
+    --mount=type=secret,id=GITHUB_TOKEN,uid=1000,gid=1000,required=true <<-EOF
+    set -eux
+    composer config --global github-oauth.github.com $(cat /run/secrets/GITHUB_TOKEN)
+    composer install --classmap-authoritative --no-dev
+    php salt orm:generate-proxies
+    php salt routing:cache
+    rm -f /var/www/storage/bootstrap/config.cache.php
+EOF
+
+FROM caddy:latest AS development-web
+COPY --link Caddyfile /etc/caddy/Caddyfile
+
+FROM development-web AS production-web
+COPY --link ./public /var/www/public

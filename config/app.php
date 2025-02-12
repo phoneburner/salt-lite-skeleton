@@ -16,7 +16,7 @@ use function PhoneBurner\SaltLite\Framework\env;
 
 return [
     'app' => [
-        'name' => env('SALT_APP_NAME') ?? 'Salt Lite Framework',
+        'name' => 'Salt-Lite Framework',
         'timezone' => Tz::Utc->value,
         'locale' => 'en_US',
         'fallback_locale' => 'en_US',

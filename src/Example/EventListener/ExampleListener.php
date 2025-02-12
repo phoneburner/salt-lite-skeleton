@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLite\App\Example\Listener;
+namespace PhoneBurner\SaltLite\App\Example\EventListener;
 
 use PhoneBurner\SaltLite\App\Example\Event\ExampleEvent;
 use Psr\Log\LoggerInterface;

@@ -8,4 +8,6 @@ use PhoneBurner\SaltLite\Framework\App\Kernel;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-App::bootstrap(Context::Http)->container->get(Kernel::class)->run();
+App::exec(Context::Http, static function (App $app): void {
+    $app->get(Kernel::class)->run();
+});

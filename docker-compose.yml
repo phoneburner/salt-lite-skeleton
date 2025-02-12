@@ -1,19 +1,38 @@
 services:
   web:
-    container_name: "salt-lite-app-web"
     build:
       context: ./
       dockerfile: Dockerfile
-      target: development
+      target: development-web
     platform: linux/amd64
-    ports:
-      - "${DOCKER_HOST_HTTP_PORT:-8000}:80"
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
     depends_on:
+      - php
       - mysql
       - redis
-      - rabbitmq
     volumes:
-      - ${SOURCE_DIR:-./}:/var/www/
+      - ./public:/var/www/public
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy-data:/data
+      - caddy-config:/config
+    env_file:
+      - .env
+    ports:
+      - "${DOCKER_HOST_HTTP_PORT:-8888}:80"
+
+  php:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: development-php
+    platform: linux/amd64
+    restart: unless-stopped
+    user: "dev"
+    volumes:
+      - ./:/var/www
+      - /home/andy/Projects/salt-lite-framework/:/var/salt-lite-framework
       - ./php-development.ini:/usr/local/etc/php/conf.d/settings.ini
     env_file:
       - .env
@@ -23,44 +42,68 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
 
+  message-consumer:
+    profiles:
+      - all
+    extends:
+      service: php
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_started
+      redis:
+        condition: service_healthy
+    command: php ./bin/salt messenger:consume --all --no-interaction --limit=100 --failure-limit=10 --memory-limit=128M --time-limit=600 --sleep=5
+
+  message-scheduler:
+    profiles:
+      - all
+    extends:
+      service: php
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_started
+      redis:
+        condition: service_healthy
+    command: php ./bin/salt messenger:schedule --all --no-interaction --limit=100 --failure-limit=10 --memory-limit=128M --time-limit=3600 --sleep=60
+
   mysql:
-    container_name: "salt-lite-app-mysql"
     image: mysql:8.0.36
     platform: linux/amd64
     ports:
       - "${DOCKER_HOST_MYSQL_PORT:-3306}:3306"
     volumes:
       - ./database/seed/:/docker-entrypoint-initdb.d/
-    tmpfs:
-      - /var/lib/mysql
+      - mysql-data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: "${SALT_MYSQL_ROOT_PASS:-pb_pass123}"
-      MYSQL_DATABASE: "${SALT_MYSQL_NAME:-salt-lite-app}"
-      MYSQL_USER: "${SALT_MYSQL_USER:-pb_user}"
-      MYSQL_PASSWORD: "${SALT_MYSQL_PASS:-pb_pass}"
+      MYSQL_ROOT_PASSWORD: "${SALT_MYSQL_ROOT_PASS:-saltlite123}"
+      MYSQL_DATABASE: "${SALT_MYSQL_NAME:-saltlite}"
+      MYSQL_USER: "${SALT_MYSQL_USER:-saltlite}"
+      MYSQL_PASSWORD: "${SALT_MYSQL_PASS:-saltlite}"
 
   redis:
-    container_name: "salt-lite-app-redis"
     image: redis:7
     platform: linux/amd64
     ports:
       - "${DOCKER_HOST_REDIS_PORT:-63791}:6379"
-
-  rabbitmq:
-    container_name: "salt-lite-app-rabbitmq"
-    image: rabbitmq:management
-    platform: linux/amd64
-    ports:
-      - "${DOCKER_HOST_RABBITMQ_MANAGEMENT_PORT:-15672}:15672"
-      - "${DOCKER_HOST_RABBITMQ_PORT:-5672}:5672"
-    environment:
-      RABBITMQ_DEFAULT_USER: "${SALT_RABBITMQ_USER:-user}"
-      RABBITMQ_DEFAULT_PASS: "${SALT_RABBITMQ_PASS:-password}"
+    volumes:
+      - redis-data:/data:delegated
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
   mailhog:
-    container_name: "salt-lite-app-mailhog"
     image: mailhog/mailhog:latest
     platform: linux/amd64
     ports:
       - "${DOCKER_HOST_MAILHOG_SMTP_PORT:-1025}:1025"
       - "${DOCKER_HOST_MAILHOG_HTTP_PORT:-8025}:8025"
+
+volumes:
+  caddy-data:
+  caddy-config:
+  mysql-data:
+  redis-data:

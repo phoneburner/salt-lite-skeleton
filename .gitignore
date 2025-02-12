@@ -2,9 +2,11 @@
 /.github/
 /build/
 /vendor/
-/html/phpunit
+/public/phpunit
+/public/local
 
 .env
+.env.production
 phpunit.xml
 settings.ini
 user.ini

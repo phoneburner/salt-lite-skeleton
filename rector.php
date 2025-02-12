@@ -12,13 +12,13 @@ return RectorConfig::configure()
     ->withCache(__DIR__ . '/build/rector')
     ->withRootFiles()
     ->withPaths([
+        __DIR__ . '/bin',
         __DIR__ . '/config',
-        __DIR__ . '/html',
-        __DIR__ . '/includes',
+        __DIR__ . '/public',
         __DIR__ . '/src',
         __DIR__ . '/tests',
     ])
-    ->withPhpSets(php83: true)
+    ->withPhpSets(php84: true)
     ->withAttributesSets(phpunit: true)
     ->withPreparedSets(typeDeclarations: true)
     ->withRules([

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLite\App\Example\Job;
+namespace PhoneBurner\SaltLite\App\Example\Message;
 
-use PhoneBurner\SaltLite\Framework\Queue\Job;
+use PhoneBurner\SaltLite\Framework\MessageBus\Message\InvokableMessage;
 use Psr\Log\LoggerInterface;
 
-class ExampleJob implements Job
+class ExampleMessage implements InvokableMessage
 {
     public function __construct(public readonly string $message = 'Example Job Message')
     {
