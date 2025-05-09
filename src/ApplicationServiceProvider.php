@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLite\App;
+namespace App;
 
-use PhoneBurner\SaltLite\Framework\App\App;
-use PhoneBurner\SaltLite\Framework\Container\ServiceProvider;
+use PhoneBurner\SaltLite\App\App;
+use PhoneBurner\SaltLite\Cache\Lock\LockFactory;
+use PhoneBurner\SaltLite\Container\ServiceProvider;
+use Psr\Cache\CacheItemPoolInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
@@ -30,6 +32,8 @@ class ApplicationServiceProvider implements ServiceProvider
         $app->set(
             ApplicationScheduleProvider::class,
             static fn(App $app): ApplicationScheduleProvider => new ApplicationScheduleProvider(
+                $app->get(CacheItemPoolInterface::class),
+                $app->get(LockFactory::class),
                 $app->get(EventDispatcher::class),
                 $app->get(LoggerInterface::class),
             ),

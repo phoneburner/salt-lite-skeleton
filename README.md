@@ -1,4 +1,4 @@
-# Salt-Lite Framework Skeleton Application
+# Salt-Lite Project Skeleton
 
 > Feels like home, just without the salty tears of frustration
 
@@ -9,6 +9,16 @@ complexity, technical debt and design decisions we regret. The goal is to provid
 users with a robust framework with minimum cognitive overhead from the original 
 Salt framework, avoiding the pitfalls of bringing in a full-fledged third-party 
 framework and trying to adapt that to our needs. 
+
+```shell
+docker run --rm -it -v $PWD:/app -u -w /app --env-file composer-auth.env composer/composer create-project \
+  --repository='{"type": "github",  "url": "https://github.com/phoneburner/salt-lite-skeleton"}' 
+  --stability=dev \
+  --ignore-platform-reqs \
+  --no-install \
+  --ask \
+  phoneburner/salt-lite-skeleton
+```
 
 ## Installation
 In order to run this application you need to have Docker installed and on your 

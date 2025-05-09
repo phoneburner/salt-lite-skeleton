@@ -13,8 +13,8 @@ services:
       - mysql
       - redis
     volumes:
-      - ./public:/var/www/public
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./public:/app/public
+      - ./caddy:/etc/caddy
       - caddy-data:/data
       - caddy-config:/config
     env_file:
@@ -31,8 +31,7 @@ services:
     restart: unless-stopped
     user: "dev"
     volumes:
-      - ./:/var/www
-      - /home/andy/Projects/salt-lite-framework/:/var/salt-lite-framework
+      - ${SOURCE_DIR:-./}:/app
       - ./php-development.ini:/usr/local/etc/php/conf.d/settings.ini
     env_file:
       - .env
@@ -77,7 +76,7 @@ services:
       - ./database/seed/:/docker-entrypoint-initdb.d/
       - mysql-data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: "${SALT_MYSQL_ROOT_PASS:-saltlite123}"
+      MYSQL_ROOT_PASSWORD: "${SALT_MYSQL_ROOT_PASS:-saltlite}"
       MYSQL_DATABASE: "${SALT_MYSQL_NAME:-saltlite}"
       MYSQL_USER: "${SALT_MYSQL_USER:-saltlite}"
       MYSQL_PASSWORD: "${SALT_MYSQL_PASS:-saltlite}"
@@ -98,6 +97,8 @@ services:
   mailhog:
     image: mailhog/mailhog:latest
     platform: linux/amd64
+    profiles:
+      - all
     ports:
       - "${DOCKER_HOST_MAILHOG_SMTP_PORT:-1025}:1025"
       - "${DOCKER_HOST_MAILHOG_HTTP_PORT:-8025}:8025"

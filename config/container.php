@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLite\App\ApplicationServiceProvider;
+use App\ApplicationServiceProvider;
+use PhoneBurner\SaltLite\Framework\Container\Config\ContainerConfigStruct;
 
 return [
-    'container' => [
-        'enable_deferred_service_registration' => true,
-        'service_providers' => [
+    'container' => new ContainerConfigStruct(
+        enable_deferred_service_registration: true,
+        service_providers: [
             ApplicationServiceProvider::class,
         ],
-    ],
+    ),
 ];

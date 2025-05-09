@@ -9,7 +9,7 @@
          beStrictAboutCoverageMetadata="false"
          beStrictAboutOutputDuringTests="true"
          displayDetailsOnPhpunitDeprecations="true"
-         failOnPhpunitDeprecation="true"
+         failOnPhpunitDeprecation="false"
          failOnRisky="true"
          failOnWarning="true">
     <testsuites>

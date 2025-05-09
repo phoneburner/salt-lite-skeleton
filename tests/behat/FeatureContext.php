@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLite\App\Tests\Behat;
+namespace App\Tests\Behat;
 
 use Behat\Behat\Context\Context;
 

@@ -2,20 +2,19 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLite\App\Tests\Behat;
+namespace App\Tests\Behat;
 
+use App\Tests\Unit\TestSupport\MockEmitter;
 use Behat\Hook\AfterScenario;
 use Behat\Hook\BeforeScenario;
 use Doctrine\DBAL\Connection;
 use Laminas\HttpHandlerRunner\Emitter\EmitterInterface;
-use PhoneBurner\SaltLite\App\Tests\Unit\TestSupport\MockEmitter;
+use PhoneBurner\SaltLite\App\Context;
+use PhoneBurner\SaltLite\Container\ServiceContainer;
 use PhoneBurner\SaltLite\Framework\App\App;
-use PhoneBurner\SaltLite\Framework\App\Context;
-use PhoneBurner\SaltLite\Framework\Container\MutableContainer;
-use PhoneBurner\SaltLite\Framework\Container\ServiceContainer;
 use PhoneBurner\SaltLite\Framework\Http\HttpKernel;
-use PhoneBurner\SaltLite\Framework\Logging\LogTrace;
-use PhoneBurner\SaltLite\Framework\Util\Helper\Uuid;
+use PhoneBurner\SaltLite\Logging\LogTrace;
+use PhoneBurner\SaltLite\Uuid\Uuid;
 use PHPUnit\Framework\Assert;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -43,7 +42,7 @@ trait HasApplicationLifecycle
         App::teardown();
     }
 
-    protected function container(): MutableContainer
+    protected function container(): ServiceContainer
     {
         return $this->services ?? throw new \RuntimeException('Container not initialized');
     }

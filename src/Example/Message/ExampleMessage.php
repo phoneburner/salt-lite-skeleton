@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLite\App\Example\Message;
+namespace App\Example\Message;
 
-use PhoneBurner\SaltLite\Framework\MessageBus\Message\InvokableMessage;
+use PhoneBurner\SaltLite\MessageBus\Message\InvokableMessage;
 use Psr\Log\LoggerInterface;
 
 class ExampleMessage implements InvokableMessage

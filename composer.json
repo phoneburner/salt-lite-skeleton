@@ -1,8 +1,8 @@
 {
   "name": "phoneburner/salt-lite-skeleton",
-  "description": "Salt-Lite Application Skeleton",
+  "description": "The Salt-Lite Project Skeleton",
   "type": "project",
-  "license": "proprietary",
+  "license": "MIT",
   "config": {
     "platform": {
       "php": "8.4"
@@ -37,6 +37,10 @@
     },
     {
       "type": "github",
+      "url": "https://github.com/phoneburner/salt-lite"
+    },
+    {
+      "type": "github",
       "url": "https://github.com/phoneburner/salt-lite-framework"
     },
     {
@@ -46,63 +50,48 @@
   ],
   "autoload": {
     "psr-4": {
-      "PhoneBurner\\SaltLite\\App\\": "src/",
-      "PhoneBurner\\SaltLite\\Migrations\\": "database/migrations/"
+      "App\\": "src/",
+      "App\\Migrations\\": "database/migrations/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "PhoneBurner\\SaltLite\\App\\Tests\\Unit\\": "tests/unit/",
-      "PhoneBurner\\SaltLite\\App\\Tests\\Behat\\": "tests/behat/"
+      "App\\Tests\\Unit\\": "tests/unit/",
+      "App\\Tests\\Behat\\": "tests/behat/"
     }
   },
   "require": {
-    "php": "~8.4.0",
-    "ext-bcmath": "*",
-    "ext-ctype": "*",
-    "ext-curl": "*",
-    "ext-exif": "*",
-    "ext-gmp": "*",
-    "ext-iconv": "*",
-    "ext-igbinary": "*",
-    "ext-intl": "*",
-    "ext-json": "*",
-    "ext-mbstring": "*",
-    "ext-pdo": "*",
-    "ext-random": "*",
-    "ext-redis": "*",
-    "ext-sodium": "*",
-    "ext-timezonedb": "*",
-    "ext-zip": "*",
-    "ext-zlib": "*",
+    "php": "^8.4.0",
+    "eventsauce/eventsauce": "^3.6.1",
     "eventsauce/message-repository-for-doctrine": "^1.2.1",
     "phoneburner/api-handler": "dev-develop",
     "phoneburner/composer-replacements": "dev-main",
     "phoneburner/http-tortilla": "dev-develop",
     "phoneburner/link-tortilla": "dev-main",
-    "phoneburner/salt-lite-framework": "dev-main"
+    "phoneburner/salt-lite": "^1.0@dev",
+    "phoneburner/salt-lite-framework": "^1.0@dev"
   },
   "require-dev": {
     "behat/behat": "^3.18.1",
-    "brianium/paratest": "^7.8.0",
     "eventsauce/test-utilities": "dev-main",
     "filp/whoops": "^2.17",
     "league/openapi-psr7-validator": "^0.22.0",
     "phoneburner/coding-standard": "dev-main",
     "phoneburner/salt-lite-phpstan": "dev-main",
     "php-parallel-lint/php-parallel-lint": "^1.4",
-    "phpspec/prophecy": "^1.20",
-    "phpspec/prophecy-phpunit": "^2.3",
-    "phpunit/phpunit": "^11.5.7",
+    "phpunit/phpunit": "^12",
     "rector/rector": "^2.0.9",
     "roave/security-advisories": "dev-latest",
     "symfony/var-dumper": "^7.2.3"
   },
   "scripts": {
+    "post-root-package-install": "git init",
+    "post-create-project-cmd": "make",
+    "pre-autoload-dump": "Aws\\Script\\Composer\\Composer::removeUnusedServices",
     "behat": "@php vendor/bin/behat",
-    "lint": "@php vendor/bin/parallel-lint -j $(nproc) --show-deprecated --exclude vendor --exclude build .",
-    "phpcbf": "@php vendor/bin/phpcbf --parallel=$(nproc) --report=full",
-    "phpcs": "@php vendor/bin/phpcs --parallel=$(nproc) --report=full",
+    "lint": "@php vendor/bin/parallel-lint -j $(nproc --ignore=2) --show-deprecated --exclude vendor --exclude build .",
+    "phpcbf": "@php vendor/bin/phpcbf --parallel=$(nproc --ignore=2) --report=full",
+    "phpcs": "@php vendor/bin/phpcs --parallel=$(nproc --ignore=2) --report=full",
     "phpstan": "@php vendor/bin/phpstan analyze --memory-limit=-1 --verbose",
     "test": [
       "@putenv XDEBUG_MODE=off",
@@ -110,7 +99,7 @@
     ],
     "test-coverage": [
       "@putenv XDEBUG_MODE=coverage",
-      "@php vendor/bin/phpunit --coverage-html=public/phpunit"
+      "@php vendor/bin/phpunit --coverage-html=build/phpunit"
     ],
     "test-parallel": [
       "@php vendor/bin/paratest"
@@ -121,11 +110,15 @@
       "@lint",
       "@phpcs",
       "@phpstan",
-      "@php vendor/bin/rector process --dry-run --clear-cache",
       "@test",
-      "@behat"
+      "@behat",
+      "@php vendor/bin/rector process --dry-run --clear-cache"
     ]
   },
   "extra": {
+    "aws/aws-sdk-php": [
+      "S3",
+      "Sqs"
+    ]
   }
 }

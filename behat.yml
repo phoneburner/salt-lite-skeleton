@@ -2,4 +2,4 @@ default:
   suites:
     default:
       paths: [ '%paths.base%/tests/behat/features' ]
-      contexts: [PhoneBurner\SaltLite\App\Tests\Behat\FeatureContext]
+      contexts: [App\Tests\Behat\FeatureContext]

@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLite\Framework\Console\EventListener\ConsoleErrorListener;
-use PhoneBurner\SaltLite\Framework\EventDispatcher\EventListener\LogEventWasDispatched;
-use PhoneBurner\SaltLite\Framework\MessageBus\Event\InvokableMessageHandlingComplete;
-use PhoneBurner\SaltLite\Framework\MessageBus\Event\InvokableMessageHandlingFailed;
-use PhoneBurner\SaltLite\Framework\MessageBus\Event\InvokableMessageHandlingStarting;
+use PhoneBurner\SaltLite\App\Event\ApplicationBootstrap;
+use PhoneBurner\SaltLite\App\Event\ApplicationTeardown;
+use PhoneBurner\SaltLite\Framework\EventDispatcher\Config\EventDispatcherConfigStruct;
 use PhoneBurner\SaltLite\Framework\MessageBus\EventListener\LogFailedInvokableMessageHandlingAttempt;
 use PhoneBurner\SaltLite\Framework\MessageBus\EventListener\LogWorkerMessageFailedEvent;
+use PhoneBurner\SaltLite\Logging\LogLevel;
+use PhoneBurner\SaltLite\MessageBus\Event\InvokableMessageHandlingComplete;
+use PhoneBurner\SaltLite\MessageBus\Event\InvokableMessageHandlingFailed;
+use PhoneBurner\SaltLite\MessageBus\Event\InvokableMessageHandlingStarting;
 use Symfony\Component\Console\Event\ConsoleCommandEvent;
 use Symfony\Component\Console\Event\ConsoleErrorEvent;
 use Symfony\Component\Console\Event\ConsoleSignalEvent;
@@ -23,60 +25,41 @@ use Symfony\Component\Messenger\Event\WorkerRateLimitedEvent;
 use Symfony\Component\Messenger\Event\WorkerRunningEvent;
 use Symfony\Component\Messenger\Event\WorkerStartedEvent;
 use Symfony\Component\Messenger\Event\WorkerStoppedEvent;
-use Symfony\Component\Messenger\EventListener\AddErrorDetailsStampListener;
-use Symfony\Component\Messenger\EventListener\DispatchPcntlSignalListener;
-use Symfony\Component\Messenger\EventListener\SendFailedMessageForRetryListener;
-use Symfony\Component\Messenger\EventListener\SendFailedMessageToFailureTransportListener;
-use Symfony\Component\Messenger\EventListener\StopWorkerOnCustomStopExceptionListener;
-use Symfony\Component\Messenger\EventListener\StopWorkerOnRestartSignalListener;
 use Symfony\Component\Scheduler\Event\FailureEvent;
 use Symfony\Component\Scheduler\Event\PostRunEvent;
 use Symfony\Component\Scheduler\Event\PreRunEvent;
-use Symfony\Component\Scheduler\EventListener\DispatchSchedulerEventListener;
 
 return [
-    'event_dispatcher' => [
-        'listeners' => [
+    'event_dispatcher' => new EventDispatcherConfigStruct(
+        event_dispatch_log_level: LogLevel::Debug,
+        event_failure_log_level: LogLevel::Warning,
+        listeners: [
+            // Application Lifecycle Events
+            ApplicationBootstrap::class => [],
+            ApplicationTeardown::class => [],
+
             // Message Bus Events
             SendMessageToTransportsEvent::class => [],
             WorkerStartedEvent::class => [],
             WorkerRunningEvent::class => [],
             WorkerStoppedEvent::class => [],
-            WorkerMessageReceivedEvent::class => [
-                LogEventWasDispatched::class,
-            ],
-            WorkerMessageHandledEvent::class => [
-                LogEventWasDispatched::class,
-            ],
+            WorkerMessageReceivedEvent::class => [],
+            WorkerMessageHandledEvent::class => [],
             WorkerMessageSkipEvent::class => [],
             WorkerMessageFailedEvent::class => [
                 LogWorkerMessageFailedEvent::class,
             ],
-            WorkerMessageRetriedEvent::class => [
-                LogEventWasDispatched::class,
-            ],
+            WorkerMessageRetriedEvent::class => [],
             WorkerRateLimitedEvent::class => [],
 
             // Scheduler Events
-            PreRunEvent::class => [
-                LogEventWasDispatched::class,
-            ],
-
-            PostRunEvent::class => [
-                LogEventWasDispatched::class,
-            ],
-
-            FailureEvent::class => [
-                LogEventWasDispatched::class,
-            ],
+            PreRunEvent::class => [],
+            PostRunEvent::class => [],
+            FailureEvent::class => [],
 
             // Queue Job Events
-            InvokableMessageHandlingStarting::class => [
-                LogEventWasDispatched::class,
-            ],
-            InvokableMessageHandlingComplete::class => [
-                LogEventWasDispatched::class,
-            ],
+            InvokableMessageHandlingStarting::class => [],
+            InvokableMessageHandlingComplete::class => [],
             InvokableMessageHandlingFailed::class => [
                 LogFailedInvokableMessageHandlingAttempt::class,
             ],
@@ -89,21 +72,5 @@ return [
 
             // Application Events & Listeners
         ],
-        'subscribers' => [
-            // Framework Subscribers
-            // Console Subscribers
-            ConsoleErrorListener::class,
-
-            // Messenger Subscribers
-            AddErrorDetailsStampListener::class,
-            DispatchPcntlSignalListener::class,
-            SendFailedMessageForRetryListener::class,
-            SendFailedMessageToFailureTransportListener::class,
-            StopWorkerOnCustomStopExceptionListener::class,
-            StopWorkerOnRestartSignalListener::class,
-
-            // Scheduler Subscribers
-            DispatchSchedulerEventListener::class,
-        ],
-    ],
+    ),
 ];

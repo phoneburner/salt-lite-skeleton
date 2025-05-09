@@ -1,9 +1,8 @@
+/.cursor
 /.idea/
 /.github/
 /build/
 /vendor/
-/public/phpunit
-/public/local
 
 .env
 .env.production
@@ -12,3 +11,5 @@ settings.ini
 user.ini
 docker-compose.override.yml
 phpstan.neon
+*.DS_Store*
+*.terraform/

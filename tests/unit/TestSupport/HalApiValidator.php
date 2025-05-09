@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLite\App\Tests\Unit\TestSupport;
+namespace App\Tests\Unit\TestSupport;
 
-use PhoneBurner\SaltLite\Framework\Http\Domain\ContentType;
-use PhoneBurner\SaltLite\Framework\Http\Domain\HttpHeader;
+use PhoneBurner\SaltLite\Http\Domain\ContentType;
+use PhoneBurner\SaltLite\Http\Domain\HttpHeader;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 

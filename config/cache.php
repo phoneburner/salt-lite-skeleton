@@ -2,13 +2,17 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLite\Framework\Cache\CacheDriver;
-use PhoneBurner\SaltLite\Framework\Cache\Marshaller\Serializer;
+use PhoneBurner\SaltLite\Cache\CacheDriver;
+use PhoneBurner\SaltLite\Serialization\Serializer;
+use Symfony\Component\Lock\Store\RedisStore;
 
 use function PhoneBurner\SaltLite\Framework\env;
 
 return [
     'cache' => [
+        'lock' => [
+            'store_driver' => RedisStore::class,
+        ],
         'drivers' => [
             CacheDriver::Remote->value => [
                 'serializer' => env('SALT_REMOTE_CACHE_SERIALIZER', Serializer::Igbinary, Serializer::Php),

@@ -1,10 +1,6 @@
 SHELL := bash
 .DEFAULT_GOAL := build
 
-_WARN := "\033[33m%s\033[0m %s\n"  # Yellow text template for "printf"
-_INFO := "\033[32m%s\033[0m %s\n" # Green text template for "printf"
-_ERROR := "\033[31m%s\033[0m %s\n" # Red text template for "printf"
-
 app = docker compose run --rm php
 
 # Define behavior to safely source file (1) to dist file (2), without overwriting
@@ -38,34 +34,6 @@ define check-token
 	fi
 endef
 
-# Define behavior to generate a new 256-bit key for the application, if it is
-# not already set in the .env file.
-define generate-key
-	if grep -q "^$(1)=" ".env"; then \
-		KEY_VALUE=$$(grep "^$(1)=" ".env" | cut -d'=' -f2); \
-		if [ -z "$$KEY_VALUE" ]; then \
-			NEW_KEY=$$(docker compose run --rm php php -r 'echo "base64:" . \base64_encode(\random_bytes(32));'); \
-			sed -i "s;^$(1)=.*;$(1)=$$NEW_KEY;" ".env"; \
-			echo "New $(1) generated successfully!"; \
-		else \
-			echo "$(1) is already set."; \
-		fi; \
-	else \
-		NEW_KEY=$$(docker compose run --rm php php -r 'echo "base64:" . \base64_encode(\random_bytes(32));'); \
-		echo -e "\$(1)=$$NEW_KEY" >> ".env"; \
-		echo "New $(1) generated successfully!"; \
-	fi
-endef
-
-define confirm
-	printf -v PROMPT $(_WARN) $(1)  [y/N];
-	read -p "$$PROMPT" CONFIRMATION;
-	if [[ ! "$$CONFIRMATION" =~ ^[Yy] ]]; then \
-		echo "Exiting..."; \
-		exit 1; \
-	fi
-endef
-
 phpunit.xml:
 	@$(call copy-safe,phpunit.dist.xml,phpunit.xml)
 
@@ -85,46 +53,46 @@ build: | phpstan.neon phpunit.xml .env
 	@$(app) mkdir --parents build
 	@touch build
 
-.PHONY: install
-install: build
+.PHONY: vendor
+vendor: build
 	@$(app) composer install
 
 .PHONY: clean
 clean:
-	$(app) rm -rf ./build ./vendor public/phpunit
+	$(app) -rf ./build ./vendor
 	$(app) find /var/www/storage/ -type f -not -name .gitignore -delete
-
-.PHONY: app-key
-app-key: .env
-	@$(call generate-key,SALT_APP_KEY)
 
 .PHONY: up
 up:
-	@docker compose up --detach
+	docker compose up --detach
 
 .PHONY: down
 down:
-	@docker compose down --remove-orphans
+	docker compose down --remove-orphans
 
 .PHONY: bash
 bash: build
 	@$(app) bash
 
-.PHONY: behat
-behat: build
-	@$(app) composer run-script behat
-
 .PHONY: lint
 lint: build
 	@$(app) composer run-script lint
 
-.PHONY: test
+# Run tests, aliased to "phpunit" for consistency with other tooling targets.
+.PHONY: test phpunit
+phpunit: test
 test: build
 	@$(app) composer run-script test
 
-.PHONY: test-coverage
+# Generate HTML PHPUnit test coverage report, aliased to "phpunit-coverage" for consistency with other tooling targets.
+.PHONY: test-coverage phpunit-coverage
+phpunit-coverage: test-coverage
 test-coverage: build
 	@$(app) composer run-script test-coverage
+
+.PHONY: serve-coverage
+serve-coverage:
+	@docker compose run --rm --publish 8000:80 php php -S 0.0.0.0:80 -t /app/build/phpunit
 
 .PHONY: phpcs
 phpcs: build
@@ -146,10 +114,17 @@ rector: build
 rector-dry-run: build
 	@$(app) composer run-script rector-dry-run
 
+# Runs all the code quality checks: lint, phpstan, phpcs, and rector-dry-run".
 .PHONY: ci
-ci: build openapi-lint
+ci: build up openapi-lint
 	@$(app) composer run-script ci
 
+# Runs the automated fixer tools, then run the code quality checks in one go, aliased to "preci".
+.PHONY: pre-ci preci
+preci: pre-ci
+pre-ci: build phpcbf rector ci
+
+# Run the PsySH REPL shell
 .PHONY: shell
 shell: build up
 	@$(app) ./bin/salt shell

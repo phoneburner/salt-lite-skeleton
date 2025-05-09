@@ -2,16 +2,17 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLite\App\Tests\Unit\TestSupport;
+namespace App\Tests\Unit\TestSupport;
 
-use PhoneBurner\SaltLite\Framework\Cache\Lock\Lock;
-use PhoneBurner\SaltLite\Framework\Cache\Lock\SharedLockMode;
-use PhoneBurner\SaltLite\Framework\Domain\Time\Ttl;
+use PhoneBurner\SaltLite\Cache\Lock\Lock;
+use PhoneBurner\SaltLite\Cache\Lock\SharedLockMode;
+use PhoneBurner\SaltLite\Time\Ttl;
+use PhoneBurner\SaltLite\Time\TtlRemaining;
 
 class SpyLock implements Lock
 {
     public function __construct(
-        public Ttl|null $ttl = null,
+        public Ttl|TtlRemaining|null $ttl = null,
         public bool $acquire = true,
         public bool $acquired = true,
         public bool $released = false,
@@ -48,8 +49,11 @@ class SpyLock implements Lock
     }
 
     #[\Override]
-    public function ttl(): Ttl|null
+    public function ttl(): TtlRemaining|null
     {
+        if ($this->ttl instanceof Ttl) {
+            return new TtlRemaining($this->ttl->seconds);
+        }
         return $this->ttl;
     }
 }

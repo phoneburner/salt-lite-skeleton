@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLite\App\ApplicationServiceProvider;
+use PhoneBurner\SaltLite\Framework\Scheduler\Config\SchedulerConfigStruct;
 
 return [
-    'scheduler' => [
-        'schedule_providers' => [
-           'default' => ApplicationServiceProvider::class,
+    'scheduler' => new SchedulerConfigStruct(
+        schedule_providers: [
+            // 'default' => \PhoneBurner\SaltLite\Framework\Scheduler\ApplicationScheduleProvider::class,
         ],
-    ],
+    ),
 ];

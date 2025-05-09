@@ -2,37 +2,15 @@
 
 declare(strict_types=1);
 
-use PhoneBurner\SaltLite\App\Example\Command\ExampleCommand;
-use Psy\Configuration;
-
-use function PhoneBurner\SaltLite\Framework\path;
+use App\Example\Command\ExampleCommand;
+use PhoneBurner\SaltLite\Framework\Console\Config\ConsoleConfigStruct;
+use PhoneBurner\SaltLite\Framework\Console\Config\ShellConfigStruct;
 
 return [
-    'console' => [
-        'commands' => [
+    'console' => new ConsoleConfigStruct(
+        commands: [
             ExampleCommand::class,
         ],
-        'shell' => [
-            'services' => [
-                // Register Application Services to inject into the shell
-            ],
-            'imports' => [
-                // Register Application Imports to inject into the shell
-            ],
-            'psysh' => [
-                'commands' => [],
-                'configDir' => path('/build/psysh/config'),
-                'dataDir' => path('/build/psysh/data'),
-                'defaultIncludes' => [],
-                'eraseDuplicates' => true,
-                'errorLoggingLevel' => \E_ALL,
-                'forceArrayIndexes' => true,
-                'historySize' => 1000,
-                'runtimeDir' => path('/build/psysh/tmp'),
-                'updateCheck' => 'never',
-                'useBracketedPaste' => true,
-                'verbosity' => Configuration::VERBOSITY_NORMAL,
-            ],
-        ],
-    ],
+        shell: new ShellConfigStruct(),
+    ),
 ];

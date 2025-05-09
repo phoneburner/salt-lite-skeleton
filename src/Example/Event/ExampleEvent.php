@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace PhoneBurner\SaltLite\App\Example\Event;
+namespace App\Example\Event;
 
-class ExampleEvent
+final readonly class ExampleEvent
 {
-    public function __construct(public readonly string $message)
+    public function __construct(public string $message)
     {
     }
 }
