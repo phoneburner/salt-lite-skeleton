@@ -34,6 +34,23 @@ define check-token
 	fi
 endef
 
+define generate-key
+	if grep -q "^$(1)=" ".env"; then \
+		KEY_VALUE=$$(grep "^$(1)=" ".env" | cut -d'=' -f2); \
+		if [ -z "$$KEY_VALUE" ]; then \
+			NEW_KEY=$$(docker run --rm php:8.4-fpm php -r 'echo "base64:" . \base64_encode(\random_bytes(32));'); \
+			sed -i "s;^$(1)=.*;$(1)=$$NEW_KEY;" ".env"; \
+			echo "New $(1) generated successfully!"; \
+		else \
+			echo "$(1) is already set."; \
+		fi; \
+	else \
+		NEW_KEY=$$(docker run --rm php:8.4-fpm php -r 'echo "base64:" . \base64_encode(\random_bytes(32));'); \
+		echo -e "\$(1)=$$NEW_KEY" >> ".env"; \
+		echo "New $(1) generated successfully!"; \
+	fi
+endef
+
 phpunit.xml:
 	@$(call copy-safe,phpunit.dist.xml,phpunit.xml)
 
@@ -42,25 +59,36 @@ phpstan.neon:
 
 .env:
 	@$(call copy-safe,.env.dist,.env)
+	@$(call generate-key,SALT_APP_KEY)
+	@$(call check-token,GITHUB_TOKEN)
+
+vendor: install | .env
+	@docker compose pull
+	@docker compose build --pull
+	@$(app) composer install
 
 # The build target dependencies must be set as "order-only" prerequisites to prevent
 # the target from being rebuilt everytime the dependencies are updated.
-build: | phpstan.neon phpunit.xml .env
-	@$(call check-token,GITHUB_TOKEN)
-	@$(call generate-key,SALT_APP_KEY)
-	@docker compose build --pull
-	@$(app) composer install
+build: vendor | phpstan.neon phpunit.xml .env
 	@$(app) mkdir --parents build
 	@touch build
-
-.PHONY: vendor
-vendor: build
-	@$(app) composer install
 
 .PHONY: clean
 clean:
 	$(app) -rf ./build ./vendor
 	$(app) find /var/www/storage/ -type f -not -name .gitignore -delete
+
+# Rebuild the Docker images and reinstall dependencies. Note that this target only
+# works _after_ the initial build target has been run at least once, so it does not
+# actually duplicate the "vendor" target.
+.PHONY: install
+install: build
+	@docker compose pull
+	@docker compose build --pull
+	@$(app) composer install
+	$(app) find /app/storage/bootstrap -type f -not -name .gitignore -delete
+	$(app) find /app/storage/cache -type f -not -name .gitignore -delete
+	$(app) find /app/storage/doctrine -type f -not -name .gitignore -delete
 
 .PHONY: up
 up:
