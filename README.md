@@ -119,8 +119,12 @@ See the main project [CONTRIBUTING.md] file for details on how to contribute to 
 
 See the main project [SECURITY.md] file for details on how to report security vulnerabilities.
 
+## License
+
+The SaltLite Framework is an open source project, licensed under the [MIT License](https://opensource.org/licenses/MIT). See
+the project [LICENSE] file for details.
+
 [SaltLite Framework]: https://github.com/phoneburner/salt-lite-framework
-
 [CONTRIBUTING.md]: https://github.com/phoneburner/salt-lite-framework/blob/main/CONTRIBUTING.md
-
+[LICENSE]: https://github.com/phoneburner/salt-lite-framework/blob/main/LICENSE.md
 [SECURITY.md]: https://github.com/phoneburner/salt-lite-framework/blob/main/SECURITY.md
