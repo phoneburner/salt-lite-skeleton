@@ -62,7 +62,7 @@ phpstan.neon:
 	@$(call generate-key,SALT_APP_KEY)
 	@$(call check-token,GITHUB_TOKEN)
 
-vendor: install | .env
+vendor: | .env
 	@docker compose pull
 	@docker compose build --pull
 	@$(app) composer install
