@@ -47,8 +47,8 @@ phpstan.neon:
 # the target from being rebuilt everytime the dependencies are updated.
 build: | phpstan.neon phpunit.xml .env
 	@$(call check-token,GITHUB_TOKEN)
-	@docker compose build --pull
 	@$(call generate-key,SALT_APP_KEY)
+	@docker compose build --pull
 	@$(app) composer install
 	@$(app) mkdir --parents build
 	@touch build

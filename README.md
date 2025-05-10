@@ -1,17 +1,41 @@
-# Salt-Lite Project Skeleton
+<p align="center"><a href="https://github.com/phoneburner/salt-lite-framework" target="_blank">
+<img src="public/images/salt-lite-logo.svg" width="350" alt="Logo"/>
+</a></p>
+
+# SaltLite Application Skeleton
 
 > Feels like home, just without the salty tears of frustration
 
-The Salt-Lite Framework is a "batteries-included" PHP framework, modeled on other
-modern frameworks like Symfony and Laravel, derived from the original Salt project.
-Ideally, it adapts the best core features of Salt without dragging along unnecessary 
-complexity, technical debt and design decisions we regret. The goal is to provide 
-users with a robust framework with minimum cognitive overhead from the original 
-Salt framework, avoiding the pitfalls of bringing in a full-fledged third-party 
-framework and trying to adapt that to our needs. 
+The [SaltLite Framework] is a "batteries-included", very-highly-opinionated PHP
+framework, derived from the original Salt framework/application used by PhoneBurner.
+While modeled on other modern "general purpose" frameworks like Symfony and Laravel,
+the SaltLite Framework is designed and optimized as an API backend.
+
+Ideally, it adapts the best core features of Salt without dragging along unnecessary
+complexity, technical debt, and the (many) design decisions we regret. The goal is
+to provide users with a robust framework with minimum cognitive overhead from the original
+Salt framework, avoiding the pitfalls of bringing in a full-fledged third-party
+framework and trying to adapt that to our needs.
+
+This is the application skeleton for the SaltLite framework, which is intended to be
+used as a template for creating new SaltLite applications.
+
+## Getting Started
+
+### Prerequisites
+
+- GNU Make (usually installed by default on Linux distributions)
+- Docker
+- Git
+- A GitHub Personal Access Token with `repo` scope. The build process will prompt you to enter this token, or it be
+  added manually to the .env file.
+
+### Create a New Project from the Skeleton Template
+
+1. To create a new project from the skeleton template, run the following command:
 
 ```shell
-docker run --rm -it -v $PWD:/app -u -w /app --env-file composer-auth.env composer/composer create-project \
+docker run --rm -it -v $PWD:/app -u -w /app composer/composer create-project \
   --repository='{"type": "github",  "url": "https://github.com/phoneburner/salt-lite-skeleton"}' 
   --stability=dev \
   --ignore-platform-reqs \
@@ -20,117 +44,83 @@ docker run --rm -it -v $PWD:/app -u -w /app --env-file composer-auth.env compose
   phoneburner/salt-lite-skeleton
 ```
 
-## Installation
-In order to run this application you need to have Docker installed and on your 
-machine, as well as a new GitHub Personal Access Token with repo scope. The build
-process will prompt you to enter this token, or it can be added manually by coping
-the .env.example file to .env and adding the token to the GITHUB_TOKEN variable.
+2. Navigate to the project directory and initialize a new Git repository:
 
-To build the application containers and install the dependencies, run the following:
+```shell
+cd /path/to/your/project
+git init
+```
+
+3. Run make to build the Docker image, set up DIST files, and install the dependencies:
+
 ```shell
 make
 ```
 
 You can confirm a successful installation by running the following:
+
 ```shell
 make test
 ```
 
-If you ever need to start fresh, you can run the following:
-```shell
-make clean
-```
-
-To start the application, run the following:
-```shell
-make up
-```
-
-To stop the application, run the following:
-```shell
-make down
-```
-
 By default, the application server will be available at http://localhost:8888,
-navigating to this URL should display the friendly 404 response page.
-
-### Notable Differences from Salt
-- The time zone configuration for PHP and the database is set to UTC by default.
-- Configuration is defined by the environment, and not by the path value of a request.
-- Overriding configuration values is done via environment variables, not by adding local configuration files.
-- Database migrations are handled by the [Doctrine Migrations](https://www.doctrine-project.org/projects/migrations.html) library, as opposed to Phinx.
-- PHPUnit 11 is used for testing, with ParaTest for parallel execution, this is 
-a significant upgrade from the previous version. Notably unit tests are defined
-with attributes and data providers must be defined as static functions.
-
-### Backwards Capability Guarantees
-Classes and interfaces with the `#[PhoneBurner\SaltLite\Framework\Util\Attribute\Contract]` attribute
-are considered part of the public API of the framework and should not be changed without
-a major version bump. These "contracts" can be freely used in application code.
-
-Conversely, classes and interfaces with the `#[PhoneBurner\SaltLite\Framework\Util\Attribute\Internal]`
-attribute are very tightly coupled to third-party vendor and/or framework logic,
-and should not be used in application code.
-
-### Configuration
-By convention, configuration files are located in the `config` directory. Each
-file should return an array of configuration values, with the top-level key identical
-to the file name. E.g., a configuration file called "logging.php" should look like:
-
-```php
-<?php
-    declare(strict_types=1);
-    
-    return [
-        'logging' => [
-            'log_level' => 'debug',
-            'log_file' => '/var/log/app.log',
-        ],
-    ]; 
-```
-
-**Important: the values of the configuration arrays must be arrays or scalar values.**
-
-The resolved configuration array is cached for performance as a static PHP array,
-with realized environmental variables from the point in time it was cached. Using
-objects or expressions as values will be problematic.
+navigating to this URL should display the Welcome page response page. (Ports mapping
+can be configured in the .env file.)
 
 ## Component Documentation
 
-Documentation
-[Application Runtime & Bootstrapping](vendor/phoneburner/salt-lite-framework/src/App/README.md)
-[Cache](vendor/phoneburner/salt-lite-framework/src/Cache/README.md)
-[Application Configuration](vendor/phoneburner/salt-lite-framework/src/Configuration/README.md)
-[Console Commands](vendor/phoneburner/salt-lite-framework/src/Console/README.md)
-[Database](vendor/phoneburner/salt-lite-framework/src/Database/README.md)
-[Service Container/Dependency Injection](vendor/phoneburner/salt-lite-framework/src/Container/README.md)
-[Event Dispatcher](vendor/phoneburner/salt-lite-framework/src/EventDispatcher/README.md)
-[HTTP Request/Response Handling](vendor/phoneburner/salt-lite-framework/src/Http/README.md)
-[Logging](vendor/phoneburner/salt-lite-framework/src/Logging/README.md)
-[Routing](vendor/phoneburner/salt-lite-framework/src/Routing/README.md)
-[Queue](vendor/phoneburner/salt-lite-framework/src/Queue/README.md)
-[Task Scheduling](vendor/phoneburner/salt-lite-framework/src/Scheduler/README.md)
-[Utilities](vendor/phoneburner/salt-lite-framework/src/Util/README.md)
+See the main [SaltLite Framework] for documentation on the framework components, configuration, and features.
 
-### Console Commands
+### Command Overview
 
-Run the following to see a list of available console commands:
-```shell
-docker compose run --rm -it web php salt list
+```shell 
+# If you ever need to start fresh, you can run the following:
+make clean
+
+# To start the application, run the following:
+make up
+
+# To stop the application, run the following:
+make down
+
+# Run all tests and coding standards checks required to pass before a pull request can be accepted
+make ci
+
+# Run PHPStan to statically analyze the entire codebase
+make phpstan
+
+# Run the PHP syntax linter
+make lint
+
+# Run the PHP_CodeSniffer code standards linter
+make phpcs
+
+# Attempt to auto-fix coding standards issues found by phpcs
+make phpbf
+
+# Run Rector with project configuration, without making changes
+make rector-dry-run
+
+# Run Rector with the project configuration and apply automated fixes
+make rector
+
+# Run PHPUnit tests
+make phpunit
+
+# Run the following to see a list of available console commands:
+docker compose run --rm -it php salt list
 ```
 
-### Testing
+## Contributing
 
-Running `make tests` will run the full test suite via ParaTest, which will execute tests in parallel for faster execution.
+See the main project [CONTRIBUTING.md] file for details on how to contribute to this project.
 
-Running `make tests-coverage` with generate a code coverage report in HTML format,
-in the "html/phpunit" directory.  The report can be viewed in a web browser at:
-http://localhost:8000/html/phpunit
+## Security & Vulnerability Reporting
 
-## Framework Project Development Notes
+See the main project [SECURITY.md] file for details on how to report security vulnerabilities.
 
-### How to Add Dependencies to the Framework Update the Skeleton Application
-```shell
-docker compose run --rm -it web composer -d lib/salt-lite-framework --no-install --no-update require nesbot/carbon \
-  && docker compose run --rm -it web composer update
-```
+[SaltLite Framework]: https://github.com/phoneburner/salt-lite-framework
+
+[CONTRIBUTING.md]: https://github.com/phoneburner/salt-lite-framework/blob/main/CONTRIBUTING.md
+
+[SECURITY.md]: https://github.com/phoneburner/salt-lite-framework/blob/main/SECURITY.md

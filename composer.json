@@ -1,6 +1,6 @@
 {
   "name": "phoneburner/salt-lite-skeleton",
-  "description": "The Salt-Lite Project Skeleton",
+  "description": "The Salt-Lite Application Skeleton",
   "type": "project",
   "license": "MIT",
   "config": {
@@ -85,8 +85,6 @@
     "symfony/var-dumper": "^7.2.3"
   },
   "scripts": {
-    "post-root-package-install": "git init",
-    "post-create-project-cmd": "make",
     "pre-autoload-dump": "Aws\\Script\\Composer\\Composer::removeUnusedServices",
     "behat": "@php vendor/bin/behat",
     "lint": "@php vendor/bin/parallel-lint -j $(nproc --ignore=2) --show-deprecated --exclude vendor --exclude build .",
