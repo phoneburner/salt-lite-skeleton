@@ -109,13 +109,13 @@ lint: build
 # Run tests, aliased to "phpunit" for consistency with other tooling targets.
 .PHONY: test phpunit
 phpunit: test
-test: build
+test: build up
 	@$(app) composer run-script test
 
 # Generate HTML PHPUnit test coverage report, aliased to "phpunit-coverage" for consistency with other tooling targets.
 .PHONY: test-coverage phpunit-coverage
 phpunit-coverage: test-coverage
-test-coverage: build
+test-coverage: build up
 	@$(app) composer run-script test-coverage
 
 .PHONY: serve-coverage
