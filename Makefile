@@ -75,7 +75,7 @@ build: vendor | phpstan.neon phpunit.xml .env
 
 .PHONY: clean
 clean:
-	$(app) -rf ./build ./vendor
+	$(app) rm -rf ./build ./vendor
 	$(app) find /var/www/storage/ -type f -not -name .gitignore -delete
 
 # Rebuild the Docker images and reinstall dependencies. Note that this target only

@@ -35,8 +35,8 @@ used as a template for creating new SaltLite applications.
 1. To create a new project from the skeleton template, run the following command:
 
 ```shell
-docker run --rm -it -v $PWD:/app -u -w /app composer/composer create-project \
-  --repository='{"type": "github",  "url": "https://github.com/phoneburner/salt-lite-skeleton"}' 
+docker run --rm -it -v $PWD:/app -w /app --user=${UID}:${GID} composer/composer create-project \
+  --repository='{"type": "github",  "url": "https://github.com/phoneburner/salt-lite-skeleton"}' \
   --stability=dev \
   --ignore-platform-reqs \
   --no-install \
